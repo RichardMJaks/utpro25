@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://gxagc877vr5v"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_rglb2"]
+[ext_resource type="Script" path="res://Game/Player/player.gd" id="1_rglb2"]
 
 [sub_resource type="Gradient" id="Gradient_8o8cq"]
 offsets = PackedFloat32Array(0.00649351, 1)
@@ -17,8 +17,6 @@ size = Vector2(89, 112.75)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_rglb2")
-move_speed = 600.0
-jump_force = 1200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.03125, 1.6875)

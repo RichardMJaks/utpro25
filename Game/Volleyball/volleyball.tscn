@@ -24,8 +24,8 @@ radius = 102.044
 collision_layer = 6
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_ai7my")
-linear_damp_mode = 1
-angular_damp_mode = 1
+linear_damp = 0.5
+angular_damp = 5.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(2.03125, 2.03125)

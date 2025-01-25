@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhrsdy0yfwrer"]
 
-[ext_resource type="PackedScene" uid="uid://gxagc877vr5v" path="res://player.tscn" id="1_uccsu"]
-[ext_resource type="PackedScene" uid="uid://dcqsqih4g61hd" path="res://volleyball.tscn" id="2_s67pt"]
+[ext_resource type="PackedScene" uid="uid://gxagc877vr5v" path="res://Game/Player/player.tscn" id="1_1rg8a"]
+[ext_resource type="PackedScene" uid="uid://dcqsqih4g61hd" path="res://Game/Volleyball/volleyball.tscn" id="2_6tfrq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6e0q"]
 size = Vector2(491, 88)
@@ -13,7 +13,7 @@ size = Vector2(28, 1487)
 size = Vector2(169.5, 605.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5hpf1"]
-size = Vector2(170.5, 84)
+size = Vector2(1160.5, 84)
 
 [node name="VolleyballLevel" type="Node2D"]
 
@@ -56,10 +56,10 @@ collision_mask = 0
 position = Vector2(274, 551)
 shape = SubResource("RectangleShape2D_i6e0q")
 
-[node name="player" parent="." instance=ExtResource("1_uccsu")]
+[node name="player" parent="." instance=ExtResource("1_1rg8a")]
 position = Vector2(175, 498)
 
-[node name="Volleyball" parent="." instance=ExtResource("2_s67pt")]
+[node name="Volleyball" parent="." instance=ExtResource("2_6tfrq")]
 position = Vector2(472, 48)
 gravity_scale = 5.0
 

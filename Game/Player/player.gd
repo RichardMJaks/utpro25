@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-@export var move_speed: float = 10
-@export var jump_force: float = 120
 var volleyball: RigidBody2D = null
 
 @onready var hit_buffer: Timer = %HitBuffer
@@ -13,10 +11,10 @@ func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta 
 
 	var dir = Input.get_axis("m_left", "m_right")
-	velocity.x = dir * move_speed	
+	velocity.x = dir * PlayerVars.speed	
 
 	if Input.is_action_just_pressed("m_jump") and is_on_floor():
-		velocity.y = -jump_force
+		velocity.y = -PlayerVars.jump_force
 
 	if Input.is_action_just_pressed("a_bounce"):
 		hit_buffer.start()
@@ -32,7 +30,7 @@ func _physics_process(delta: float) -> void:
 func _bounce(vb: RigidBody2D) -> void:
 	var vb_speed: float = vb.linear_velocity.length()
 	var dir: Vector2 = (vb.global_position - global_position).normalized()
-	vb.linear_velocity = vb_speed * dir
+	vb.linear_velocity = PlayerVars.bounce_force * dir
 
 func _on_recieve_area_entered(body:Node2D) -> void:
 	volleyball = body.owner
