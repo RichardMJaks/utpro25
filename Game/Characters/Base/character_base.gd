@@ -38,6 +38,9 @@ func _physics_process(delta: float) -> void:
 	if true not in throw_areas:
 		volleyball = null
 
+	if animator.has_animation("walk"):
+		animator.play("walk")
+
 	if input_handler.wants_bounce and volleyball:
 		input_handler.wants_bounce = false
 		_throw(volleyball)
@@ -80,8 +83,13 @@ func do_throw(pos: Vector2, dir: Vector2) -> void:
 	volleyball.global_position = pos
 	volleyball.linear_velocity = dir * PlayerVars.bounce_force	
 
-	is_throwing = false
 	volleyball = null
+
+	if name != "Player":
+		is_throwing = false
+
+func _stop_throwing() -> void:
+	is_throwing = false
 
 func _create_throw_timer() -> void:
 	var timer = Timer.new()

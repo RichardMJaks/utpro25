@@ -15,7 +15,7 @@ size = Vector2(64, 46)
 [node name="CharacterBase" type="CharacterBody2D"]
 script = ExtResource("1_4mp8t")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

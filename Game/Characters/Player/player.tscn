@@ -1,60 +1,305 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdyd34asp50ya"]
+[gd_scene load_steps=40 format=3 uid="uid://bdyd34asp50ya"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_om7nk"]
+[ext_resource type="Texture2D" uid="uid://doqpc81cms7ve" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll1.png" id="2_c0of2"]
+[ext_resource type="Texture2D" uid="uid://docntkggqf80k" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll1.png" id="2_r28si"]
 [ext_resource type="Script" path="res://Game/Characters/Player/player_input_handler.gd" id="2_rbr0d"]
-[ext_resource type="Texture2D" uid="uid://d1twamnxfhkno" path="res://Game/Art/assets/t6llspritedemo.png" id="2_uw0gf"]
+[ext_resource type="Texture2D" uid="uid://dunirirr1y3rr" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll2.png" id="3_brog0"]
+[ext_resource type="Texture2D" uid="uid://bg01r44ag510t" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll2.png" id="3_yne8h"]
+[ext_resource type="Texture2D" uid="uid://5knqvnsu0pvx" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll3.png" id="4_o0hjg"]
+[ext_resource type="Texture2D" uid="uid://erlbnpxei0i8" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll3.png" id="4_x581x"]
+[ext_resource type="Texture2D" uid="uid://cx1eupbingnx6" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll4.png" id="5_4arp8"]
+[ext_resource type="Texture2D" uid="uid://ckuoupks7iqt5" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll4.png" id="5_50vad"]
+[ext_resource type="Texture2D" uid="uid://27d8x5ot8pjq" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll5.png" id="6_0l1hf"]
+[ext_resource type="Texture2D" uid="uid://cqolljdtdtsoy" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll5.png" id="6_m1mln"]
+[ext_resource type="Texture2D" uid="uid://cesanl1ymi7nd" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll6.png" id="7_tdfkd"]
+[ext_resource type="Texture2D" uid="uid://cepv4bf62smi2" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll6.png" id="7_ttb10"]
+[ext_resource type="Texture2D" uid="uid://c273eysvoxwb0" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll7.png" id="8_x6nij"]
+[ext_resource type="Texture2D" uid="uid://c5cp7bgot0120" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll7.png" id="8_y3alj"]
+[ext_resource type="Texture2D" uid="uid://ca4t706begdyp" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll8.png" id="9_co7hw"]
+[ext_resource type="Texture2D" uid="uid://bflj5ac4fls42" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll8.png" id="9_jvmu5"]
+[ext_resource type="Texture2D" uid="uid://x8h7ck5b4eyq" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll9.png" id="10_kq8cn"]
+[ext_resource type="Texture2D" uid="uid://g0l3k5c215qs" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll10.png" id="11_kwdhc"]
+[ext_resource type="Texture2D" uid="uid://dvt7k16va6en4" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll11.png" id="12_5o1qf"]
+[ext_resource type="Texture2D" uid="uid://cx75pou8o5wbo" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll12.png" id="13_b77ff"]
+[ext_resource type="Texture2D" uid="uid://boakcyudvssg3" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/1.png" id="14_dljhs"]
+[ext_resource type="Texture2D" uid="uid://c8tsxqpnq26m4" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/2.png" id="15_qc1k4"]
+[ext_resource type="Texture2D" uid="uid://bq3234672pnea" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/3.png" id="16_lats1"]
+[ext_resource type="Texture2D" uid="uid://d2876sjnc3egj" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/4.png" id="17_sqvwg"]
+[ext_resource type="Texture2D" uid="uid://bwvs2tmupdun" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/5.png" id="18_fqbp6"]
+[ext_resource type="Texture2D" uid="uid://c1myi716i42hj" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/6.png" id="19_qhxvy"]
+[ext_resource type="Texture2D" uid="uid://cvjh0i6hh7ux" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/7.png" id="20_eywoc"]
+[ext_resource type="Texture2D" uid="uid://deilva38qhers" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/8.png" id="21_5sxum"]
+[ext_resource type="Texture2D" uid="uid://buuwc4oibawpe" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/9.png" id="22_ejg5a"]
+[ext_resource type="Texture2D" uid="uid://b03hx4nmnrlx1" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/10.png" id="23_m40v3"]
+[ext_resource type="Texture2D" uid="uid://gqiyah1d5s6f" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/11.png" id="24_b1ubd"]
+[ext_resource type="Texture2D" uid="uid://db0bnetrv0xlv" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/12.png" id="25_bu1gr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eyshk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r28si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_brog0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o0hjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_50vad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m1mln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tdfkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y3alj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_co7hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kq8cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kwdhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5o1qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b77ff")
+}],
+"loop": true,
+"name": &"front_throw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_dljhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qc1k4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_lats1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_sqvwg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fqbp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qhxvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_eywoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5sxum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ejg5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_m40v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b1ubd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_bu1gr")
+}],
+"loop": true,
+"name": &"top_throw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c0of2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yne8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x581x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4arp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0l1hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ttb10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x6nij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jvmu5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
 
 [sub_resource type="Animation" id="Animation_banqd"]
 resource_name = "front_throw"
-length = 0.25
-step = 0.25
-tracks/0/type = "method"
+step = 0.075
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.25),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["front_throw"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.819492),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"front_throw"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_obj6g"]
-resource_name = "top_throw"
-length = 0.25
-step = 0.25
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.25),
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.81775),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"top_throw"
+"method": &"_stop_throwing"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_obj6g"]
+resource_name = "top_throw"
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["top_throw"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"top_throw"
+}, {
+"args": [],
+"method": &"_stop_throwing"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_fgt8e"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["walk"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_36ayt"]
 _data = {
 "front_throw": SubResource("Animation_banqd"),
-"top_throw": SubResource("Animation_obj6g")
+"top_throw": SubResource("Animation_obj6g"),
+"walk": SubResource("Animation_fgt8e")
 }
 
 [node name="Player" instance=ExtResource("1_om7nk")]
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource("2_uw0gf")
+position = Vector2(24, 0)
+sprite_frames = SubResource("SpriteFrames_eyshk")
+animation = &"top_throw"
+frame = 11
 
 [node name="RemoteTransform2D" parent="." index="1"]
 position = Vector2(0, 112)
+
+[node name="TopThrowPosition" parent="CatchAreas" index="3"]
+position = Vector2(96, -96)
+
+[node name="FrontThrowPosition" parent="CatchAreas" index="4"]
+position = Vector2(72, -64)
 
 [node name="InputHandler" parent="." index="4"]
 script = ExtResource("2_rbr0d")
