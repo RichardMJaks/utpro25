@@ -59,6 +59,9 @@ position = Vector2(0, 16)
 
 [node name="InputHandler" parent="." index="4"]
 script = ExtResource("2_dt1ia")
+prediction_delta = 0.2
+error_margin = 20.0
+rethrow_delay = 1.0
 
 [node name="Animator" parent="." index="5"]
 libraries = {

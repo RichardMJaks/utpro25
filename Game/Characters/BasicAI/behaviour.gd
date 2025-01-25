@@ -3,6 +3,8 @@ extends InputHandler
 @onready var volleyball: Volleyball = get_tree().current_scene.volleyball
 @export var prediction_delta: float = 0.05
 @export var error_margin: float = 20
+@export var rethrow_delay: float = 1
+var throw_blocked: bool = false
 
 func set_dir() -> int:
 	var pos = _calculate_trajectory()
@@ -32,4 +34,20 @@ func _calculate_trajectory() -> int:
 	return final_pos.x
 
 func set_bounce() -> bool:
-	return true
+	if true in owner.throw_areas and not throw_blocked:
+		throw_blocked = true
+		_create_throw_timer()
+		return true
+	return false
+
+func _create_throw_timer() -> void:
+	var timer = Timer.new()
+	timer.wait_time = rethrow_delay
+	timer.one_shot = true
+	timer.autostart = true
+	timer.timeout.connect(
+		func():
+			throw_blocked = false
+			timer.queue_free()
+	)
+	return add_child(timer)

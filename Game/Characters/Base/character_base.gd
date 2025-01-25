@@ -44,6 +44,7 @@ func _physics_process(delta: float) -> void:
 
 func _throw(vb: Volleyball) -> void:
 	vb.make_invisible()
+	print("throwing")
 	is_throwing = true
 	if throw_areas[0]:
 		animator.play("top_throw")
@@ -59,7 +60,7 @@ func top_throw() -> void:
 
 func front_throw() -> void:
 	var vb_pos = front_throw_position.global_position
-	var dir = PlayerVars.front_throw_dir * side 
+	var dir = PlayerVars.front_throw_dir 
 	dir.x = dir.x * side
 
 	do_throw(vb_pos, dir)

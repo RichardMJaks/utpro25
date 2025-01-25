@@ -58,12 +58,12 @@ position = Vector2(0, 24)
 [node name="InputHandler" parent="." index="4"]
 script = ExtResource("2_rbr0d")
 
-[node name="Animator" parent="." index="6"]
+[node name="Animator" parent="." index="5"]
 libraries = {
 "": SubResource("AnimationLibrary_36ayt")
 }
 
-[node name="HitBuffer" type="Timer" parent="." index="7"]
+[node name="HitBuffer" type="Timer" parent="." index="6"]
 unique_name_in_owner = true
 wait_time = 0.1
 one_shot = true
