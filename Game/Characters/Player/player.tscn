@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://gxagc877vr5v"]
 
-[ext_resource type="Script" path="res://Game/Player/player.gd" id="1_rglb2"]
+[ext_resource type="Script" path="res://Game/Characters/Player/player.gd" id="1_rglb2"]
 
 [sub_resource type="Gradient" id="Gradient_8o8cq"]
 offsets = PackedFloat32Array(0.00649351, 1)
@@ -10,7 +10,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_8o8cq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv1gm"]
-size = Vector2(66, 110)
+size = Vector2(66, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kp71p"]
 size = Vector2(89, 112.75)
@@ -18,8 +18,14 @@ size = Vector2(89, 112.75)
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_rglb2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.03125, 1.6875)
+[node name="TopSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+scale = Vector2(1.03125, 1)
+texture = SubResource("GradientTexture2D_gwfdd")
+
+[node name="BottomSprite" type="Sprite2D" parent="."]
+position = Vector2(0, 32)
+scale = Vector2(1.03125, 1)
 texture = SubResource("GradientTexture2D_gwfdd")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
@@ -39,6 +45,14 @@ unique_name_in_owner = true
 process_callback = 0
 wait_time = 0.05
 one_shot = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+position = Vector2(0, 64)
+remote_path = NodePath("..")
+
+[node name="TopAnimator" type="AnimationPlayer" parent="."]
+
+[node name="BottomAnimator" type="AnimationPlayer" parent="."]
 
 [connection signal="area_entered" from="BounceBackArea" to="." method="_on_recieve_area_entered"]
 [connection signal="area_exited" from="BounceBackArea" to="." method="_on_recieve_area_exited"]

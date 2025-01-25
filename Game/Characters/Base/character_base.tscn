@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://bu7452mkngn4r"]
+
+[ext_resource type="Script" path="res://Game/Characters/Player/player.gd" id="1_bjnji"]
+[ext_resource type="Script" path="res://Game/Characters/Components/input_handler.gd" id="2_cgqy4"]
+
+[sub_resource type="Gradient" id="Gradient_lvtep"]
+offsets = PackedFloat32Array(0.00649351, 1)
+colors = PackedColorArray(1, 0, 1, 1, 1, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_inh5n"]
+gradient = SubResource("Gradient_lvtep")
+
+[sub_resource type="Gradient" id="Gradient_8o8cq"]
+offsets = PackedFloat32Array(0.00649351, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gwfdd"]
+gradient = SubResource("Gradient_8o8cq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv1gm"]
+size = Vector2(64, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp71p"]
+size = Vector2(51, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cntra"]
+size = Vector2(96, 48)
+
+[node name="CharacterBase" type="CharacterBody2D"]
+script = ExtResource("1_bjnji")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+position = Vector2(0, 64)
+remote_path = NodePath("..")
+
+[node name="Sprite" type="Node2D" parent="."]
+
+[node name="TopSprite" type="Sprite2D" parent="Sprite"]
+position = Vector2(4.47035e-07, -32)
+texture = SubResource("GradientTexture2D_inh5n")
+
+[node name="BottomSprite" type="Sprite2D" parent="Sprite"]
+position = Vector2(-4.47035e-07, 32)
+texture = SubResource("GradientTexture2D_gwfdd")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vv1gm")
+debug_color = Color(0.988235, 0.996078, 1, 0.247059)
+
+[node name="CatchAreas" type="Node2D" parent="."]
+
+[node name="FrontThrowArea" type="Area2D" parent="CatchAreas"]
+position = Vector2(72, -32)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="Collider" type="CollisionShape2D" parent="CatchAreas/FrontThrowArea"]
+position = Vector2(17.5, -8)
+shape = SubResource("RectangleShape2D_kp71p")
+
+[node name="TopThrowArea" type="Area2D" parent="CatchAreas"]
+
+[node name="Collider" type="CollisionShape2D" parent="CatchAreas/TopThrowArea"]
+position = Vector2(16, -104)
+shape = SubResource("RectangleShape2D_cntra")
+debug_color = Color(0.171801, 0.516512, 1, 0.42)
+
+[node name="HitBuffer" type="Timer" parent="."]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.05
+one_shot = true
+
+[node name="InputHandler" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_cgqy4")
+
+[node name="Animator" type="Node" parent="."]
+
+[node name="TopAnimator" type="AnimationPlayer" parent="Animator"]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+
+[node name="BottomAnimator" type="AnimationPlayer" parent="Animator"]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+
+[node name="ThrowPositions" type="Node2D" parent="."]
+
+[node name="TopThrowPosition" type="Marker2D" parent="ThrowPositions"]
+unique_name_in_owner = true
+position = Vector2(32, -96)
+
+[node name="FrontThrowPosition" type="Marker2D" parent="ThrowPositions"]
+unique_name_in_owner = true
+position = Vector2(72, -32)
