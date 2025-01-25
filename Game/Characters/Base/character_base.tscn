@@ -60,6 +60,9 @@ position = Vector2(17.5, -8)
 shape = SubResource("RectangleShape2D_kp71p")
 
 [node name="TopThrowArea" type="Area2D" parent="CatchAreas"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
 
 [node name="Collider" type="CollisionShape2D" parent="CatchAreas/TopThrowArea"]
 position = Vector2(16, -104)
@@ -82,3 +85,8 @@ position = Vector2(72, -32)
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
+
+[connection signal="area_entered" from="CatchAreas/FrontThrowArea" to="." method="_on_throw_area_entered" binds= [1]]
+[connection signal="area_exited" from="CatchAreas/FrontThrowArea" to="." method="_on_throw_area_exited" binds= [1]]
+[connection signal="area_entered" from="CatchAreas/TopThrowArea" to="." method="_on_throw_area_entered" binds= [0]]
+[connection signal="area_exited" from="CatchAreas/TopThrowArea" to="." method="_on_throw_area_exited" binds= [0]]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcqsqih4g61hd"]
+[gd_scene load_steps=7 format=3 uid="uid://dcqsqih4g61hd"]
+
+[ext_resource type="Script" path="res://Game/Volleyball/volleyball.gd" id="1_ab2o7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ai7my"]
 friction = 0.0
@@ -26,6 +28,7 @@ collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_ai7my")
 linear_damp = 0.5
 angular_damp = 5.0
+script = ExtResource("1_ab2o7")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(2.03125, 2.03125)

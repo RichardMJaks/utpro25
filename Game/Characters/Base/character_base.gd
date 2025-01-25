@@ -14,7 +14,13 @@ var volleyball: Volleyball = null
 @onready var top_throw_position: Marker2D = %TopThrowPosition
 @onready var front_throw_position: Marker2D = %BottomThrowPosition
 
+var throw_areas: Array[bool] = [false, false]
+
 func _physics_process(delta: float) -> void:
+	# Check if any throw area is available to throw a ball
+	if true not in throw_areas:
+		volleyball = null
+
 	if input_handler.wants_bounce and volleyball:
 		_throw(volleyball)
 
@@ -33,6 +39,10 @@ func _physics_process(delta: float) -> void:
 
 func _throw(vb: Volleyball) -> void:
 	is_throwing = true
+	if throw_areas[0]:
+		animator.play("top_throw")
+	else:
+		animator.play("front_throw")
 	vb.make_invisible()
 
 func top_throw() -> void:
@@ -51,6 +61,9 @@ func front_throw() -> void:
 	var dir = PlayerVars.front_throw_dir * side
 	volleyball.linear_velocity = dir * PlayerVars.bounce_force
 
+func _on_throw_area_entered(area: Area2D, i: int) -> void:
+	volleyball = area.owner
+	throw_areas[i] = true
 
-
-
+func _on_throw_area_exited(area: Area2D, i: int) -> void:
+	throw_areas[i] = false
