@@ -1,18 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://dcqsqih4g61hd"]
 
+[ext_resource type="Script" path="res://Game/Volleyball/volleyball.gd" id="1_ab2o7"]
+[ext_resource type="Texture2D" uid="uid://ce8cwptss0jm7" path="res://Game/Art/assets/boulderdemo.png" id="2_35kry"]
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ai7my"]
 friction = 0.0
 bounce = 1.0
-
-[sub_resource type="Gradient" id="Gradient_0orme"]
-interpolation_mode = 1
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_f1d82"]
-gradient = SubResource("Gradient_0orme")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.5, 0)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64nuw"]
 radius = 65.0692
@@ -26,10 +19,11 @@ collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_ai7my")
 linear_damp = 0.5
 angular_damp = 5.0
+script = ExtResource("1_ab2o7")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(2.03125, 2.03125)
-texture = SubResource("GradientTexture2D_f1d82")
+texture = ExtResource("2_35kry")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)

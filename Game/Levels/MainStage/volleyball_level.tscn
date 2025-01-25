@@ -1,35 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=5 format=3 uid="uid://bhrsdy0yfwrer"]
 
-[ext_resource type="PackedScene" uid="uid://gxagc877vr5v" path="res://Game/Characters/Player/player.tscn" id="1_1rg8a"]
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
 [ext_resource type="PackedScene" uid="uid://dcqsqih4g61hd" path="res://Game/Volleyball/volleyball.tscn" id="2_6tfrq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6imdr"]
-size = Vector2(844, 272)
+[ext_resource type="PackedScene" uid="uid://dk23i070hnenw" path="res://Game/Ground/ground.tscn" id="4_ibp17"]
 
 [node name="VolleyballLevel" type="Node2D"]
 script = ExtResource("1_c342i")
 
 [node name="DemoBg" type="Sprite2D" parent="."]
-position = Vector2(957, 537)
+position = Vector2(1032, 568)
 texture = ExtResource("1_8hslq")
-
-[node name="player" parent="." instance=ExtResource("1_1rg8a")]
-position = Vector2(175, 498)
 
 [node name="Volleyball" parent="." instance=ExtResource("2_6tfrq")]
 position = Vector2(472, 48)
 gravity_scale = 5.0
-
-[node name="LeftIslandGround" type="StaticBody2D" parent="."]
-position = Vector2(424, 944)
-collision_layer = 3
-collision_mask = 0
-
-[node name="PhysicsCollider" type="CollisionShape2D" parent="LeftIslandGround"]
-position = Vector2(-2, 0)
-shape = SubResource("RectangleShape2D_6imdr")
 
 [node name="Player1Position" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -43,3 +28,18 @@ gizmo_extents = 64.1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 544)
+
+[node name="LeftGround" parent="." instance=ExtResource("4_ibp17")]
+position = Vector2(160, 840)
+
+[node name="PhysicsCollider" parent="LeftGround" index="0"]
+position = Vector2(344, 127)
+
+[node name="RightGround" parent="." instance=ExtResource("4_ibp17")]
+position = Vector2(1216, 840)
+
+[node name="PhysicsCollider" parent="RightGround" index="0"]
+position = Vector2(344, 127)
+
+[editable path="LeftGround"]
+[editable path="RightGround"]
