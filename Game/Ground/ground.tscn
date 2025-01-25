@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Game/Ground/ground.gd" id="1_1q20n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_clv28"]
-size = Vector2(864, 274)
+size = Vector2(864, 277)
 
 [node name="Ground" type="StaticBody2D"]
 collision_layer = 3

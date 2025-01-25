@@ -1,20 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=10 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
-[ext_resource type="PackedScene" uid="uid://dcqsqih4g61hd" path="res://Game/Volleyball/volleyball.tscn" id="2_6tfrq"]
 [ext_resource type="PackedScene" uid="uid://dk23i070hnenw" path="res://Game/Ground/ground.tscn" id="4_ibp17"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
+size = Vector2(864, 276.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdtbd"]
+size = Vector2(864, 277)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymrqm"]
+size = Vector2(192, 1072)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_io8od"]
+size = Vector2(200, 1548)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5a25"]
+size = Vector2(192, 1540)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68hts"]
+size = Vector2(192, 276)
 
 [node name="VolleyballLevel" type="Node2D"]
 script = ExtResource("1_c342i")
 
 [node name="DemoBg" type="Sprite2D" parent="."]
-position = Vector2(1032, 568)
+position = Vector2(960, 548)
 texture = ExtResource("1_8hslq")
-
-[node name="Volleyball" parent="." instance=ExtResource("2_6tfrq")]
-position = Vector2(472, 48)
-gravity_scale = 5.0
 
 [node name="Player1Position" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -29,17 +42,70 @@ gizmo_extents = 64.1
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 544)
 
-[node name="LeftGround" parent="." instance=ExtResource("4_ibp17")]
-position = Vector2(160, 840)
+[node name="VolleyballP1Position" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(384, 320)
 
-[node name="PhysicsCollider" parent="LeftGround" index="0"]
-position = Vector2(344, 127)
+[node name="VolleyballP2Position" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1472, 320)
 
-[node name="RightGround" parent="." instance=ExtResource("4_ibp17")]
-position = Vector2(1216, 840)
+[node name="Colliders" type="Node2D" parent="."]
 
-[node name="PhysicsCollider" parent="RightGround" index="0"]
-position = Vector2(344, 127)
+[node name="LeftGround" parent="Colliders" instance=ExtResource("4_ibp17")]
+position = Vector2(88, 820)
+side = 1
 
-[editable path="LeftGround"]
-[editable path="RightGround"]
+[node name="PhysicsCollider" parent="Colliders/LeftGround" index="0"]
+position = Vector2(344, 126.25)
+shape = SubResource("RectangleShape2D_m3fci")
+
+[node name="RightGround" parent="Colliders" instance=ExtResource("4_ibp17")]
+position = Vector2(1144, 820)
+side = -1
+
+[node name="PhysicsCollider" parent="Colliders/RightGround" index="0"]
+position = Vector2(344, 126.5)
+shape = SubResource("RectangleShape2D_tdtbd")
+
+[node name="Separator" type="StaticBody2D" parent="Colliders"]
+position = Vector2(88, 820)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/Separator"]
+position = Vector2(872, -268)
+shape = SubResource("RectangleShape2D_ymrqm")
+debug_color = Color(0.36179, 0.4069, 0.375423, 0.42)
+
+[node name="WallLeft" type="StaticBody2D" parent="Colliders"]
+position = Vector2(-976, 808)
+collision_layer = 3
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/WallLeft"]
+position = Vector2(876, -506)
+shape = SubResource("RectangleShape2D_io8od")
+debug_color = Color(0.493671, 0.346672, 0.377866, 0.42)
+
+[node name="WallRight" type="StaticBody2D" parent="Colliders"]
+position = Vector2(1144, 816)
+collision_layer = 3
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/WallRight"]
+position = Vector2(872, -502)
+shape = SubResource("RectangleShape2D_s5a25")
+debug_color = Color(0.482644, 0.352967, 0.378501, 0.42)
+
+[node name="GapCollider" type="StaticBody2D" parent="Colliders"]
+position = Vector2(1144, 816)
+collision_layer = 3
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/GapCollider"]
+position = Vector2(-184, 130)
+shape = SubResource("RectangleShape2D_68hts")
+debug_color = Color(0.549624, 0.310666, 0.367176, 0.42)
+
+[editable path="Colliders/LeftGround"]
+[editable path="Colliders/RightGround"]
