@@ -3,7 +3,7 @@ extends Node
 # Player Properties
 var speed = 600
 var bounce_force_range = 500
-var bounce_force = 2000:
+var bounce_force = 2300:
     get:
         return bounce_force + \
             randf_range(
@@ -26,7 +26,7 @@ var top_throw_dir:
         )) 
 var front_throw_dir:
     get: 
-        var initial = -45
+        var initial = -60
         return Vector2.from_angle(deg_to_rad(
             initial + randf_range(
                 -angle_range/2.0,

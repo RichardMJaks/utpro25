@@ -11,7 +11,7 @@ bounce = 1.0
 radius = 65.0692
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hj15t"]
-radius = 40.0
+radius = 80.399
 
 [node name="Volleyball" type="RigidBody2D"]
 collision_layer = 6

@@ -2,7 +2,11 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
+<<<<<<< HEAD
 uid="uid://dwn7lqlh77tfq"
+=======
+uid="uid://buardxrb40caq"
+>>>>>>> 82fc123 (Fixed game ruining bug)
 path="res://.godot/imported/menu_background.ogg-c2ae7506430ab91e8d583ed71044d9ba.oggvorbisstr"
 
 [deps]

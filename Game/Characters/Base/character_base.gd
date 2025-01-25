@@ -14,11 +14,19 @@ var volleyball: Volleyball = null
 @onready var top_throw_position: Marker2D = %TopThrowPosition
 @onready var front_throw_position: Marker2D = %FrontThrowPosition
 
+@export var rethrow_delay: float = 1
+var throw_blocked: bool = false
+
 var throw_areas: Array[bool] = [false, false]
 
 func _ready() -> void:
 	# Sets Throwboxes orientation right, calls deferred to recieve side first
-	(func(): %CatchAreas.scale.x = side).call_deferred()
+	(
+		func(): 
+			for child in %CatchAreas.get_children():
+				child.position.x = side * child.position.x
+				%Sprite.flip_h = side == PlayerVars.SIDE.RIGHT
+	).call_deferred()
 
 func _physics_process(delta: float) -> void:
 	# If throwing then all movement is blocked
@@ -31,6 +39,7 @@ func _physics_process(delta: float) -> void:
 		volleyball = null
 
 	if input_handler.wants_bounce and volleyball:
+		input_handler.wants_bounce = false
 		_throw(volleyball)
 
 	
@@ -43,26 +52,26 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _throw(vb: Volleyball) -> void:
-	vb.make_invisible()
-	print("throwing")
 	is_throwing = true
 	if throw_areas[0]:
+		vb.make_invisible()
 		animator.play("top_throw")
-	else:
+	elif throw_areas[1]:
+		vb.make_invisible()
 		animator.play("front_throw")
+	else:
+		is_throwing = false
 
 func top_throw() -> void:
 	var vb_pos = top_throw_position.global_position
 	var dir = PlayerVars.top_throw_dir
 	dir.x = dir.x * side 
-
 	do_throw(vb_pos, dir)
 
 func front_throw() -> void:
 	var vb_pos = front_throw_position.global_position
 	var dir = PlayerVars.front_throw_dir 
 	dir.x = dir.x * side
-
 	do_throw(vb_pos, dir)
 
 func do_throw(pos: Vector2, dir: Vector2) -> void:
@@ -71,12 +80,27 @@ func do_throw(pos: Vector2, dir: Vector2) -> void:
 	volleyball.global_position = pos
 	volleyball.linear_velocity = dir * PlayerVars.bounce_force	
 
-	print(name + " is throwing with " + str(dir))
 	is_throwing = false
+	volleyball = null
 
-func _on_throw_area_entered(area: Area2D, i: int) -> void:
+func _create_throw_timer() -> void:
+	var timer = Timer.new()
+	timer.wait_time = rethrow_delay
+	timer.one_shot = true
+	timer.autostart = true
+	timer.timeout.connect(
+		func():
+			throw_blocked = false
+			timer.queue_free()
+	)
+	return add_child(timer)
+
+func _on_throw_area_entered(area: Area2D, i: int, s: String) -> void:
+	if not (name == "Player"):
+		print(str(i) + " | " + s)
 	volleyball = area.owner
-	throw_areas[i] = true
+	if not (true in throw_areas):
+		throw_areas[i] = true
 
 func _on_throw_area_exited(_area: Area2D, i: int) -> void:
 	throw_areas[i] = false
