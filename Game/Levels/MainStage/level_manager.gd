@@ -21,8 +21,9 @@ func _ready() -> void:
 
 	if ps_player:
 		player_1 = ps_player.instantiate()
+		add_child(player_1)
 		player_1.global_position = player_1_pos.global_position
-		player_1.side = PlayerVars.SIDE.LEFT	
+		player_1.side = PlayerVars.SIDE.LEFT
 
 func _reduce_health(id: PlayerVars.SIDE) -> void:
 	match(id):
