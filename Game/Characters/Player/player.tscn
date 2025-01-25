@@ -1,59 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://gxagc877vr5v"]
+[gd_scene load_steps=3 format=3 uid="uid://bdyd34asp50ya"]
 
-[ext_resource type="Script" path="res://Game/Characters/Player/player.gd" id="1_rglb2"]
+[ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_om7nk"]
+[ext_resource type="Script" path="res://Game/Characters/Player/player_input_handler.gd" id="2_rbr0d"]
 
-[sub_resource type="Gradient" id="Gradient_8o8cq"]
-offsets = PackedFloat32Array(0.00649351, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+[node name="Player" instance=ExtResource("1_om7nk")]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gwfdd"]
-gradient = SubResource("Gradient_8o8cq")
+[node name="InputHandler" parent="." index="4"]
+script = ExtResource("2_rbr0d")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vv1gm"]
-size = Vector2(66, 128)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp71p"]
-size = Vector2(89, 112.75)
-
-[node name="player" type="CharacterBody2D"]
-script = ExtResource("1_rglb2")
-
-[node name="TopSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
-scale = Vector2(1.03125, 1)
-texture = SubResource("GradientTexture2D_gwfdd")
-
-[node name="BottomSprite" type="Sprite2D" parent="."]
-position = Vector2(0, 32)
-scale = Vector2(1.03125, 1)
-texture = SubResource("GradientTexture2D_gwfdd")
-
-[node name="Collider" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_vv1gm")
-
-[node name="BounceBackArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceBackArea"]
-position = Vector2(57.5, -61.625)
-shape = SubResource("RectangleShape2D_kp71p")
-
-[node name="HitBuffer" type="Timer" parent="."]
+[node name="HitBuffer" type="Timer" parent="." index="7"]
 unique_name_in_owner = true
-process_callback = 0
-wait_time = 0.05
+wait_time = 0.1
 one_shot = true
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-position = Vector2(0, 64)
-remote_path = NodePath("..")
-
-[node name="TopAnimator" type="AnimationPlayer" parent="."]
-
-[node name="BottomAnimator" type="AnimationPlayer" parent="."]
-
-[connection signal="area_entered" from="BounceBackArea" to="." method="_on_recieve_area_entered"]
-[connection signal="area_exited" from="BounceBackArea" to="." method="_on_recieve_area_exited"]
-[connection signal="timeout" from="HitBuffer" to="." method="_on_hit_buffer_timeout"]
+[connection signal="timeout" from="HitBuffer" to="InputHandler" method="_on_hit_buffer_timeout"]

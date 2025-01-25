@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bhrsdy0yfwrer"]
 
-[ext_resource type="PackedScene" uid="uid://gxagc877vr5v" path="res://Game/Characters/Player/player.tscn" id="1_1rg8a"]
+[ext_resource type="PackedScene" uid="uid://bdyd34asp50ya" path="res://Game/Characters/Player/player.tscn" id="1_1rg8a"]
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
 [ext_resource type="PackedScene" uid="uid://dcqsqih4g61hd" path="res://Game/Volleyball/volleyball.tscn" id="2_6tfrq"]
@@ -14,9 +14,6 @@ script = ExtResource("1_c342i")
 [node name="DemoBg" type="Sprite2D" parent="."]
 position = Vector2(957, 537)
 texture = ExtResource("1_8hslq")
-
-[node name="player" parent="." instance=ExtResource("1_1rg8a")]
-position = Vector2(175, 498)
 
 [node name="Volleyball" parent="." instance=ExtResource("2_6tfrq")]
 position = Vector2(472, 48)
@@ -43,3 +40,6 @@ gizmo_extents = 64.1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 544)
+
+[node name="Player" parent="." instance=ExtResource("1_1rg8a")]
+position = Vector2(192, 672)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://bu7452mkngn4r"]
 
-[ext_resource type="Script" path="res://Game/Characters/Player/player.gd" id="1_bjnji"]
+[ext_resource type="Script" path="res://Game/Characters/Base/character_base.gd" id="1_4mp8t"]
 [ext_resource type="Script" path="res://Game/Characters/Components/input_handler.gd" id="2_cgqy4"]
 
 [sub_resource type="Gradient" id="Gradient_lvtep"]
@@ -27,7 +27,7 @@ size = Vector2(51, 80)
 size = Vector2(96, 48)
 
 [node name="CharacterBase" type="CharacterBody2D"]
-script = ExtResource("1_bjnji")
+script = ExtResource("1_4mp8t")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 position = Vector2(0, 64)
@@ -66,25 +66,9 @@ position = Vector2(16, -104)
 shape = SubResource("RectangleShape2D_cntra")
 debug_color = Color(0.171801, 0.516512, 1, 0.42)
 
-[node name="HitBuffer" type="Timer" parent="."]
-unique_name_in_owner = true
-process_callback = 0
-wait_time = 0.05
-one_shot = true
-
 [node name="InputHandler" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_cgqy4")
-
-[node name="Animator" type="Node" parent="."]
-
-[node name="TopAnimator" type="AnimationPlayer" parent="Animator"]
-unique_name_in_owner = true
-root_node = NodePath("../..")
-
-[node name="BottomAnimator" type="AnimationPlayer" parent="Animator"]
-unique_name_in_owner = true
-root_node = NodePath("../..")
 
 [node name="ThrowPositions" type="Node2D" parent="."]
 
@@ -95,3 +79,6 @@ position = Vector2(32, -96)
 [node name="FrontThrowPosition" type="Marker2D" parent="ThrowPositions"]
 unique_name_in_owner = true
 position = Vector2(72, -32)
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true

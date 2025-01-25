@@ -7,8 +7,8 @@ var right_health: int
 var ps_volleyball: PackedScene = preload("res://Game/Volleyball/volleyball.tscn")
 var ps_player: PackedScene = preload("res://Game/Characters/Player/player.tscn")
 
-var player_1: Player
-var player_2: CharacterBody2D #TODO: Set correct typehint once enemies are designed 
+var player_1: Character
+var player_2: Character #TODO: Set correct typehint once enemies are designed 
 
 @onready var player_1_pos: Marker2D = %Player1Position
 @onready var player_2_pos: Marker2D = %Player2Position

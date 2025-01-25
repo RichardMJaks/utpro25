@@ -9,8 +9,7 @@ var volleyball: Volleyball = null
 
 @onready var input_handler: InputHandler = %InputHandler
 
-@onready var animator_top: AnimationPlayer = %TopAnimator
-@onready var animator_bottom: AnimationPlayer = %BottomAnimator
+@onready var animator: AnimationPlayer = %Animator
 
 @onready var top_throw_position: Marker2D = %TopThrowPosition
 @onready var front_throw_position: Marker2D = %BottomThrowPosition
@@ -28,11 +27,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += get_gravity().y * PlayerVars.gravity_multiplier * delta
 	
-	velocity.x = input_handler.dir
+	velocity.x = input_handler.dir * PlayerVars.speed
 
-	if input_handler.wants_jump and is_on_floor():
-		velocity.y = PlayerVars.jump_force
-	
 	move_and_slide()
 
 func _throw(vb: Volleyball) -> void:
