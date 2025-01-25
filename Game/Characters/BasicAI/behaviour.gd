@@ -1,14 +1,23 @@
 extends InputHandler
 
+@onready var cs = get_tree().current_scene
+
 @onready var volleyball: Volleyball = get_tree().current_scene.volleyball
 @export var prediction_delta: float = 0.05
 @export var error_margin: float = 20
 @export var rethrow_delay: float = 1
 var throw_blocked: bool = false
 
+# Get helpers
+@onready var midpoint: Marker2D = cs.midpoint 
+@onready var island_midpoint: Marker2D = cs.island_midpoint 
+
 func set_dir() -> int:
 	var pos = _calculate_trajectory()
 	
+	if volleyball.global_position.x < midpoint.global_position.x:
+		pos = island_midpoint.global_position.x
+
 	if (pos - owner.global_position.x) < -error_margin:
 		return -1
 	elif (pos - owner.global_position.x) > error_margin:

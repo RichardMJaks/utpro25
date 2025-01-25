@@ -19,6 +19,11 @@ var volleyball: Volleyball
 @onready var vb_1_pos: Marker2D = %VolleyballP1Position
 @onready var vb_2_pos: Marker2D = %VolleyballP2Position
 
+# AI Helpers
+@onready var midpoint: Marker2D = %ArenaMidpointHelper
+@onready var island_midpoint: Marker2D = %IslandMidpointHelper
+
+
 func _ready() -> void:
 	left_health = PlayerVars.total_health
 	right_health = PlayerVars.total_health

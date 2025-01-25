@@ -61,7 +61,7 @@ position = Vector2(0, 16)
 script = ExtResource("2_dt1ia")
 prediction_delta = 0.2
 error_margin = 20.0
-rethrow_delay = 1.0
+rethrow_delay = 0.3
 
 [node name="Animator" parent="." index="5"]
 libraries = {
