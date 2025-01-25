@@ -1,17 +1,14 @@
-[gd_scene load_steps=40 format=3 uid="uid://bdyd34asp50ya"]
+[gd_scene load_steps=36 format=3 uid="uid://bdyd34asp50ya"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_om7nk"]
 [ext_resource type="Texture2D" uid="uid://doqpc81cms7ve" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll1.png" id="2_c0of2"]
-[ext_resource type="Texture2D" uid="uid://docntkggqf80k" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll1.png" id="2_r28si"]
 [ext_resource type="Script" path="res://Game/Characters/Player/player_input_handler.gd" id="2_rbr0d"]
 [ext_resource type="Texture2D" uid="uid://dunirirr1y3rr" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll2.png" id="3_brog0"]
 [ext_resource type="Texture2D" uid="uid://bg01r44ag510t" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll2.png" id="3_yne8h"]
-[ext_resource type="Texture2D" uid="uid://5knqvnsu0pvx" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll3.png" id="4_o0hjg"]
 [ext_resource type="Texture2D" uid="uid://erlbnpxei0i8" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll3.png" id="4_x581x"]
 [ext_resource type="Texture2D" uid="uid://cx1eupbingnx6" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll4.png" id="5_4arp8"]
 [ext_resource type="Texture2D" uid="uid://ckuoupks7iqt5" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll4.png" id="5_50vad"]
 [ext_resource type="Texture2D" uid="uid://27d8x5ot8pjq" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll5.png" id="6_0l1hf"]
-[ext_resource type="Texture2D" uid="uid://cqolljdtdtsoy" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll5.png" id="6_m1mln"]
 [ext_resource type="Texture2D" uid="uid://cesanl1ymi7nd" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll6.png" id="7_tdfkd"]
 [ext_resource type="Texture2D" uid="uid://cepv4bf62smi2" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll6.png" id="7_ttb10"]
 [ext_resource type="Texture2D" uid="uid://c273eysvoxwb0" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll7.png" id="8_x6nij"]
@@ -20,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://bflj5ac4fls42" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll8.png" id="9_jvmu5"]
 [ext_resource type="Texture2D" uid="uid://x8h7ck5b4eyq" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll9.png" id="10_kq8cn"]
 [ext_resource type="Texture2D" uid="uid://g0l3k5c215qs" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll10.png" id="11_kwdhc"]
-[ext_resource type="Texture2D" uid="uid://dvt7k16va6en4" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll11.png" id="12_5o1qf"]
 [ext_resource type="Texture2D" uid="uid://cx75pou8o5wbo" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll12.png" id="13_b77ff"]
 [ext_resource type="Texture2D" uid="uid://boakcyudvssg3" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/1.png" id="14_dljhs"]
 [ext_resource type="Texture2D" uid="uid://c8tsxqpnq26m4" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/2.png" id="15_qc1k4"]
@@ -31,27 +27,16 @@
 [ext_resource type="Texture2D" uid="uid://cvjh0i6hh7ux" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/7.png" id="20_eywoc"]
 [ext_resource type="Texture2D" uid="uid://deilva38qhers" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/8.png" id="21_5sxum"]
 [ext_resource type="Texture2D" uid="uid://buuwc4oibawpe" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/9.png" id="22_ejg5a"]
-[ext_resource type="Texture2D" uid="uid://b03hx4nmnrlx1" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/10.png" id="23_m40v3"]
-[ext_resource type="Texture2D" uid="uid://gqiyah1d5s6f" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/11.png" id="24_b1ubd"]
 [ext_resource type="Texture2D" uid="uid://db0bnetrv0xlv" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/12.png" id="25_bu1gr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eyshk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_r28si")
-}, {
-"duration": 1.0,
 "texture": ExtResource("3_brog0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_o0hjg")
-}, {
-"duration": 1.0,
 "texture": ExtResource("5_50vad")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_m1mln")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_tdfkd")
@@ -69,12 +54,9 @@ animations = [{
 "texture": ExtResource("11_kwdhc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_5o1qf")
-}, {
-"duration": 1.0,
 "texture": ExtResource("13_b77ff")
 }],
-"loop": true,
+"loop": false,
 "name": &"front_throw",
 "speed": 12.0
 }, {
@@ -107,15 +89,9 @@ animations = [{
 "texture": ExtResource("22_ejg5a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("23_m40v3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_b1ubd")
-}, {
-"duration": 1.0,
 "texture": ExtResource("25_bu1gr")
 }],
-"loop": true,
+"loop": false,
 "name": &"top_throw",
 "speed": 12.0
 }, {
@@ -149,9 +125,94 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Animation" id="Animation_lo37y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"front_throw"]
+}
+
 [sub_resource type="Animation" id="Animation_banqd"]
 resource_name = "front_throw"
+length = 0.666667
 step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["front_throw"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.586739),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"front_throw"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.651132),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_stop_throwing"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_obj6g"]
+resource_name = "top_throw"
+length = 0.833333
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -174,62 +235,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["front_throw"]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.819492),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"front_throw"
-}]
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.81775),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_stop_throwing"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_obj6g"]
-resource_name = "top_throw"
-step = 0.125
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 11]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
 "values": ["top_throw"]
 }
 tracks/2/type = "method"
@@ -239,7 +244,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.75, 0.875),
+"times": PackedFloat32Array(0.75, 0.823117),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -277,9 +282,41 @@ tracks/1/keys = {
 "values": ["walk"]
 }
 
+[sub_resource type="Animation" id="Animation_0qvr1"]
+resource_name = "idle"
+length = 1.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 0, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_36ayt"]
 _data = {
+"RESET": SubResource("Animation_lo37y"),
 "front_throw": SubResource("Animation_banqd"),
+"idle": SubResource("Animation_0qvr1"),
 "top_throw": SubResource("Animation_obj6g"),
 "walk": SubResource("Animation_fgt8e")
 }
@@ -289,11 +326,16 @@ _data = {
 [node name="Sprite" parent="." index="0"]
 position = Vector2(24, 0)
 sprite_frames = SubResource("SpriteFrames_eyshk")
-animation = &"top_throw"
-frame = 11
+animation = &"front_throw"
 
 [node name="RemoteTransform2D" parent="." index="1"]
 position = Vector2(0, 112)
+
+[node name="Collider" parent="CatchAreas/FrontThrowArea" index="0"]
+position = Vector2(0, 24)
+
+[node name="Collider" parent="CatchAreas/TopThrowArea" index="0"]
+position = Vector2(0, 7.5)
 
 [node name="TopThrowPosition" parent="CatchAreas" index="3"]
 position = Vector2(96, -96)

@@ -38,8 +38,11 @@ func _physics_process(delta: float) -> void:
 	if true not in throw_areas:
 		volleyball = null
 
-	if animator.has_animation("walk"):
+	if velocity.x != 0 and animator.has_animation("walk"):
 		animator.play("walk")
+
+	if velocity.x == 0 and animator.has_animation("idle"):
+		animator.play("idle")
 
 	if input_handler.wants_bounce and volleyball:
 		input_handler.wants_bounce = false

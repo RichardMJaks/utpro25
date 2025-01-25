@@ -13,7 +13,6 @@ config_version=5
 config/name="Volleyball"
 run/main_scene="res://Game/Menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-run/max_fps=24
 config/icon="res://icon.svg"
 
 [autoload]

@@ -7,10 +7,10 @@
 size = Vector2(64, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kp71p"]
-size = Vector2(120, 120)
+size = Vector2(120, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cntra"]
-size = Vector2(64, 46)
+size = Vector2(64, 31)
 
 [node name="CharacterBase" type="CharacterBody2D"]
 script = ExtResource("1_4mp8t")
