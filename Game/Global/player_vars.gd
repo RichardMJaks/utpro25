@@ -11,4 +11,4 @@ var top_throw_dir = Vector2.from_angle(deg_to_rad(-45))
 var front_throw_dir = Vector2.from_angle(deg_to_rad(-45))
 
 # Miscellaneous
-enum SIDE {LEFT = 1, RIGHT = -1}
+enum SIDE {NONE = 0, LEFT = 1, RIGHT = -1}

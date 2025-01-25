@@ -1,24 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdyd34asp50ya"]
+[gd_scene load_steps=7 format=3 uid="uid://bdyd34asp50ya"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_om7nk"]
 [ext_resource type="Script" path="res://Game/Characters/Player/player_input_handler.gd" id="2_rbr0d"]
-
-[sub_resource type="Animation" id="Animation_obj6g"]
-resource_name = "top_throw"
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"top_throw"
-}]
-}
+[ext_resource type="Texture2D" uid="uid://d1twamnxfhkno" path="res://Game/Art/assets/t6llspritedemo.png" id="2_uw0gf"]
 
 [sub_resource type="Animation" id="Animation_banqd"]
 resource_name = "front_throw"
@@ -37,6 +21,23 @@ tracks/0/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_obj6g"]
+resource_name = "top_throw"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"top_throw"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_36ayt"]
 _data = {
 "front_throw": SubResource("Animation_banqd"),
@@ -44,6 +45,15 @@ _data = {
 }
 
 [node name="Player" instance=ExtResource("1_om7nk")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_uw0gf")
+
+[node name="RemoteTransform2D" parent="." index="1"]
+position = Vector2(0, 112)
+
+[node name="Collider" parent="." index="2"]
+position = Vector2(0, 24)
 
 [node name="InputHandler" parent="." index="4"]
 script = ExtResource("2_rbr0d")
