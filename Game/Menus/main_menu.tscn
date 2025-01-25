@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc430ebb16tud"]
+[gd_scene load_steps=4 format=3 uid="uid://dc430ebb16tud"]
 
+[ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="1_53h3y"]
 [ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="2_u3efc"]
 [ext_resource type="Script" path="res://Game/Menus/Util/quit.gd" id="5_krnyj"]
 
@@ -28,18 +29,21 @@ alignment = 1
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_53h3y")
 text = "Play"
 script = ExtResource("2_u3efc")
 scene_path = "res://Game/DialogScene/dialogs.tscn"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_53h3y")
 text = "Settings"
 script = ExtResource("2_u3efc")
 scene_path = "res://Game/Menus/settings.tscn"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_53h3y")
 text = "Quit"
 script = ExtResource("5_krnyj")
 

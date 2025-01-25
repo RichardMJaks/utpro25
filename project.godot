@@ -26,6 +26,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/resizable=false
 
+[gui]
+
+theme/custom_font="res://Game/Styles/font-Vinque Rg.otf"
+
 [input]
 
 m_left={
