@@ -58,6 +58,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _throw(vb: Volleyball) -> void:
+	if vb.is_queued_for_deletion():
+		return
+
 	is_throwing = true
 	if throw_areas[0]:
 		vb.make_invisible()

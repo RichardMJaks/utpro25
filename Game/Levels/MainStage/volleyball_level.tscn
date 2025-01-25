@@ -23,9 +23,11 @@ size = Vector2(192, 1540)
 size = Vector2(192, 276)
 
 [node name="VolleyballLevel" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_c342i")
 
 [node name="DemoBg" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(960, 548)
 texture = ExtResource("1_8hslq")
 
@@ -36,7 +38,7 @@ gizmo_extents = 46.0
 
 [node name="Player2Position" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1538, 740)
+position = Vector2(1536, 808)
 gizmo_extents = 64.1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -109,7 +111,7 @@ debug_color = Color(0.549624, 0.310666, 0.367176, 0.42)
 
 [node name="ArenaMidpointHelper" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1072, 504)
+position = Vector2(1504, 504)
 
 [node name="IslandMidpointHelper" type="Marker2D" parent="."]
 unique_name_in_owner = true

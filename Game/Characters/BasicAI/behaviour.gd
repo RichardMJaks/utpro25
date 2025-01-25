@@ -2,7 +2,7 @@ extends InputHandler
 
 @onready var cs = get_tree().current_scene
 
-@onready var volleyball: Volleyball = get_tree().current_scene.volleyball
+@onready var volleyball: Volleyball = await cs.volleyball
 @export var prediction_delta: float = 0.05
 @export var error_margin: float = 20
 
@@ -10,7 +10,16 @@ extends InputHandler
 @onready var midpoint: Marker2D = cs.midpoint 
 @onready var island_midpoint: Marker2D = cs.island_midpoint 
 
+func _process(delta: float) -> void:
+	if not volleyball:
+		volleyball = cs.volleyball
+
+	super(delta)
+
 func set_dir() -> int:
+	if not volleyball:
+		return 0
+
 	var pos = _calculate_trajectory()
 	
 	if volleyball.global_position.x < midpoint.global_position.x:
