@@ -6,6 +6,7 @@ var right_health: int
 
 var ps_volleyball: PackedScene = preload("res://Game/Volleyball/volleyball.tscn")
 var ps_player: PackedScene = preload("res://Game/Characters/Player/player.tscn")
+var ps_basic: PackedScene = preload("res://Game/Characters/BasicAI/basic_ai.tscn")
 
 var player_1: Character
 var player_2: Character #TODO: Set correct typehint once enemies are designed 
@@ -36,6 +37,12 @@ func _ready() -> void:
 		add_child(volleyball)
 		volleyball.global_position = vb_1_pos.global_position
 		volleyball.body_entered.connect(_check_collision)
+
+	if ps_basic:
+		player_2 = ps_basic.instantiate()
+		add_child(player_2)
+		player_2.global_position = player_2_pos.global_position
+		player_2.side = PlayerVars.SIDE.RIGHT
 
 func _check_collision(body: CollisionObject2D) -> void:
 	if not (body is Ground):

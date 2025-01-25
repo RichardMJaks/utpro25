@@ -16,6 +16,10 @@ var volleyball: Volleyball = null
 
 var throw_areas: Array[bool] = [false, false]
 
+func _ready() -> void:
+	# Sets Throwboxes orientation right, calls deferred to recieve side first
+	(func(): %CatchAreas.scale.x = side).call_deferred()
+
 func _physics_process(delta: float) -> void:
 	# If throwing then all movement is blocked
 	if is_throwing:
@@ -39,22 +43,24 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _throw(vb: Volleyball) -> void:
+	vb.make_invisible()
 	is_throwing = true
 	if throw_areas[0]:
 		animator.play("top_throw")
 	else:
 		animator.play("front_throw")
-	vb.make_invisible()
 
 func top_throw() -> void:
 	var vb_pos = top_throw_position.global_position
-	var dir = PlayerVars.top_throw_dir * side 
+	var dir = PlayerVars.top_throw_dir
+	dir.x = dir.x * side 
 
 	do_throw(vb_pos, dir)
 
 func front_throw() -> void:
 	var vb_pos = front_throw_position.global_position
 	var dir = PlayerVars.front_throw_dir * side 
+	dir.x = dir.x * side
 
 	do_throw(vb_pos, dir)
 
@@ -64,6 +70,7 @@ func do_throw(pos: Vector2, dir: Vector2) -> void:
 	volleyball.global_position = pos
 	volleyball.linear_velocity = dir * PlayerVars.bounce_force	
 
+	print(name + " is throwing with " + str(dir))
 	is_throwing = false
 
 func _on_throw_area_entered(area: Area2D, i: int) -> void:
