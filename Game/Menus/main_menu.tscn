@@ -32,7 +32,7 @@ layout_mode = 2
 theme = ExtResource("1_53h3y")
 text = "Play"
 script = ExtResource("2_u3efc")
-scene_path = "res://Game/DialogScene/dialogs.tscn"
+scene_path = "res://Game/StoryScenes/dialogs.tscn"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
