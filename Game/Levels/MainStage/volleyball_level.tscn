@@ -107,5 +107,13 @@ position = Vector2(-184, 130)
 shape = SubResource("RectangleShape2D_68hts")
 debug_color = Color(0.549624, 0.310666, 0.367176, 0.42)
 
+[node name="ArenaMidpointHelper" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(712, 512)
+
+[node name="IslandMidpointHelper" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1472, 696)
+
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]

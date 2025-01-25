@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://Game/Characters/Components/input_handler.gd" id="2_cgqy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv1gm"]
-size = Vector2(64, 176)
+size = Vector2(64, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kp71p"]
-size = Vector2(51, 80)
+size = Vector2(107, 136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cntra"]
-size = Vector2(96, 48)
+size = Vector2(104, 128)
 
 [node name="CharacterBase" type="CharacterBody2D"]
 script = ExtResource("1_4mp8t")
@@ -26,6 +26,7 @@ shape = SubResource("RectangleShape2D_vv1gm")
 debug_color = Color(0.988235, 0.996078, 1, 0.247059)
 
 [node name="CatchAreas" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="FrontThrowArea" type="Area2D" parent="CatchAreas"]
 position = Vector2(72, -32)
@@ -34,7 +35,7 @@ collision_mask = 4
 monitorable = false
 
 [node name="Collider" type="CollisionShape2D" parent="CatchAreas/FrontThrowArea"]
-position = Vector2(17.5, -8)
+position = Vector2(-10.5, 20)
 shape = SubResource("RectangleShape2D_kp71p")
 
 [node name="TopThrowArea" type="Area2D" parent="CatchAreas"]
@@ -43,23 +44,23 @@ collision_mask = 4
 monitorable = false
 
 [node name="Collider" type="CollisionShape2D" parent="CatchAreas/TopThrowArea"]
-position = Vector2(16, -104)
+position = Vector2(-4, -88)
 shape = SubResource("RectangleShape2D_cntra")
 debug_color = Color(0.171801, 0.516512, 1, 0.42)
+
+[node name="ThrowPositions" type="Node2D" parent="CatchAreas"]
+
+[node name="TopThrowPosition" type="Marker2D" parent="CatchAreas/ThrowPositions"]
+unique_name_in_owner = true
+position = Vector2(32, -96)
+
+[node name="FrontThrowPosition" type="Marker2D" parent="CatchAreas/ThrowPositions"]
+unique_name_in_owner = true
+position = Vector2(72, -32)
 
 [node name="InputHandler" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_cgqy4")
-
-[node name="ThrowPositions" type="Node2D" parent="."]
-
-[node name="TopThrowPosition" type="Marker2D" parent="ThrowPositions"]
-unique_name_in_owner = true
-position = Vector2(32, -96)
-
-[node name="FrontThrowPosition" type="Marker2D" parent="ThrowPositions"]
-unique_name_in_owner = true
-position = Vector2(72, -32)
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
