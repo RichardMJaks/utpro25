@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0ok4bbej2p80"]
+
+[ext_resource type="Texture2D" uid="uid://dotof3yxh071d" path="res://Game/Art/assets/black.png" id="1_0yrpm"]
+[ext_resource type="Script" path="res://Game/StoryScenes/dialog.gd" id="1_pmbkd"]
+[ext_resource type="Texture2D" uid="uid://bnw44ebnbgcav" path="res://Game/Art/assets/dialog_background.png" id="2_4psm2"]
+[ext_resource type="Theme" uid="uid://x2mfs161k0id" path="res://Game/Styles/text.tres" id="3_rn2y2"]
+
+[node name="Dialogs" type="Control" node_paths=PackedStringArray("dialogTextBox", "darkFade")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pmbkd")
+dialogTextBox = NodePath("DialogTextBox")
+darkFade = NodePath("DarkFade")
+gameScene = "res://Game/Levels/MainStage/volleyball_level.tscn"
+
+[node name="DialogBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_4psm2")
+
+[node name="DialogTextBox" type="Label" parent="."]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 56.0
+offset_right = 1838.0
+offset_bottom = 225.0
+theme = ExtResource("3_rn2y2")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+autowrap_mode = 2
+
+[node name="TutorialToSkip" type="Label" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 966.0
+offset_right = 1878.0
+offset_bottom = 1055.0
+theme = ExtResource("3_rn2y2")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "[Enter] jutuga edasi liikumiseks"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="DarkFade" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_0yrpm")
