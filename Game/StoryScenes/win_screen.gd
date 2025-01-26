@@ -6,7 +6,7 @@ extends Node
 var state = "fade_in" # fade_in, idk
 var timeElapsed: float = 0
 
-var fadeTime: float = 1.2
+var fadeTime: float = 1
 var waitTime: float = 1.5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,4 +24,5 @@ func fadeIn():
 	
 	if (timeElapsed > fadeTime):
 		state = "wait"
+		darkFade.hide()
 		timeElapsed = 0
