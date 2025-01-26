@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dc430ebb16tud"]
 
-[ext_resource type="Texture2D" uid="uid://v15ke1h17k5e" path="res://Game/Art/Menus/mainmenuBG.png" id="1_6ovdu"]
+[ext_resource type="Texture2D" uid="uid://hr0u0a1sqlnx" path="res://Game/Art/Menus/mainmenuBG.png" id="1_6ovdu"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="1_53h3y"]
 [ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="2_u3efc"]
 [ext_resource type="Script" path="res://Game/Menus/Util/quit.gd" id="5_krnyj"]
