@@ -28,6 +28,9 @@ process_mode = 4
 visible = false
 texture = ExtResource("5_jg23r")
 
+[node name="Fader" parent="HUD" index="2"]
+visible = true
+
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
 [editable path="HUD/VanakuratDialog"]

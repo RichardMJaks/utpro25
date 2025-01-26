@@ -28,6 +28,9 @@ texture = ExtResource("4_augxg")
 [node name="P2Texture" parent="HUD/LindaDialog/Panel/HBoxContainer/P2" index="0"]
 texture = ExtResource("5_ejywi")
 
+[node name="Fader" parent="HUD" index="2"]
+visible = true
+
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
 [editable path="HUD/LindaDialog"]

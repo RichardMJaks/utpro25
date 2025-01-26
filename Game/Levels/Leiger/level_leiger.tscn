@@ -33,6 +33,9 @@ texture = ExtResource("4_wwsm1")
 [node name="P2Texture" parent="HUD/LeigerDialog/Panel/HBoxContainer/P2" index="0"]
 texture = ExtResource("5_5eebb")
 
+[node name="Fader" parent="HUD" index="2"]
+visible = true
+
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
 [editable path="HUD/LeigerDialog"]
