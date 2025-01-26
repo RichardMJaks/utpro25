@@ -1,21 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy1ue1tl22sx6"]
+[gd_scene load_steps=6 format=3 uid="uid://cy1ue1tl22sx6"]
 
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_o8f8a"]
 [ext_resource type="PackedScene" uid="uid://c06pvi43m4vae" path="res://Game/Characters/Linda/linda.tscn" id="2_elpcl"]
 [ext_resource type="PackedScene" uid="uid://cjx4d0pukqak2" path="res://Game/Menus/DialogBox/Linda/linda.tscn" id="3_7i632"]
+[ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="4_augxg"]
+[ext_resource type="Texture2D" uid="uid://gst0yfqcr5ik" path="res://Game/Art/Menus/lindaicon.png" id="5_ejywi"]
 
 [node name="LevelLinda" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_o8f8a")]
 next_screen = "res://Game/Levels/Vanakurat/level_vanakurat.tscn"
 ps_player_2 = ExtResource("2_elpcl")
+player_starts = true
 dialog_box = NodePath("HUD/LindaDialog")
 
 [node name="ArenaMidpointHelper" parent="." index="7"]
-position = Vector2(984, 544)
+position = Vector2(864, 544)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
 position = Vector2(1168, 672)
 
 [node name="LindaDialog" parent="HUD" index="0" instance=ExtResource("3_7i632")]
+process_mode = 4
+visible = false
+
+[node name="P1Texture" parent="HUD/LindaDialog/Panel/HBoxContainer/P1" index="0"]
+texture = ExtResource("4_augxg")
+
+[node name="P2Texture" parent="HUD/LindaDialog/Panel/HBoxContainer/P2" index="0"]
+texture = ExtResource("5_ejywi")
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
+[editable path="HUD/LindaDialog"]

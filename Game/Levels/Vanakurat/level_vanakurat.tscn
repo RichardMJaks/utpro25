@@ -1,20 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnwtlebg4o8ew"]
+[gd_scene load_steps=6 format=3 uid="uid://bnwtlebg4o8ew"]
 
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_gaqq8"]
 [ext_resource type="PackedScene" uid="uid://bv6gqr2wasehv" path="res://Game/Characters/Vanakurat/vanakurat.tscn" id="2_mn4uf"]
 [ext_resource type="PackedScene" uid="uid://cwhygspukdw4" path="res://Game/Menus/DialogBox/Vanakurat/vanakurat.tscn" id="3_o51bo"]
+[ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="4_sstxp"]
+[ext_resource type="Texture2D" uid="uid://52io61udug2d" path="res://Game/Art/Menus/paganicon.png" id="5_jg23r"]
 
-[node name="VolleyballLevel" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_gaqq8")]
+[node name="VolleyballLevel2" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_gaqq8")]
 ps_player_2 = ExtResource("2_mn4uf")
 dialog_box = NodePath("HUD/VanakuratDialog")
 
 [node name="ArenaMidpointHelper" parent="." index="7"]
-position = Vector2(896, 528)
+position = Vector2(960, 520)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
-position = Vector2(1472, 736)
+position = Vector2(1576, 736)
 
 [node name="VanakuratDialog" parent="HUD" index="0" instance=ExtResource("3_o51bo")]
+process_mode = 4
+visible = false
+
+[node name="P1Texture" parent="HUD/VanakuratDialog/Panel/HBoxContainer/P1" index="0"]
+texture = ExtResource("4_sstxp")
+
+[node name="P2Texture" parent="HUD/VanakuratDialog/Panel/HBoxContainer/P2" index="0"]
+process_mode = 4
+visible = false
+texture = ExtResource("5_jg23r")
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
+[editable path="HUD/VanakuratDialog"]

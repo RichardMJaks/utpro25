@@ -73,7 +73,7 @@ a_bounce={
 
 [physics]
 
-2d/physics_engine="GodotPhysics2D"
+2d/physics_engine="Rapier2D"
 
 [rendering]
 

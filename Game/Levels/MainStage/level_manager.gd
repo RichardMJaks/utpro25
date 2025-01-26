@@ -22,7 +22,7 @@ var volleyball: Volleyball
 @onready var vb_1_pos: Marker2D = %VolleyballP1Position
 @onready var vb_2_pos: Marker2D = %VolleyballP2Position
 
-var player_starts: bool = false
+@export var player_starts: bool = false
 
 # Transitioner
 @export var transition: Control
@@ -50,6 +50,13 @@ func _ready() -> void:
 	add_child(player_2)
 
 	_reset_player_positions()
+	var t = %Fader.create_tween()
+	t.tween_property(%Fader, "color:a", 0, 2).set_ease(Tween.EASE_IN)
+	t.tween_callback(func(): get_tree().create_timer(1).timeout.connect(func(): 
+		dialog_box.visible = true
+		dialog_box.process_mode = Node.PROCESS_MODE_ALWAYS
+		))
+	
 	dialog_box.finished.connect(_initialize_game)
 
 func _check_collision(body: CollisionObject2D) -> void:
@@ -87,6 +94,7 @@ func _reduce_health(id: PlayerVars.SIDE) -> void:
 	if left_health <= 0:
 		get_tree().paused = true
 		_show_game_over()
+		return
 	
 	
 	_initialize_game()	
@@ -95,15 +103,11 @@ func _show_game_over() -> void:
 	%GameOver.visible = true
 
 func do_transition() -> void:
-	if not transition:
-		get_tree().paused = false
-		get_tree().change_scene_to_file(next_screen)
-		return
-
-	transition.fade_out(2)
-	transition.finished_out.connect(
+	var t = %Fader.create_tween()
+	t.tween_property(%Fader, "color:a", 1, 2).set_ease(Tween.EASE_OUT)
+	
+	t.tween_callback(
 		func():
-			print("finished out")
 			get_tree().paused = false
 			get_tree().change_scene_to_file(next_screen)
 	)
@@ -141,4 +145,12 @@ func _spawn_volleyball(ps: PackedScene) -> Volleyball:
 	return vb
 
 func _on_try_again() -> void:
-	get_tree().reload_current_scene()
+	print("tryagain")
+	var t = %Fader.create_tween()
+	t.tween_property(%Fader, "color:a", 1, 2).set_ease(Tween.EASE_OUT)
+	
+	t.tween_callback(
+		func():
+			get_tree().reload_current_scene()
+
+	)

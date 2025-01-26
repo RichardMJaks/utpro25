@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bolymfgv0plim"]
+[gd_scene load_steps=6 format=3 uid="uid://bolymfgv0plim"]
 
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_ue1ca"]
 [ext_resource type="PackedScene" uid="uid://bsmfui0dfhi0h" path="res://Game/Characters/Leiger/leiger.tscn" id="2_qs2yo"]
 [ext_resource type="PackedScene" uid="uid://nk8crvl3oekp" path="res://Game/Menus/DialogBox/Leiger/leiger.tscn" id="3_ohmxp"]
+[ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="4_wwsm1"]
+[ext_resource type="Texture2D" uid="uid://b2eei35cojbv4" path="res://Game/Art/Menus/leigericon.png" id="5_5eebb"]
 
 [node name="LevelLeigur" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_ue1ca")]
 next_screen = "res://Game/Levels/Linda/level_linda.tscn"
@@ -16,12 +18,21 @@ position = Vector2(350, 784.1)
 position = Vector2(1542, 784.1)
 
 [node name="ArenaMidpointHelper" parent="." index="7"]
-position = Vector2(960, 512)
+position = Vector2(1160, 512)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
 position = Vector2(1696, 704)
 
 [node name="LeigerDialog" parent="HUD" index="0" instance=ExtResource("3_ohmxp")]
+process_mode = 4
+visible = false
+
+[node name="P1Texture" parent="HUD/LeigerDialog/Panel/HBoxContainer/P1" index="0"]
+texture = ExtResource("4_wwsm1")
+
+[node name="P2Texture" parent="HUD/LeigerDialog/Panel/HBoxContainer/P2" index="0"]
+texture = ExtResource("5_5eebb")
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
+[editable path="HUD/LeigerDialog"]
