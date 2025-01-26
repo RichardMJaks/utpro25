@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bv6gqr2wasehv"]
+[gd_scene load_steps=33 format=3 uid="uid://bv6gqr2wasehv"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_hsbgv"]
 [ext_resource type="Texture2D" uid="uid://cbwm3cpks3bi2" path="res://Game/Art/assets/vanapagan/paganUT1.png" id="2_e77ko"]
@@ -19,6 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://6rh454txlo3" path="res://Game/Art/assets/vanapagan/paganw7.png" id="17_1ajla"]
 [ext_resource type="Texture2D" uid="uid://cck7eb0qamj6c" path="res://Game/Art/assets/vanapagan/paganw8.png" id="18_0mtig"]
 [ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="19_ehxsh"]
+[ext_resource type="AudioStream" uid="uid://bqg5f150p1h78" path="res://Game/Audio/Leiger/DevsChoice/catch_1.ogg" id="20_h24t5"]
+[ext_resource type="AudioStream" uid="uid://bix0vifqmftwc" path="res://Game/Audio/Leiger/DevsChoice/throw_2.ogg" id="21_r8jd8"]
+[ext_resource type="AudioStream" uid="uid://bfetad4c1mhbw" path="res://Game/Audio/Leiger/DevsChoice/throw_3.ogg" id="22_j3488"]
+[ext_resource type="AudioStream" uid="uid://b5iwlb8p7q3b2" path="res://Game/Audio/Rock_folder/catch_rock.ogg" id="23_4w3su"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h4anw"]
 animations = [{
@@ -148,6 +152,42 @@ tracks/2/keys = {
 "method": &"_stop_throwing"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio/Catch:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Audio/Throw:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audio/RockHitsLand05:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_pxuq7"]
 loop_mode = 1
@@ -176,25 +216,102 @@ tracks/1/keys = {
 "values": ["walk"]
 }
 
+[sub_resource type="Animation" id="Animation_k6xtx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audio/Catch:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Throw:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/RockHitsLand05:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_khnll"]
 _data = {
+"RESET": SubResource("Animation_k6xtx"),
 "front_throw": SubResource("Animation_i7mbx"),
 "top_throw": SubResource("Animation_bfjj4"),
 "walk": SubResource("Animation_pxuq7")
 }
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uvjha"]
+random_pitch = 1.1
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("20_h24t5")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rugoq"]
+random_pitch = 1.1
+random_volume_offset_db = 2.0
+streams_count = 2
+stream_0/stream = ExtResource("21_r8jd8")
+stream_1/stream = ExtResource("22_j3488")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fqobh"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("23_4w3su")
 
 [node name="CharacterBase" instance=ExtResource("1_hsbgv")]
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_h4anw")
 animation = &"top_throw"
+frame = 8
 
 [node name="InputHandler" parent="." index="4"]
 script = ExtResource("19_ehxsh")
 prediction_delta = 0.1
 error_margin = 10.0
+alternative_prediction = false
 
 [node name="Animator" parent="." index="5"]
 libraries = {
 "": SubResource("AnimationLibrary_khnll")
 }
+
+[node name="Audio" type="Node" parent="." index="6"]
+process_mode = 3
+
+[node name="Catch" type="AudioStreamPlayer" parent="Audio" index="0"]
+stream = SubResource("AudioStreamRandomizer_uvjha")
+pitch_scale = 0.65
+bus = &"SFX"
+
+[node name="Throw" type="AudioStreamPlayer" parent="Audio" index="1"]
+stream = SubResource("AudioStreamRandomizer_rugoq")
+pitch_scale = 0.65
+bus = &"SFX"
+
+[node name="RockHitsLand05" type="AudioStreamPlayer" parent="Audio" index="2"]
+stream = SubResource("AudioStreamRandomizer_fqobh")
+bus = &"rock_land"
