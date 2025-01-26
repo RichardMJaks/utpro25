@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hr0u0a1sqlnx"
-path="res://.godot/imported/mainmenuBG.png-ac2cc86818c5cbf4424314a14d575c31.ctex"
+uid="uid://52io61udug2d"
+path="res://.godot/imported/paganicon.png-d72aa952ecad47c0ee1c6ab7b58ddbdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Art/Menus/mainmenuBG.png"
-dest_files=["res://.godot/imported/mainmenuBG.png-ac2cc86818c5cbf4424314a14d575c31.ctex"]
+source_file="res://Game/Art/Menus/paganicon.png"
+dest_files=["res://.godot/imported/paganicon.png-d72aa952ecad47c0ee1c6ab7b58ddbdb.ctex"]
 
 [params]
 

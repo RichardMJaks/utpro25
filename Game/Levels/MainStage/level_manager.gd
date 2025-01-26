@@ -128,6 +128,8 @@ func _initialize_game() -> void:
 func _reset_player_positions() -> void:
 	player_1.global_position = player_1_pos.global_position
 	player_2.global_position = player_2_pos.global_position
+	player_1.animator.play("idle")
+	player_2.animator.play("idle")
 
 func _spawn_volleyball(ps: PackedScene) -> Volleyball:
 	var vb = ps.instantiate()

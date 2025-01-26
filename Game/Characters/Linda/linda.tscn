@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c06pvi43m4vae"]
+[gd_scene load_steps=46 format=3 uid="uid://c06pvi43m4vae"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_1w0rx"]
 [ext_resource type="Texture2D" uid="uid://8ukk4q3vlih4" path="res://Game/Art/Linda_animatsioon/Vise_alt/1.png" id="2_6h7nc"]
@@ -11,19 +11,36 @@
 [ext_resource type="Texture2D" uid="uid://we5t3hvba046" path="res://Game/Art/Linda_animatsioon/Vise_alt/9.png" id="9_78dan"]
 [ext_resource type="Texture2D" uid="uid://dmx42jidjmrgk" path="res://Game/Art/Linda_animatsioon/Vise_alt/10.png" id="10_eqebm"]
 [ext_resource type="Texture2D" uid="uid://cjcjh48glkw40" path="res://Game/Art/Linda_animatsioon/Vise_alt/12.png" id="11_357fb"]
-[ext_resource type="Texture2D" uid="uid://3qxr05qoavvd" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda1.png" id="12_6dl75"]
-[ext_resource type="Texture2D" uid="uid://dr4uwosxf0vqq" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda2.png" id="13_qq83u"]
-[ext_resource type="Texture2D" uid="uid://i2n6tf00eqpx" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda3.png" id="14_qyhq0"]
-[ext_resource type="Texture2D" uid="uid://ba58ef68jx6ef" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda4.png" id="15_irb7x"]
-[ext_resource type="Texture2D" uid="uid://bkmhx0ju212w8" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda5.png" id="16_q1s0g"]
-[ext_resource type="Texture2D" uid="uid://b8jvfi3guyf0m" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda6.png" id="17_f3pns"]
-[ext_resource type="Texture2D" uid="uid://de88jgp5avq8p" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda7.png" id="18_fynfh"]
-[ext_resource type="Texture2D" uid="uid://c37ikomxyj7ls" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda8.png" id="19_n1f0i"]
+[ext_resource type="Texture2D" uid="uid://ppy2chsi6ofg" path="res://Game/Art/Linda_animatsioon/lindaidle.png" id="12_6h7oh"]
+[ext_resource type="Texture2D" uid="uid://be20e2w25223m" path="res://Game/Art/Linda_animatsioon/Vise_ülevalt/1.png" id="13_xmaac"]
+[ext_resource type="Texture2D" uid="uid://ba2s4jeuikkft" path="res://Game/Art/Linda_animatsioon/Vise_ülevalt/3.png" id="14_lnuh4"]
+[ext_resource type="Texture2D" uid="uid://bg8mf41ohl7xm" path="res://Game/Art/Linda_animatsioon/Vise_ülevalt/4.png" id="15_xpygr"]
+[ext_resource type="Texture2D" uid="uid://bx1qjx4j20b2r" path="res://Game/Art/Linda_animatsioon/Vise_ülevalt/5.png" id="16_fqx4i"]
+[ext_resource type="Texture2D" uid="uid://b75vdhhqk8ptb" path="res://Game/Art/Linda_animatsioon/Vise_ülevalt/7.png" id="17_wh0x8"]
+[ext_resource type="Texture2D" uid="uid://vsghvfvoeqqc" path="res://Game/Art/Linda_animatsioon/Vise_ülevalt/9.png" id="18_ikv2d"]
+[ext_resource type="Texture2D" uid="uid://btvegmhcbd21i" path="res://Game/Art/Linda_animatsioon/Vise_ülevalt/10.png" id="19_jeq1e"]
 [ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="20_53s0y"]
+[ext_resource type="Texture2D" uid="uid://d0u8rrk8arv6a" path="res://Game/Art/Linda_animatsioon/Vise_ülevalt/12.png" id="20_k3dbp"]
+[ext_resource type="Texture2D" uid="uid://bauk5di1odnqj" path="res://Game/Art/Linda_animatsioon/Parnadatud_kõndimine/Linda1.png" id="21_lvja3"]
 [ext_resource type="AudioStream" uid="uid://bqg5f150p1h78" path="res://Game/Audio/Leiger/DevsChoice/catch_1.ogg" id="21_vg6kl"]
 [ext_resource type="AudioStream" uid="uid://bix0vifqmftwc" path="res://Game/Audio/Leiger/DevsChoice/throw_2.ogg" id="22_3hf3q"]
+[ext_resource type="Texture2D" uid="uid://oj6crgl7r2v8" path="res://Game/Art/Linda_animatsioon/Parnadatud_kõndimine/Linda2.png" id="22_m4l7i"]
+[ext_resource type="Texture2D" uid="uid://bwp01wiybtggc" path="res://Game/Art/Linda_animatsioon/Parnadatud_kõndimine/Linda3.png" id="23_1w747"]
 [ext_resource type="AudioStream" uid="uid://bfetad4c1mhbw" path="res://Game/Audio/Leiger/DevsChoice/throw_3.ogg" id="23_3yqb4"]
+[ext_resource type="Texture2D" uid="uid://belv5qnvwrf16" path="res://Game/Art/Linda_animatsioon/Parnadatud_kõndimine/Linda4.png" id="24_0xhdi"]
 [ext_resource type="AudioStream" uid="uid://b5iwlb8p7q3b2" path="res://Game/Audio/Rock_folder/catch_rock.ogg" id="24_p1sug"]
+[ext_resource type="Texture2D" uid="uid://c5733d6hakf72" path="res://Game/Art/Linda_animatsioon/Parnadatud_kõndimine/Linda5.png" id="25_2cj4r"]
+[ext_resource type="Texture2D" uid="uid://bu514bikks1wq" path="res://Game/Art/Linda_animatsioon/Parnadatud_kõndimine/Linda6.png" id="26_830lq"]
+[ext_resource type="Texture2D" uid="uid://ca24fql7rwvhl" path="res://Game/Art/Linda_animatsioon/Parnadatud_kõndimine/Linda7.png" id="27_0qo7c"]
+[ext_resource type="Texture2D" uid="uid://b7q7j4gh8cep5" path="res://Game/Art/Linda_animatsioon/Parnadatud_kõndimine/Linda8.png" id="28_ekckf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wohvp"]
+atlas = ExtResource("12_6h7oh")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8175b"]
+atlas = ExtResource("12_6h7oh")
+region = Rect2(400, 0, 400, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xmsc3"]
 animations = [{
@@ -62,40 +79,70 @@ animations = [{
 "name": &"front_throw",
 "speed": 12.0
 }, {
-"frames": [],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wohvp")
 }, {
-"frames": [],
-"loop": false,
-"name": &"top_throw",
-"speed": 5.0
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8175b")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_6dl75")
+"texture": ExtResource("13_xmaac")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_qq83u")
+"texture": ExtResource("14_lnuh4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_qyhq0")
+"texture": ExtResource("15_xpygr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_irb7x")
+"texture": ExtResource("16_fqx4i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_q1s0g")
+"texture": ExtResource("17_wh0x8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_f3pns")
+"texture": ExtResource("18_ikv2d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_fynfh")
+"texture": ExtResource("19_jeq1e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_n1f0i")
+"texture": ExtResource("20_k3dbp")
+}],
+"loop": false,
+"name": &"top_throw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_lvja3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_m4l7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1w747")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0xhdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2cj4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_830lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_0qo7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ekckf")
 }],
 "loop": true,
 "name": &"walk",
@@ -221,8 +268,9 @@ tracks/5/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_276hw"]
-length = 0.25
+[sub_resource type="Animation" id="Animation_p0kmx"]
+length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -230,10 +278,37 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": []
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["idle"]
+}
+
+[sub_resource type="Animation" id="Animation_276hw"]
+length = 0.666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -254,7 +329,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.233333),
+"times": PackedFloat32Array(0.579638),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -268,12 +343,48 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.233333),
+"times": PackedFloat32Array(0.658343),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"_stop_throwing"
 }]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Audio/RockCatch:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audio/Catch:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.0965748),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Audio/Throw:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_n7dyc"]
@@ -302,13 +413,14 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"walk"]
+"values": ["walk"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_14n2y"]
 _data = {
 "RESET": SubResource("Animation_avje3"),
 "front_throw": SubResource("Animation_hvj2o"),
+"idle": SubResource("Animation_p0kmx"),
 "top_throw": SubResource("Animation_276hw"),
 "walk": SubResource("Animation_n7dyc")
 }
@@ -335,7 +447,10 @@ stream_0/stream = ExtResource("24_p1sug")
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_xmsc3")
-animation = &"front_throw"
+animation = &"top_throw"
+
+[node name="TopThrowPosition" parent="CatchAreas" index="3"]
+position = Vector2(104, -144)
 
 [node name="FrontThrowPosition" parent="CatchAreas" index="4"]
 position = Vector2(104, -72)
