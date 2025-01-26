@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=17 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cn8v7x8kwo85w" path="res://Game/Audio/Rock_folder/rock_hits_land_05.ogg" id="5_wfany"]
 [ext_resource type="AudioStream" uid="uid://rsuj1lrkmkat" path="res://Game/Audio/Rock_folder/rock_hits_land_06.ogg" id="6_jn4e5"]
 [ext_resource type="AudioStream" uid="uid://clkk8r43wjrp0" path="res://Game/Audio/Rock_folder/rock_hits_water_02.ogg" id="7_87nfj"]
+[ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_iqiqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
 size = Vector2(864, 300.5)
@@ -152,7 +153,6 @@ process_mode = 3
 
 [node name="GameOver" type="Control" parent="HUD"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -190,8 +190,8 @@ text = "Su saar hävines!"
 [node name="Button" type="Button" parent="HUD/GameOver/VBoxContainer"]
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Proovi uuesti"
+theme = ExtResource("8_iqiqn")
+text = "proovin uuesti"
 
 [connection signal="pressed" from="HUD/GameOver/VBoxContainer/Button" to="." method="_on_try_again"]
 
