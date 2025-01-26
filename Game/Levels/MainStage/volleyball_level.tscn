@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=11 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
+[ext_resource type="Script" path="res://Game/Levels/MainStage/camera_shake.gd" id="3_730w7"]
 [ext_resource type="PackedScene" uid="uid://dk23i070hnenw" path="res://Game/Ground/ground.tscn" id="4_ibp17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
@@ -42,7 +43,9 @@ position = Vector2(1536, 808)
 gizmo_extents = 64.1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+process_mode = 3
 position = Vector2(960, 544)
+script = ExtResource("3_730w7")
 
 [node name="VolleyballP1Position" type="Marker2D" parent="."]
 unique_name_in_owner = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bdyd34asp50ya"]
+[gd_scene load_steps=39 format=3 uid="uid://bdyd34asp50ya"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_om7nk"]
 [ext_resource type="Texture2D" uid="uid://doqpc81cms7ve" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll1.png" id="2_c0of2"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ca4t706begdyp" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll8.png" id="9_co7hw"]
 [ext_resource type="Texture2D" uid="uid://bflj5ac4fls42" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll8.png" id="9_jvmu5"]
 [ext_resource type="Texture2D" uid="uid://x8h7ck5b4eyq" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll9.png" id="10_kq8cn"]
+[ext_resource type="Texture2D" uid="uid://ck1e3p1enksos" path="res://Game/Art/Toll_animatsioon/tollidle.png" id="10_qp77r"]
 [ext_resource type="Texture2D" uid="uid://g0l3k5c215qs" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll10.png" id="11_kwdhc"]
 [ext_resource type="Texture2D" uid="uid://cx75pou8o5wbo" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll12.png" id="13_b77ff"]
 [ext_resource type="Texture2D" uid="uid://boakcyudvssg3" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/1.png" id="14_dljhs"]
@@ -28,6 +29,14 @@
 [ext_resource type="Texture2D" uid="uid://deilva38qhers" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/8.png" id="21_5sxum"]
 [ext_resource type="Texture2D" uid="uid://buuwc4oibawpe" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/9.png" id="22_ejg5a"]
 [ext_resource type="Texture2D" uid="uid://db0bnetrv0xlv" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/12.png" id="25_bu1gr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjy2k"]
+atlas = ExtResource("10_qp77r")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dffh"]
+atlas = ExtResource("10_qp77r")
+region = Rect2(400, 0, 400, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eyshk"]
 animations = [{
@@ -59,6 +68,17 @@ animations = [{
 "loop": false,
 "name": &"front_throw",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjy2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dffh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -211,7 +231,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_0qvr1"]
 resource_name = "idle"
-length = 0.8
+length = 0.5
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -221,10 +241,10 @@ tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [4, 5, 0, 5]
+"values": [0, 1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -236,7 +256,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"walk"]
+"values": ["idle"]
 }
 
 [sub_resource type="Animation" id="Animation_obj6g"]

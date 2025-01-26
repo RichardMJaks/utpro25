@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bolymfgv0plim"]
+
+[ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_ue1ca"]
+[ext_resource type="PackedScene" uid="uid://bsmfui0dfhi0h" path="res://Game/Characters/Leiger/leiger.tscn" id="2_qs2yo"]
+
+[node name="VolleyballLevel" instance=ExtResource("1_ue1ca")]
+ps_player_2 = ExtResource("2_qs2yo")
+
+[node name="ArenaMidpointHelper" parent="." index="7"]
+position = Vector2(1160, 512)
+
+[node name="IslandMidpointHelper" parent="." index="8"]
+position = Vector2(1664, 696)
+
+[editable path="Colliders/LeftGround"]
+[editable path="Colliders/RightGround"]

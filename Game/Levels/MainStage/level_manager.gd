@@ -1,7 +1,7 @@
 extends Node
 class_name LevelManager
 
-var win_screen = "res://Game/StoryScenes/win_screen.tscn"
+@export var next_screen: NodePath = "res://Game/StoryScenes/win_screen.tscn"
 
 var left_health: int = PlayerVars.total_health
 var right_health: int = PlayerVars.total_health
@@ -52,6 +52,7 @@ func _check_collision(body: CollisionObject2D) -> void:
 	_create_stuck_ball(volleyball, ps_stuck_vb)
 		
 	_reduce_health(body.side)
+	SignalBus.landed.emit()
 
 func _create_stuck_ball(vb: Volleyball, ps: PackedScene) -> void:
 	var pos = vb.global_position
@@ -75,7 +76,7 @@ func _reduce_health(id: PlayerVars.SIDE) -> void:
 			.timeout.connect(
 			func(): 
 				get_tree().paused = false
-				get_tree().change_scene_to_file(win_screen)
+				get_tree().change_scene_to_file(next_screen)
 		)
 		get_tree().paused = true
 		return

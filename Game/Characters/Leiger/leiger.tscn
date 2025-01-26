@@ -1,70 +1,70 @@
-[gd_scene load_steps=33 format=3 uid="uid://bma8k1x6bqdyn"]
+[gd_scene load_steps=33 format=3 uid="uid://bsmfui0dfhi0h"]
 
-[ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_g7ffq"]
-[ext_resource type="Texture2D" uid="uid://ceejhtm85mvk5" path="res://Game/Art/assets/leigerbotthrowsprite.png" id="2_32kfw"]
-[ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="2_dt1ia"]
-[ext_resource type="Texture2D" uid="uid://d2m5at3xo1wv6" path="res://Game/Art/assets/LeigT1.png" id="3_ku44f"]
-[ext_resource type="Texture2D" uid="uid://cnenyii3hs1jc" path="res://Game/Art/assets/LeigT2.png" id="4_tcmxu"]
-[ext_resource type="Texture2D" uid="uid://chdvhkx6t6th7" path="res://Game/Art/assets/LeigT3.png" id="5_qiflf"]
-[ext_resource type="Texture2D" uid="uid://cwr33654dynto" path="res://Game/Art/assets/LeigT4.png" id="6_pcl8d"]
-[ext_resource type="Texture2D" uid="uid://cof8lr68sqnoy" path="res://Game/Art/assets/LeigT5.png" id="7_qvnmm"]
-[ext_resource type="Texture2D" uid="uid://6l5wrmmq6qf5" path="res://Game/Art/assets/LeigT6.png" id="8_q0tjx"]
-[ext_resource type="Texture2D" uid="uid://d1w5lidv8xqx6" path="res://Game/Art/assets/LeigT7.png" id="9_cwigb"]
-[ext_resource type="Texture2D" uid="uid://cbeo55f5nt1pq" path="res://Game/Art/assets/LeigT8.png" id="10_pf20d"]
-[ext_resource type="Texture2D" uid="uid://uje5vyh3x33v" path="res://Game/Art/assets/LeigT9.png" id="11_giwi5"]
-[ext_resource type="Texture2D" uid="uid://8qe6intfuo8a" path="res://Game/Art/assets/LeigT12.png" id="12_3ppte"]
-[ext_resource type="Texture2D" uid="uid://dyo1jgls7g57q" path="res://Game/Art/assets/leigurwalksprite.png" id="13_4vjoy"]
+[ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_tdw3h"]
+[ext_resource type="Texture2D" uid="uid://ceejhtm85mvk5" path="res://Game/Art/assets/leigerbotthrowsprite.png" id="2_dhxeo"]
+[ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="2_hjvb3"]
+[ext_resource type="Texture2D" uid="uid://d2m5at3xo1wv6" path="res://Game/Art/assets/LeigT1.png" id="3_v8oc3"]
+[ext_resource type="Texture2D" uid="uid://cnenyii3hs1jc" path="res://Game/Art/assets/LeigT2.png" id="4_4imis"]
+[ext_resource type="Texture2D" uid="uid://chdvhkx6t6th7" path="res://Game/Art/assets/LeigT3.png" id="5_nhsej"]
+[ext_resource type="Texture2D" uid="uid://cwr33654dynto" path="res://Game/Art/assets/LeigT4.png" id="6_vwl4f"]
+[ext_resource type="Texture2D" uid="uid://cof8lr68sqnoy" path="res://Game/Art/assets/LeigT5.png" id="7_lyg80"]
+[ext_resource type="Texture2D" uid="uid://6l5wrmmq6qf5" path="res://Game/Art/assets/LeigT6.png" id="8_84ngg"]
+[ext_resource type="Texture2D" uid="uid://d1w5lidv8xqx6" path="res://Game/Art/assets/LeigT7.png" id="9_xifex"]
+[ext_resource type="Texture2D" uid="uid://cbeo55f5nt1pq" path="res://Game/Art/assets/LeigT8.png" id="10_6ms6a"]
+[ext_resource type="Texture2D" uid="uid://uje5vyh3x33v" path="res://Game/Art/assets/LeigT9.png" id="11_u50ob"]
+[ext_resource type="Texture2D" uid="uid://8qe6intfuo8a" path="res://Game/Art/assets/LeigT12.png" id="12_qlw43"]
+[ext_resource type="Texture2D" uid="uid://dyo1jgls7g57q" path="res://Game/Art/assets/leigurwalksprite.png" id="13_n5eci"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjo1r"]
-atlas = ExtResource("2_32kfw")
+atlas = ExtResource("2_dhxeo")
 region = Rect2(400, 0, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sv2lf"]
-atlas = ExtResource("2_32kfw")
+atlas = ExtResource("2_dhxeo")
 region = Rect2(1200, 0, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s062r"]
-atlas = ExtResource("2_32kfw")
+atlas = ExtResource("2_dhxeo")
 region = Rect2(2000, 0, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2w7fm"]
-atlas = ExtResource("2_32kfw")
+atlas = ExtResource("2_dhxeo")
 region = Rect2(0, 400, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7pvti"]
-atlas = ExtResource("2_32kfw")
+atlas = ExtResource("2_dhxeo")
 region = Rect2(400, 400, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lt6sr"]
-atlas = ExtResource("2_32kfw")
+atlas = ExtResource("2_dhxeo")
 region = Rect2(800, 400, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eep2s"]
-atlas = ExtResource("2_32kfw")
+atlas = ExtResource("2_dhxeo")
 region = Rect2(1200, 400, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyqla"]
-atlas = ExtResource("2_32kfw")
+atlas = ExtResource("2_dhxeo")
 region = Rect2(2000, 400, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebmcf"]
-atlas = ExtResource("13_4vjoy")
+atlas = ExtResource("13_n5eci")
 region = Rect2(0, 0, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mahrq"]
-atlas = ExtResource("13_4vjoy")
+atlas = ExtResource("13_n5eci")
 region = Rect2(0, 400, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3rd0g"]
-atlas = ExtResource("13_4vjoy")
+atlas = ExtResource("13_n5eci")
 region = Rect2(0, 800, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c887f"]
-atlas = ExtResource("13_4vjoy")
+atlas = ExtResource("13_n5eci")
 region = Rect2(0, 1200, 400, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5w4yf"]
-atlas = ExtResource("13_4vjoy")
+atlas = ExtResource("13_n5eci")
 region = Rect2(0, 1600, 400, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8vr15"]
@@ -100,34 +100,34 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_ku44f")
+"texture": ExtResource("3_v8oc3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_tcmxu")
+"texture": ExtResource("4_4imis")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_qiflf")
+"texture": ExtResource("5_nhsej")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_pcl8d")
+"texture": ExtResource("6_vwl4f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_qvnmm")
+"texture": ExtResource("7_lyg80")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_q0tjx")
+"texture": ExtResource("8_84ngg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_cwigb")
+"texture": ExtResource("9_xifex")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_pf20d")
+"texture": ExtResource("10_6ms6a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_giwi5")
+"texture": ExtResource("11_u50ob")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_3ppte")
+"texture": ExtResource("12_qlw43")
 }],
 "loop": false,
 "name": &"top_throw",
@@ -292,7 +292,7 @@ _data = {
 "walk": SubResource("Animation_jxkf5")
 }
 
-[node name="BasicAI" instance=ExtResource("1_g7ffq")]
+[node name="CharacterBase" instance=ExtResource("1_tdw3h")]
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_8vr15")
@@ -305,8 +305,8 @@ position = Vector2(96, -128)
 position = Vector2(112, -96)
 
 [node name="InputHandler" parent="." index="4"]
-script = ExtResource("2_dt1ia")
-prediction_delta = 0.2
+script = ExtResource("2_hjvb3")
+prediction_delta = 0.15
 error_margin = 20.0
 rethrow_delay = 1.0
 
