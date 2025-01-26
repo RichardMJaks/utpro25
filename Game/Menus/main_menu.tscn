@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dc430ebb16tud"]
+[gd_scene load_steps=5 format=3 uid="uid://dc430ebb16tud"]
 
+[ext_resource type="Texture2D" uid="uid://v15ke1h17k5e" path="res://Game/Art/Menus/mainmenuBG.png" id="1_6ovdu"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="1_53h3y"]
 [ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="2_u3efc"]
 [ext_resource type="Script" path="res://Game/Menus/Util/quit.gd" id="5_krnyj"]
@@ -12,6 +13,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_6ovdu")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -19,32 +26,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+offset_left = 487.0
+offset_top = 203.0
+offset_right = 892.0
+offset_bottom = 457.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_53h3y")
-text = "Play"
+text = "mängin"
 script = ExtResource("2_u3efc")
 scene_path = "res://Game/StoryScenes/dialogs.tscn"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_53h3y")
-text = "Settings"
+text = "sääded"
 script = ExtResource("2_u3efc")
 scene_path = "res://Game/Menus/settings.tscn"
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_53h3y")
-text = "Quit"
+text = "lähän ära"
 script = ExtResource("5_krnyj")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="pressed"]

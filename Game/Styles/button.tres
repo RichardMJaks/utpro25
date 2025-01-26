@@ -1,4 +1,40 @@
-[gd_resource type="Theme" format=3 uid="uid://ds1yohn75ktb6"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ds1yohn75ktb6"]
+
+[ext_resource type="Texture2D" uid="uid://co1f4x7yeyokm" path="res://Game/Art/assets/bouldergameprop.png" id="1_o50bj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4tx7"]
+bg_color = Color(0.0470588, 0.176471, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kifh"]
+bg_color = Color(0.0470588, 0.176471, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqygw"]
+bg_color = Color(0.45098, 0.517647, 0.364706, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0cx65"]
+bg_color = Color(0.45098, 0.517647, 0.364706, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.45098, 0.517647, 0.364706, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [resource]
 default_font_size = 64
+Button/colors/font_color = Color(0.0470588, 0.176471, 0, 1)
+Button/colors/font_focus_color = Color(0.45098, 0.517647, 0.364706, 1)
+Button/colors/font_hover_color = Color(0.45098, 0.517647, 0.364706, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_a4tx7")
+Button/styles/hover = SubResource("StyleBoxFlat_7kifh")
+Button/styles/normal = SubResource("StyleBoxFlat_yqygw")
+HSlider/icons/grabber = ExtResource("1_o50bj")
+HSlider/icons/grabber_highlight = ExtResource("1_o50bj")
+HSlider/styles/slider = SubResource("StyleBoxFlat_0cx65")

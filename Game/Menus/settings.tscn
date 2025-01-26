@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnh17nihq0hli"]
+[gd_scene load_steps=7 format=3 uid="uid://cnh17nihq0hli"]
 
+[ext_resource type="Texture2D" uid="uid://v15ke1h17k5e" path="res://Game/Art/Menus/mainmenuBG.png" id="1_creqo"]
 [ext_resource type="Script" path="res://Game/Menus/Util/audio_slider.gd" id="2_1f2wm"]
+[ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="2_gsepi"]
+[ext_resource type="Texture2D" uid="uid://dotof3yxh071d" path="res://Game/Art/assets/black.png" id="2_tfffq"]
 [ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="3_k8ejn"]
+[ext_resource type="Theme" uid="uid://x2mfs161k0id" path="res://Game/Styles/text.tres" id="3_mjwf5"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -11,6 +15,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_creqo")
+
+[node name="Dark" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.6)
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_tfffq")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -18,34 +33,59 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -50.5
-offset_right = 35.0
-offset_bottom = 50.5
+offset_left = -195.0
+offset_top = -59.0
+offset_right = 195.0
+offset_bottom = 59.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 20
 alignment = 1
 
-[node name="VolumeFX" type="HSlider" parent="VBoxContainer"]
+[node name="Music" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-max_value = 1.0
-step = 0.0
-script = ExtResource("2_1f2wm")
-audio_bus = "SFX"
 
-[node name="VolumeMusic" type="HSlider" parent="VBoxContainer"]
+[node name="MusicCaption" type="Label" parent="VBoxContainer/Music"]
 layout_mode = 2
+theme = ExtResource("3_mjwf5")
+theme_override_colors/font_color = Color(0.45098, 0.517647, 0.364706, 1)
+text = "pillimäng"
+horizontal_alignment = 1
+
+[node name="VolumeMusic" type="HSlider" parent="VBoxContainer/Music"]
+layout_mode = 2
+theme = ExtResource("2_gsepi")
 max_value = 1.0
 step = 0.0
 script = ExtResource("2_1f2wm")
 audio_bus = "Music"
 
+[node name="SFX" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -8
+
+[node name="SFXCaption" type="Label" parent="VBoxContainer/SFX"]
+layout_mode = 2
+theme = ExtResource("3_mjwf5")
+theme_override_colors/font_color = Color(0.45098, 0.517647, 0.364706, 1)
+text = "muud hääled"
+horizontal_alignment = 1
+
+[node name="VolumeFX" type="HSlider" parent="VBoxContainer/SFX"]
+layout_mode = 2
+theme = ExtResource("2_gsepi")
+max_value = 1.0
+step = 0.0
+script = ExtResource("2_1f2wm")
+audio_bus = "SFX"
+
 [node name="MainMenu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Main Menu"
+theme = ExtResource("2_gsepi")
+text = "tagasi"
 script = ExtResource("3_k8ejn")
 scene_path = "res://Game/Menus/main_menu.tscn"
 
-[connection signal="value_changed" from="VBoxContainer/VolumeFX" to="VBoxContainer/VolumeFX" method="on_slider_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/VolumeMusic" to="VBoxContainer/VolumeMusic" method="on_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Music/VolumeMusic" to="VBoxContainer/Music/VolumeMusic" method="on_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/SFX/VolumeFX" to="VBoxContainer/SFX/VolumeFX" method="on_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/MainMenu" to="VBoxContainer/MainMenu" method="pressed"]
