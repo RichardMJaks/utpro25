@@ -194,6 +194,16 @@ layout_mode = 2
 theme = ExtResource("8_iqiqn")
 text = "proovin uuesti"
 
+[node name="Fader" type="ColorRect" parent="HUD"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="HUD/GameOver/VBoxContainer/Button" to="." method="_on_try_again"]
 
 [editable path="Colliders/LeftGround"]

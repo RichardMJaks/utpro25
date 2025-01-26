@@ -457,7 +457,7 @@ position = Vector2(104, -72)
 
 [node name="InputHandler" parent="." index="4"]
 script = ExtResource("20_53s0y")
-prediction_delta = 0.25
+prediction_delta = 0.3
 error_margin = 20.0
 alternative_prediction = false
 
