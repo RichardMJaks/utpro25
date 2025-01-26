@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://nk8crvl3oekp"]
+
+[ext_resource type="PackedScene" uid="uid://brigmd3vsvmgl" path="res://Game/Menus/DialogBox/dialog_box.tscn" id="1_gdb8w"]
+[ext_resource type="Script" path="res://Game/Menus/DialogBox/Leiger/leiger.gd" id="2_pv2r7"]
+
+[node name="LeigerDialog" instance=ExtResource("1_gdb8w")]
+script = ExtResource("2_pv2r7")

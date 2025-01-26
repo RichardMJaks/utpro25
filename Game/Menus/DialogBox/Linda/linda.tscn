@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjx4d0pukqak2"]
+
+[ext_resource type="PackedScene" uid="uid://brigmd3vsvmgl" path="res://Game/Menus/DialogBox/dialog_box.tscn" id="1_2vmbq"]
+[ext_resource type="Script" path="res://Game/Menus/DialogBox/Linda/linda.gd" id="2_h4c8c"]
+
+[node name="LindaDialog" instance=ExtResource("1_2vmbq")]
+script = ExtResource("2_h4c8c")

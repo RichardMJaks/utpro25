@@ -9,10 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://clkk8r43wjrp0" path="res://Game/Audio/Rock_folder/rock_hits_water_02.ogg" id="7_87nfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
-size = Vector2(864, 276.5)
+size = Vector2(864, 300.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tdtbd"]
-size = Vector2(864, 277)
+size = Vector2(864, 301)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ymrqm"]
 size = Vector2(192, 1072)
@@ -24,7 +24,7 @@ size = Vector2(200, 1548)
 size = Vector2(192, 1540)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68hts"]
-size = Vector2(192, 276)
+size = Vector2(192, 300)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ej37h"]
 playback_mode = 1
@@ -78,7 +78,7 @@ position = Vector2(88, 820)
 side = 1
 
 [node name="PhysicsCollider" parent="Colliders/LeftGround" index="0"]
-position = Vector2(344, 126.25)
+position = Vector2(344, 114.25)
 shape = SubResource("RectangleShape2D_m3fci")
 
 [node name="RightGround" parent="Colliders" instance=ExtResource("4_ibp17")]
@@ -86,7 +86,7 @@ position = Vector2(1144, 820)
 side = -1
 
 [node name="PhysicsCollider" parent="Colliders/RightGround" index="0"]
-position = Vector2(344, 126.5)
+position = Vector2(344, 114.5)
 shape = SubResource("RectangleShape2D_tdtbd")
 
 [node name="Separator" type="StaticBody2D" parent="Colliders"]
@@ -124,7 +124,7 @@ collision_layer = 3
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/GapCollider"]
-position = Vector2(-184, 130)
+position = Vector2(-184, 118)
 shape = SubResource("RectangleShape2D_68hts")
 debug_color = Color(0.549624, 0.310666, 0.367176, 0.42)
 
@@ -146,6 +146,54 @@ bus = &"rock_land"
 [node name="HitWater" type="AudioStreamPlayer" parent="Audio"]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_x4swp")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="GameOver" type="Control" parent="HUD"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HUD/GameOver"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -50.0
+offset_right = 265.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HUD/GameOver/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Su saar hävines!"
+
+[node name="Button" type="Button" parent="HUD/GameOver/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Proovi uuesti"
+
+[connection signal="pressed" from="HUD/GameOver/VBoxContainer/Button" to="." method="_on_try_again"]
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]

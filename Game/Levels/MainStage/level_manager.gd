@@ -26,6 +26,7 @@ var player_starts: bool = false
 
 # Transitioner
 @export var transition: Control
+@export var dialog_box: DialogBox
 
 # Audio
 @onready var a_hit_land: AudioStreamPlayer = %HitLand
@@ -42,13 +43,14 @@ func _ready() -> void:
 
 	player_1 = ps_player_1.instantiate()
 	player_1.side = PlayerVars.SIDE.LEFT
+	add_child(player_1)
 
 	player_2 = ps_player_2.instantiate()
 	player_2.side = PlayerVars.SIDE.RIGHT	
-
-	_initialize_game()
 	add_child(player_2)
-	add_child(player_1)
+
+	_reset_player_positions()
+	dialog_box.finished.connect(_initialize_game)
 
 func _check_collision(body: CollisionObject2D) -> void:
 	if not (body is Ground):
@@ -83,10 +85,14 @@ func _reduce_health(id: PlayerVars.SIDE) -> void:
 		return
 	# Lose
 	if left_health <= 0:
-		pass
+		get_tree().paused = true
+		_show_game_over()
 	
 	
 	_initialize_game()	
+
+func _show_game_over() -> void:
+	%GameOver.visible = true
 
 func do_transition() -> void:
 	if not transition:
@@ -103,6 +109,9 @@ func do_transition() -> void:
 	)
 
 func _initialize_game() -> void:
+	dialog_box.visible = false
+	dialog_box.process_mode = Node.PROCESS_MODE_DISABLED
+
 	get_tree().paused = true
 	get_tree().create_timer(3, true, false, true) \
 		.timeout.connect(func(): get_tree().paused = false)
@@ -124,7 +133,10 @@ func _spawn_volleyball(ps: PackedScene) -> Volleyball:
 	var vb = ps.instantiate()
 	vb.body_entered.connect(_check_collision)
 	add_child(vb, true)
+
+	vb.linear_velocity = Vector2.UP * 500
 	
 	return vb
-	
-		
+
+func _on_try_again() -> void:
+	get_tree().reload_current_scene()

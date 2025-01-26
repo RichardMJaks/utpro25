@@ -13,7 +13,7 @@ extends InputHandler
 
 func _process(delta: float) -> void:
 	if not volleyball:
-		if not cs.volleyball.is_queued_for_deletion():
+		if cs.volleyball and not cs.volleyball.is_queued_for_deletion():
 			volleyball = cs.volleyball
 
 	super(delta)

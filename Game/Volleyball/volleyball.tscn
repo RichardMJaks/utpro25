@@ -25,6 +25,7 @@ angular_damp = 5.0
 script = ExtResource("1_ab2o7")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+z_index = -1
 texture = ExtResource("2_pdd16")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
