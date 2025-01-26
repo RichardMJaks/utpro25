@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gst0yfqcr5ik" path="res://Game/Art/Menus/lindaicon.png" id="5_ejywi"]
 
 [node name="LevelLinda" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_o8f8a")]
-next_screen = "res://Game/Levels/Vanakurat/level_vanakurat.tscn"
+next_screen = "res://Game/StoryScenes/vs3.tscn"
 ps_player_2 = ExtResource("2_elpcl")
 player_starts = true
 dialog_box = NodePath("HUD/LindaDialog")
