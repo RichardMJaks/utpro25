@@ -7,56 +7,59 @@
 size = Vector2(64, 208)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kp71p"]
-size = Vector2(107, 136)
+size = Vector2(68, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cntra"]
-size = Vector2(104, 128)
+size = Vector2(32, 31)
 
 [node name="CharacterBase" type="CharacterBody2D"]
+process_mode = 1
 script = ExtResource("1_4mp8t")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -104)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-position = Vector2(0, 64)
 remote_path = NodePath("..")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, -104)
 shape = SubResource("RectangleShape2D_vv1gm")
 debug_color = Color(0.988235, 0.996078, 1, 0.247059)
 
 [node name="CatchAreas" type="Node2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, -104)
 
 [node name="FrontThrowArea" type="Area2D" parent="CatchAreas"]
-position = Vector2(72, -32)
+position = Vector2(16, 16)
 collision_layer = 0
 collision_mask = 4
 monitorable = false
 
 [node name="Collider" type="CollisionShape2D" parent="CatchAreas/FrontThrowArea"]
-position = Vector2(-10.5, 20)
 shape = SubResource("RectangleShape2D_kp71p")
 
 [node name="TopThrowArea" type="Area2D" parent="CatchAreas"]
+position = Vector2(0, -112)
 collision_layer = 0
 collision_mask = 4
 monitorable = false
 
 [node name="Collider" type="CollisionShape2D" parent="CatchAreas/TopThrowArea"]
-position = Vector2(-4, -88)
 shape = SubResource("RectangleShape2D_cntra")
 debug_color = Color(0.171801, 0.516512, 1, 0.42)
 
 [node name="ThrowPositions" type="Node2D" parent="CatchAreas"]
 
-[node name="TopThrowPosition" type="Marker2D" parent="CatchAreas/ThrowPositions"]
+[node name="TopThrowPosition" type="Marker2D" parent="CatchAreas"]
 unique_name_in_owner = true
-position = Vector2(32, -96)
+position = Vector2(176, -128)
 
-[node name="FrontThrowPosition" type="Marker2D" parent="CatchAreas/ThrowPositions"]
+[node name="FrontThrowPosition" type="Marker2D" parent="CatchAreas"]
 unique_name_in_owner = true
-position = Vector2(72, -32)
+position = Vector2(184, -32)
 
 [node name="InputHandler" type="Node" parent="."]
 unique_name_in_owner = true
@@ -64,8 +67,11 @@ script = ExtResource("2_cgqy4")
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
+callback_mode_process = 0
+callback_mode_method = 1
+callback_mode_discrete = 0
 
-[connection signal="area_entered" from="CatchAreas/FrontThrowArea" to="." method="_on_throw_area_entered" binds= [1]]
+[connection signal="area_entered" from="CatchAreas/FrontThrowArea" to="." method="_on_throw_area_entered" binds= [1, "front"]]
 [connection signal="area_exited" from="CatchAreas/FrontThrowArea" to="." method="_on_throw_area_exited" binds= [1]]
-[connection signal="area_entered" from="CatchAreas/TopThrowArea" to="." method="_on_throw_area_entered" binds= [0]]
+[connection signal="area_entered" from="CatchAreas/TopThrowArea" to="." method="_on_throw_area_entered" binds= [0, "top"]]
 [connection signal="area_exited" from="CatchAreas/TopThrowArea" to="." method="_on_throw_area_exited" binds= [0]]

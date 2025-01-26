@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqg2mjknby61y"]
+
+[ext_resource type="Texture2D" uid="uid://ho14qt3qqs0p" path="res://Game/Art/assets/boulderstop.png" id="1_um44a"]
+[ext_resource type="Script" path="res://Game/Volleyball/stuck_rot_randomizer.gd" id="2_lkcl7"]
+
+[node name="StuckBall" type="Node2D"]
+
+[node name="StuckBall" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1.91107e-06, 72)
+rotation = -0.679026
+texture = ExtResource("1_um44a")
+script = ExtResource("2_lkcl7")

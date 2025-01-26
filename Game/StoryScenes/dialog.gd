@@ -7,7 +7,8 @@ extends Node
 class DialogLine:
 	var type: String
 	var text: String
-	
+
+	@warning_ignore("shadowed_variable")	
 	func _init(type: String, text: String):
 		self.type = type
 		self.text = text
@@ -46,6 +47,7 @@ func fadeIn():
 
 func write():
 	var line: String = dialogLines[dialogLineIndex].text
+	@warning_ignore("narrowing_conversion")
 	var targetChar: int = timeElapsed * 25
 	
 	if (targetChar > line.length()):

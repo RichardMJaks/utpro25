@@ -2,12 +2,7 @@
 extends Node
 class_name InputHandler
 
-var wants_bounce: bool = false:
-	get:
-		if wants_bounce:
-			wants_bounce = false
-			return true
-		return false
+var wants_bounce: bool = false
 var dir: int = 0
 
 func _process(_delta: float) -> void:

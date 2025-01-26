@@ -2,17 +2,25 @@ extends InputHandler
 
 @onready var cs = get_tree().current_scene
 
-@onready var volleyball: Volleyball = get_tree().current_scene.volleyball
+@onready var volleyball: Volleyball = await cs.volleyball
 @export var prediction_delta: float = 0.05
 @export var error_margin: float = 20
-@export var rethrow_delay: float = 1
-var throw_blocked: bool = false
 
 # Get helpers
 @onready var midpoint: Marker2D = cs.midpoint 
 @onready var island_midpoint: Marker2D = cs.island_midpoint 
 
+func _process(delta: float) -> void:
+	if not volleyball:
+		if not cs.volleyball.is_queued_for_deletion():
+			volleyball = cs.volleyball
+
+	super(delta)
+
 func set_dir() -> int:
+	if not volleyball:
+		return 0
+
 	var pos = _calculate_trajectory()
 	
 	if volleyball.global_position.x < midpoint.global_position.x:
@@ -43,20 +51,4 @@ func _calculate_trajectory() -> int:
 	return final_pos.x
 
 func set_bounce() -> bool:
-	if true in owner.throw_areas and not throw_blocked:
-		throw_blocked = true
-		_create_throw_timer()
-		return true
-	return false
-
-func _create_throw_timer() -> void:
-	var timer = Timer.new()
-	timer.wait_time = rethrow_delay
-	timer.one_shot = true
-	timer.autostart = true
-	timer.timeout.connect(
-		func():
-			throw_blocked = false
-			timer.queue_free()
-	)
-	return add_child(timer)
+	return true in owner.throw_areas 

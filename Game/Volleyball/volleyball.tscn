@@ -1,17 +1,17 @@
 [gd_scene load_steps=6 format=3 uid="uid://dcqsqih4g61hd"]
 
 [ext_resource type="Script" path="res://Game/Volleyball/volleyball.gd" id="1_ab2o7"]
-[ext_resource type="Texture2D" uid="uid://ce8cwptss0jm7" path="res://Game/Art/assets/boulderdemo.png" id="2_35kry"]
+[ext_resource type="Texture2D" uid="uid://co1f4x7yeyokm" path="res://Game/Art/assets/bouldergameprop.png" id="2_pdd16"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ai7my"]
 friction = 0.0
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_64nuw"]
-radius = 65.0692
+radius = 49.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hj15t"]
-radius = 40.0
+radius = 56.0
 
 [node name="Volleyball" type="RigidBody2D"]
 collision_layer = 6
@@ -25,8 +25,7 @@ angular_damp = 5.0
 script = ExtResource("1_ab2o7")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(2.03125, 2.03125)
-texture = ExtResource("2_35kry")
+texture = ExtResource("2_pdd16")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
@@ -38,5 +37,6 @@ collision_mask = 0
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BounceArea"]
+process_mode = 1
 shape = SubResource("CircleShape2D_hj15t")
 debug_color = Color(1, 1, 1, 0.227451)
