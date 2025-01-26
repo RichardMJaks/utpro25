@@ -40,7 +40,7 @@ layout_mode = 2
 theme = ExtResource("1_53h3y")
 text = "mängin"
 script = ExtResource("2_u3efc")
-scene_path = "res://Game/StoryScenes/dialogs.tscn"
+scene_path = "res://Game/Levels/load_stuff.tscn"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
