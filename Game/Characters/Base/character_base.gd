@@ -108,6 +108,7 @@ func _create_throw_timer() -> void:
 	)
 	return add_child(timer)
 
+@warning_ignore("unused_parameter")
 func _on_throw_area_entered(area: Area2D, i: int, s: String) -> void:
 	volleyball = area.owner
 	if not (true in throw_areas):
