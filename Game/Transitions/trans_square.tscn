@@ -9,19 +9,11 @@ shader = ExtResource("2_d52xt")
 shader_parameter/fade = 0.0
 shader_parameter/tiling = 3.0
 
-[node name="Transition" type="Control" node_paths=PackedStringArray("fader")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("fader")]
 script = ExtResource("1_1ofp7")
-fader = NodePath("CanvasLayer/TextureRect")
+fader = NodePath("TextureRect")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_3ir21")
 offset_right = 1920.0
 offset_bottom = 1080.0

@@ -89,6 +89,11 @@ func _reduce_health(id: PlayerVars.SIDE) -> void:
 	_initialize_game()	
 
 func do_transition() -> void:
+	if not transition:
+		get_tree().paused = false
+		get_tree().change_scene_to_file(next_screen)
+		return
+
 	transition.fade_out(2)
 	transition.finished_out.connect(
 		func():
@@ -96,7 +101,6 @@ func do_transition() -> void:
 			get_tree().paused = false
 			get_tree().change_scene_to_file(next_screen)
 	)
-
 
 func _initialize_game() -> void:
 	get_tree().paused = true

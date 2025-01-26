@@ -153,3 +153,4 @@ stream = SubResource("AudioStreamRandomizer_x4swp")
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
+[editable path="Transition"]
