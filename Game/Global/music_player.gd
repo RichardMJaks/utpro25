@@ -8,7 +8,7 @@ var nextTrack
 var state # fade_out, fade_in
 var timeElapsed: float = 0
 
-var levels = ["LevelLeigur", "LevelLinda", "LevelVanakurat", "VolleyballLevel"]
+var levels = ["LevelLeigur", "LevelLinda", "LevelVanakurat", "VolleyballLevel", "Vs1", "Vs2", "Vs3"]
 
 func _ready() -> void:
 	volume_db = linear_to_db(0)

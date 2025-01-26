@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgnvmm5exaoos"]
+
+[ext_resource type="Script" path="res://Game/StoryScenes/vs.gd" id="1_bm56a"]
+[ext_resource type="Texture2D" uid="uid://c3y7u3nn1rtyp" path="res://Game/Art/Menus/tollvslinda.png" id="2_blarm"]
+[ext_resource type="Texture2D" uid="uid://dotof3yxh071d" path="res://Game/Art/assets/black.png" id="3_0kdm3"]
+
+[node name="Vs2" type="Control" node_paths=PackedStringArray("darkFade")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bm56a")
+darkFade = NodePath("DarkFade")
+gameScene = "res://Game/Levels/Linda/level_linda.tscn"
+
+[node name="DialogBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_blarm")
+
+[node name="DarkFade" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_0kdm3")
