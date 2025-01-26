@@ -1,15 +1,25 @@
-[gd_scene load_steps=33 format=3 uid="uid://bv6gqr2wasehv"]
+[gd_scene load_steps=46 format=3 uid="uid://bv6gqr2wasehv"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_hsbgv"]
 [ext_resource type="Texture2D" uid="uid://cbwm3cpks3bi2" path="res://Game/Art/assets/vanapagan/paganUT1.png" id="2_e77ko"]
 [ext_resource type="Texture2D" uid="uid://b7o5dg4taj1wq" path="res://Game/Art/assets/vanapagan/paganUT3.png" id="3_3h5ce"]
+[ext_resource type="Texture2D" uid="uid://bt4atsd41ypry" path="res://Game/Art/assets/vanapagan/paganBT2.png" id="3_w6fjr"]
 [ext_resource type="Texture2D" uid="uid://bfvjik6cowux0" path="res://Game/Art/assets/vanapagan/paganUT4.png" id="4_670vs"]
+[ext_resource type="Texture2D" uid="uid://dqjl1hxdjpb06" path="res://Game/Art/assets/vanapagan/paganBT3.png" id="4_7554r"]
+[ext_resource type="Texture2D" uid="uid://cao853rda3qpr" path="res://Game/Art/assets/vanapagan/paganBT5.png" id="5_62yoc"]
 [ext_resource type="Texture2D" uid="uid://g6pnirpnfq4d" path="res://Game/Art/assets/vanapagan/paganUT6.png" id="5_a0kyu"]
+[ext_resource type="Texture2D" uid="uid://qudnvm0v3bst" path="res://Game/Art/assets/vanapagan/paganBT6.png" id="5_kvghw"]
+[ext_resource type="Texture2D" uid="uid://drihx2ikuiy4q" path="res://Game/Art/assets/vanapagan/paganBT7.png" id="6_djdtl"]
 [ext_resource type="Texture2D" uid="uid://dl0ixv4oy6utc" path="res://Game/Art/assets/vanapagan/paganUT7.png" id="6_dyk8g"]
+[ext_resource type="Texture2D" uid="uid://dd8mg6lmb31l3" path="res://Game/Art/assets/vanapagan/paganBT8.png" id="6_he4h3"]
+[ext_resource type="Texture2D" uid="uid://bclxk0k0smgjy" path="res://Game/Art/assets/vanapagan/paganBT10.png" id="7_dto7m"]
 [ext_resource type="Texture2D" uid="uid://c0lcrm1hg26hk" path="res://Game/Art/assets/vanapagan/paganUT9.png" id="7_p8spm"]
+[ext_resource type="Texture2D" uid="uid://bmrbetepdarca" path="res://Game/Art/assets/vanapagan/paganBT9.png" id="8_5hh1x"]
 [ext_resource type="Texture2D" uid="uid://3fg76voxf0js" path="res://Game/Art/assets/vanapagan/paganUT10.png" id="8_cpp1y"]
+[ext_resource type="Texture2D" uid="uid://c3dgxft241xn2" path="res://Game/Art/assets/vanapagan/paganBT12.png" id="8_ppolw"]
 [ext_resource type="Texture2D" uid="uid://ikuoqy1d8ggj" path="res://Game/Art/assets/vanapagan/paganUT11.png" id="9_g4lo0"]
 [ext_resource type="Texture2D" uid="uid://xhfvww60ojig" path="res://Game/Art/assets/vanapagan/paganUT13.png" id="10_t48su"]
+[ext_resource type="Texture2D" uid="uid://dif7dj7g2t522" path="res://Game/Art/assets/vanapagan/vanapaganidle.png" id="11_5u76u"]
 [ext_resource type="Texture2D" uid="uid://cw05ejq0b30pk" path="res://Game/Art/assets/vanapagan/paganw1.png" id="11_sjhqb"]
 [ext_resource type="Texture2D" uid="uid://b0e1fcfdatfx4" path="res://Game/Art/assets/vanapagan/paganw2.png" id="12_7scym"]
 [ext_resource type="Texture2D" uid="uid://nknv54kcc3mu" path="res://Game/Art/assets/vanapagan/paganw3.png" id="13_83ldp"]
@@ -24,8 +34,59 @@
 [ext_resource type="AudioStream" uid="uid://bfetad4c1mhbw" path="res://Game/Audio/Leiger/DevsChoice/throw_3.ogg" id="22_j3488"]
 [ext_resource type="AudioStream" uid="uid://b5iwlb8p7q3b2" path="res://Game/Audio/Rock_folder/catch_rock.ogg" id="23_4w3su"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4n2kj"]
+atlas = ExtResource("11_5u76u")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gqlm"]
+atlas = ExtResource("11_5u76u")
+region = Rect2(400, 0, 400, 400)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_h4anw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_w6fjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7554r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_62yoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kvghw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_djdtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_he4h3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5hh1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dto7m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ppolw")
+}],
+"loop": true,
+"name": &"front_throw",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4n2kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gqlm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_e77ko")
@@ -129,15 +190,39 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_i7mbx"]
 resource_name = "front_throw"
-length = 0.25
-tracks/0/type = "method"
+length = 0.75
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.208286, 0.238042),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["front_throw"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.666667, 0.733333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -146,6 +231,70 @@ tracks/0/keys = {
 "args": [],
 "method": &"_stop_throwing"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio/RockHitsLand05:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Audio/Catch:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0181462),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audio/Throw:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.35833),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_br2o0"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["idle"]
 }
 
 [sub_resource type="Animation" id="Animation_bfjj4"]
@@ -259,6 +408,7 @@ tracks/1/keys = {
 _data = {
 "RESET": SubResource("Animation_k6xtx"),
 "front_throw": SubResource("Animation_i7mbx"),
+"idle": SubResource("Animation_br2o0"),
 "top_throw": SubResource("Animation_bfjj4"),
 "walk": SubResource("Animation_pxuq7")
 }
@@ -285,8 +435,14 @@ stream_0/stream = ExtResource("23_4w3su")
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_h4anw")
-animation = &"top_throw"
-frame = 8
+animation = &"front_throw"
+autoplay = "idle"
+
+[node name="TopThrowPosition" parent="CatchAreas" index="3"]
+position = Vector2(112, -128)
+
+[node name="FrontThrowPosition" parent="CatchAreas" index="4"]
+position = Vector2(112, -80)
 
 [node name="InputHandler" parent="." index="4"]
 script = ExtResource("19_ehxsh")
