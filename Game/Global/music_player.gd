@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-var menuMusic = load("res://Game/Audio/Music/background_music.ogg")
+var menuMusic = load("res://Game/Audio/Music/background_music.mp3")
 var gameMusic = load("res://Game/Audio/Music/Kevin MacLeod - Thatched Villagers.mp3")
 
 var previousScene
