@@ -5,6 +5,7 @@ extends InputHandler
 @onready var volleyball: Volleyball = await cs.volleyball
 @export var prediction_delta: float = 0.05
 @export var error_margin: float = 20
+@export var alternative_prediction: bool = false
 
 # Get helpers
 @onready var midpoint: Marker2D = cs.midpoint 
@@ -23,7 +24,7 @@ func set_dir() -> int:
 
 	var pos = _calculate_trajectory()
 	
-	if volleyball.global_position.x < midpoint.global_position.x:
+	if volleyball.global_position.x < midpoint.global_position.x and not alternative_prediction:
 		pos = island_midpoint.global_position.x
 
 	if (pos - owner.global_position.x) < -error_margin:
@@ -33,12 +34,16 @@ func set_dir() -> int:
 	
 	return 0
 
+func _alternative_pd() -> float:
+	return (volleyball.global_position - owner.global_position).length() / 1500
+
+
 func _calculate_trajectory() -> int:
 	var start_pos = volleyball.global_position
 	var v = volleyball.linear_velocity
 	var damp = volleyball.linear_damp
 	var g = volleyball.get_gravity()
-	var t = prediction_delta
+	var t = prediction_delta if not alternative_prediction else _alternative_pd()
 
 	var final_pos
 	if damp == 0:

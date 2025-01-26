@@ -8,11 +8,10 @@ next_screen = "res://Game/Levels/Linda/level_linda.tscn"
 ps_player_2 = ExtResource("2_qs2yo")
 
 [node name="ArenaMidpointHelper" parent="." index="7"]
-position = Vector2(1160, 512)
+position = Vector2(960, 512)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
-position = Vector2(1664, 696)
+position = Vector2(1696, 704)
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
-[editable path="Transition"]
