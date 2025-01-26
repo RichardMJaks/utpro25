@@ -51,12 +51,12 @@ texture = ExtResource("1_8hslq")
 
 [node name="Player1Position" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(344, 808)
+position = Vector2(344, 784)
 gizmo_extents = 46.0
 
 [node name="Player2Position" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(1536, 808)
+position = Vector2(1536, 784)
 gizmo_extents = 64.1
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -196,6 +196,7 @@ text = "proovin uuesti"
 
 [node name="Fader" type="ColorRect" parent="HUD"]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

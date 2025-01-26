@@ -11,10 +11,10 @@ ps_player_2 = ExtResource("2_mn4uf")
 dialog_box = NodePath("HUD/VanakuratDialog")
 
 [node name="ArenaMidpointHelper" parent="." index="7"]
-position = Vector2(896, 528)
+position = Vector2(960, 520)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
-position = Vector2(1472, 736)
+position = Vector2(1576, 736)
 
 [node name="VanakuratDialog" parent="HUD" index="0" instance=ExtResource("3_o51bo")]
 process_mode = 4
