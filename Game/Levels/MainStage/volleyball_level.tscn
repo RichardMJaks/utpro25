@@ -1,13 +1,12 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=16 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/camera_shake.gd" id="3_730w7"]
 [ext_resource type="PackedScene" uid="uid://dk23i070hnenw" path="res://Game/Ground/ground.tscn" id="4_ibp17"]
-[ext_resource type="AudioStream" uid="uid://crux4xt20b32b" path="res://Game/Audio/Rock_folder/rock_hits_land_05.ogg" id="5_wfany"]
-[ext_resource type="AudioStream" uid="uid://dc4hxvjhpcsnd" path="res://Game/Audio/Rock_folder/rock_hits_land_06.ogg" id="6_jn4e5"]
+[ext_resource type="AudioStream" uid="uid://cn8v7x8kwo85w" path="res://Game/Audio/Rock_folder/rock_hits_land_05.ogg" id="5_wfany"]
+[ext_resource type="AudioStream" uid="uid://rsuj1lrkmkat" path="res://Game/Audio/Rock_folder/rock_hits_land_06.ogg" id="6_jn4e5"]
 [ext_resource type="AudioStream" uid="uid://clkk8r43wjrp0" path="res://Game/Audio/Rock_folder/rock_hits_water_02.ogg" id="7_87nfj"]
-[ext_resource type="PackedScene" uid="uid://bqvwjdx4j777g" path="res://Game/Transitions/trans_square.tscn" id="8_k54tx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
 size = Vector2(864, 276.5)
@@ -40,10 +39,9 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("7_87nfj")
 
-[node name="VolleyballLevel" type="Node2D" node_paths=PackedStringArray("transition")]
+[node name="VolleyballLevel" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_c342i")
-transition = NodePath("Transition")
 
 [node name="DemoBg" type="Sprite2D" parent="."]
 z_index = -2
@@ -149,8 +147,5 @@ bus = &"rock_land"
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_x4swp")
 
-[node name="Transition" parent="." instance=ExtResource("8_k54tx")]
-
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
-[editable path="Transition"]

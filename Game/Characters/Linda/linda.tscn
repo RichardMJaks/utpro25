@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://c06pvi43m4vae"]
+[gd_scene load_steps=34 format=3 uid="uid://c06pvi43m4vae"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_1w0rx"]
 [ext_resource type="Texture2D" uid="uid://8ukk4q3vlih4" path="res://Game/Art/Linda_animatsioon/Vise_alt/1.png" id="2_6h7nc"]
@@ -20,6 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://de88jgp5avq8p" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda7.png" id="18_fynfh"]
 [ext_resource type="Texture2D" uid="uid://c37ikomxyj7ls" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda8.png" id="19_n1f0i"]
 [ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="20_53s0y"]
+[ext_resource type="AudioStream" uid="uid://bqg5f150p1h78" path="res://Game/Audio/Leiger/DevsChoice/catch_1.ogg" id="21_vg6kl"]
+[ext_resource type="AudioStream" uid="uid://bix0vifqmftwc" path="res://Game/Audio/Leiger/DevsChoice/throw_2.ogg" id="22_3hf3q"]
+[ext_resource type="AudioStream" uid="uid://bfetad4c1mhbw" path="res://Game/Audio/Leiger/DevsChoice/throw_3.ogg" id="23_3yqb4"]
+[ext_resource type="AudioStream" uid="uid://b5iwlb8p7q3b2" path="res://Game/Audio/Rock_folder/catch_rock.ogg" id="24_p1sug"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xmsc3"]
 animations = [{
@@ -98,6 +102,45 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Animation" id="Animation_avje3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audio/Catch:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio/Throw:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio/RockCatch:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_hvj2o"]
 length = 0.833333
 tracks/0/type = "value"
@@ -140,6 +183,42 @@ tracks/2/keys = {
 "args": [],
 "method": &"_stop_throwing"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Audio/Catch:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0661955),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Audio/Throw:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.566667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Audio/RockCatch:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_276hw"]
@@ -228,17 +307,35 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_14n2y"]
 _data = {
+"RESET": SubResource("Animation_avje3"),
 "front_throw": SubResource("Animation_hvj2o"),
 "top_throw": SubResource("Animation_276hw"),
 "walk": SubResource("Animation_n7dyc")
 }
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xoib7"]
+random_pitch = 1.1
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("21_vg6kl")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_38s1v"]
+random_pitch = 1.1
+random_volume_offset_db = 2.0
+streams_count = 2
+stream_0/stream = ExtResource("22_3hf3q")
+stream_1/stream = ExtResource("23_3yqb4")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_55vga"]
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("24_p1sug")
 
 [node name="CharacterBase" instance=ExtResource("1_1w0rx")]
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_xmsc3")
 animation = &"front_throw"
-frame = 8
 
 [node name="FrontThrowPosition" parent="CatchAreas" index="4"]
 position = Vector2(104, -72)
@@ -247,8 +344,25 @@ position = Vector2(104, -72)
 script = ExtResource("20_53s0y")
 prediction_delta = 0.25
 error_margin = 20.0
+alternative_prediction = false
 
 [node name="Animator" parent="." index="5"]
+process_mode = 3
 libraries = {
 "": SubResource("AnimationLibrary_14n2y")
 }
+
+[node name="Audio" type="Node" parent="." index="6"]
+process_mode = 3
+
+[node name="Catch" type="AudioStreamPlayer" parent="Audio" index="0"]
+stream = SubResource("AudioStreamRandomizer_xoib7")
+pitch_scale = 2.06
+
+[node name="Throw" type="AudioStreamPlayer" parent="Audio" index="1"]
+stream = SubResource("AudioStreamRandomizer_38s1v")
+pitch_scale = 2.0
+
+[node name="RockCatch" type="AudioStreamPlayer" parent="Audio" index="2"]
+stream = SubResource("AudioStreamRandomizer_55vga")
+bus = &"rock_land"

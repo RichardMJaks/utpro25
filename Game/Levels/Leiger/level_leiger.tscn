@@ -1,18 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://bolymfgv0plim"]
+[gd_scene load_steps=4 format=3 uid="uid://bolymfgv0plim"]
 
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_ue1ca"]
 [ext_resource type="PackedScene" uid="uid://bsmfui0dfhi0h" path="res://Game/Characters/Leiger/leiger.tscn" id="2_qs2yo"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_068fd"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 50.89
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 300.0
+initial_velocity_max = 450.0
+gravity = Vector3(0, 1176, 0)
+scale_min = 0.05
+scale_max = 0.15
+hue_variation_min = -0.01
+hue_variation_max = 0.00999998
 
 [node name="LevelLeigur" instance=ExtResource("1_ue1ca")]
 next_screen = "res://Game/Levels/Linda/level_linda.tscn"
 ps_player_2 = ExtResource("2_qs2yo")
 
 [node name="ArenaMidpointHelper" parent="." index="7"]
-position = Vector2(1160, 512)
+position = Vector2(960, 512)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
-position = Vector2(1664, 696)
+position = Vector2(1696, 704)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="10"]
+process_material = SubResource("ParticleProcessMaterial_068fd")
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
-[editable path="Transition"]
