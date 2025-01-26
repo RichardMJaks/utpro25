@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://buhg7k7ov1kek"]
+
+[ext_resource type="Texture2D" uid="uid://oj8l7tgc5005" path="res://Game/Art/assets/win_screen.png" id="1_c7yee"]
+[ext_resource type="Script" path="res://Game/StoryScenes/win_screen.gd" id="1_kbkr1"]
+[ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="2_isemx"]
+[ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="3_iejt8"]
+[ext_resource type="Texture2D" uid="uid://dotof3yxh071d" path="res://Game/Art/assets/black.png" id="5_d0p2p"]
+
+[node name="Tutorial" type="Control" node_paths=PackedStringArray("darkFade")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kbkr1")
+darkFade = NodePath("DarkFade")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_c7yee")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 511.0
+offset_top = 413.0
+offset_right = 916.0
+offset_bottom = 496.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="MainMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_isemx")
+text = "algusesse"
+script = ExtResource("3_iejt8")
+scene_path = "res://Game/Menus/main_menu.tscn"
+
+[node name="DarkFade" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_d0p2p")
+
+[connection signal="pressed" from="VBoxContainer/MainMenu" to="VBoxContainer/MainMenu" method="pressed"]
