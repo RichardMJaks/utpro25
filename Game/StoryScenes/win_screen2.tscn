@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="3_iejt8"]
 [ext_resource type="Texture2D" uid="uid://dotof3yxh071d" path="res://Game/Art/assets/black.png" id="5_d0p2p"]
 
-[node name="Tutorial" type="Control" node_paths=PackedStringArray("darkFade")]
+[node name="Win" type="Control" node_paths=PackedStringArray("darkFade")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +46,6 @@ script = ExtResource("3_iejt8")
 scene_path = "res://Game/Menus/main_menu.tscn"
 
 [node name="DarkFade" type="TextureRect" parent="."]
-visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("5_d0p2p")

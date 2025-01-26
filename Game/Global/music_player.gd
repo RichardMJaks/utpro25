@@ -8,6 +8,7 @@ var nextTrack
 var state # fade_out, fade_in
 var timeElapsed: float = 0
 
+var menus = ["MainMenu", "Settings", "Tutorial", "Win"]
 var levels = ["LevelLeigur", "LevelLinda", "LevelVanakurat", "VolleyballLevel", "Vs1", "Vs2", "Vs3"]
 
 func _ready() -> void:
@@ -22,7 +23,7 @@ func _on_tree_changed():
 	if (currentScene == previousScene): return
 	print(str(previousScene) + " -> " + str(currentScene))
 	
-	if (currentScene == "MainMenu" && previousScene != "Settings" && previousScene != "Tutorial"):
+	if (currentScene in menus && not previousScene in menus):
 		playMusic(menuMusic)
 	
 	if (currentScene in levels && not previousScene in levels):
