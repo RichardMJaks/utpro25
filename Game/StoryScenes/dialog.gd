@@ -24,7 +24,7 @@ var state = "fade_in" # fade_in, write, wait, fade_out
 var timeElapsed: float = 0
 
 var fadeTime: float = 1.5
-var dialogWaitTime: float = 2
+var dialogWaitTime: float = 3
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -33,9 +33,9 @@ func _process(delta: float) -> void:
 		timeElapsed += 1000000 # Skips current state
 	
 	if (state == "fade_in"): fadeIn()
-	if (state == "write"): write()
-	if (state == "wait"): wait()
-	if (state == "fade_out"): fadeOut()
+	elif (state == "write"): write()
+	elif (state == "wait"): wait()
+	elif (state == "fade_out"): fadeOut()
 
 func fadeIn():
 	var fade: float = (fadeTime - timeElapsed) / fadeTime
