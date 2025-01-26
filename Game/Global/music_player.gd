@@ -22,7 +22,7 @@ func _on_tree_changed():
 	if (currentScene == previousScene): return
 	print(str(previousScene) + " -> " + str(currentScene))
 	
-	if (currentScene == "MainMenu" && previousScene != "Settings"):
+	if (currentScene == "MainMenu" && previousScene != "Settings" && previousScene != "Tutorial"):
 		playMusic(menuMusic)
 	
 	if (currentScene in levels && not previousScene in levels):

@@ -26,10 +26,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 487.0
-offset_top = 203.0
-offset_right = 892.0
-offset_bottom = 457.0
+offset_left = 510.0
+offset_top = 141.0
+offset_right = 915.0
+offset_bottom = 483.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -41,6 +41,13 @@ theme = ExtResource("1_53h3y")
 text = "mängin"
 script = ExtResource("2_u3efc")
 scene_path = "res://Game/Levels/load_stuff.tscn"
+
+[node name="Tutorial" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_53h3y")
+text = "õppetus"
+script = ExtResource("2_u3efc")
+scene_path = "res://Game/Menus/tutorial.tscn"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -56,5 +63,6 @@ text = "lähän ära"
 script = ExtResource("5_krnyj")
 
 [connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial" to="VBoxContainer/Tutorial" method="pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="pressed"]
