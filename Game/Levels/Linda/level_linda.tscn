@@ -28,9 +28,6 @@ texture = ExtResource("4_augxg")
 [node name="P2Texture" parent="HUD/LindaDialog/Panel/HBoxContainer/P2" index="0"]
 texture = ExtResource("5_ejywi")
 
-[node name="GameOver" parent="HUD" index="1"]
-visible = true
-
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]
 [editable path="HUD/LindaDialog"]

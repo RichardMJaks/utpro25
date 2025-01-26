@@ -3,11 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://br2hj3yrkel2h"
-valid=false
+path="res://.godot/imported/background_music.ogg-91e325230a95e797e0346eedfc7b4049.oggvorbisstr"
 
 [deps]
 
 source_file="res://Game/Audio/Music/background_music.ogg"
+dest_files=["res://.godot/imported/background_music.ogg-91e325230a95e797e0346eedfc7b4049.oggvorbisstr"]
 
 [params]
 

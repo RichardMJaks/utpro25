@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="4_sstxp"]
 [ext_resource type="Texture2D" uid="uid://52io61udug2d" path="res://Game/Art/Menus/paganicon.png" id="5_jg23r"]
 
-[node name="VolleyballLevel" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_gaqq8")]
+[node name="VolleyballLevel2" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_gaqq8")]
 ps_player_2 = ExtResource("2_mn4uf")
 dialog_box = NodePath("HUD/VanakuratDialog")
 
@@ -17,6 +17,8 @@ position = Vector2(896, 528)
 position = Vector2(1472, 736)
 
 [node name="VanakuratDialog" parent="HUD" index="0" instance=ExtResource("3_o51bo")]
+process_mode = 4
+visible = false
 
 [node name="P1Texture" parent="HUD/VanakuratDialog/Panel/HBoxContainer/P1" index="0"]
 texture = ExtResource("4_sstxp")
