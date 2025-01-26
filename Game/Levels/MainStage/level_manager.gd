@@ -1,7 +1,7 @@
 extends Node
 class_name LevelManager
 
-@export var next_screen: NodePath = "res://Game/StoryScenes/win_screen.tscn"
+@export var next_screen: String = "res://Game/StoryScenes/win_screen.tscn"
 
 var left_health: int = PlayerVars.total_health
 var right_health: int = PlayerVars.total_health
@@ -32,8 +32,6 @@ var player_starts: bool = false
 func _ready() -> void:
 	left_health = PlayerVars.total_health
 	right_health = PlayerVars.total_health
-
-	SignalBus.landed.connect(_reduce_health)
 
 	player_1 = ps_player_1.instantiate()
 	player_1.side = PlayerVars.SIDE.LEFT
@@ -84,13 +82,13 @@ func _reduce_health(id: PlayerVars.SIDE) -> void:
 	if left_health <= 0:
 		pass
 	
-	get_tree().paused = true
+	
 	_initialize_game()	
 
+func _initialize_game() -> void:
+	get_tree().paused = true
 	get_tree().create_timer(3, true, false, true) \
 		.timeout.connect(func(): get_tree().paused = false)
-
-func _initialize_game() -> void:
 	_reset_player_positions()
 	volleyball = _spawn_volleyball(ps_volleyball)
 	

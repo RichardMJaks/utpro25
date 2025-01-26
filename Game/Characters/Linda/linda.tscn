@@ -1,0 +1,254 @@
+[gd_scene load_steps=26 format=3 uid="uid://c06pvi43m4vae"]
+
+[ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_1w0rx"]
+[ext_resource type="Texture2D" uid="uid://8ukk4q3vlih4" path="res://Game/Art/Linda_animatsioon/Vise_alt/1.png" id="2_6h7nc"]
+[ext_resource type="Texture2D" uid="uid://b6p3o7np35jnl" path="res://Game/Art/Linda_animatsioon/Vise_alt/2.png" id="3_jp61b"]
+[ext_resource type="Texture2D" uid="uid://ck63ompd72slk" path="res://Game/Art/Linda_animatsioon/Vise_alt/4.png" id="4_0o53l"]
+[ext_resource type="Texture2D" uid="uid://rool0axd4pqm" path="res://Game/Art/Linda_animatsioon/Vise_alt/5.png" id="5_xbntm"]
+[ext_resource type="Texture2D" uid="uid://c836w1mponkum" path="res://Game/Art/Linda_animatsioon/Vise_alt/6.png" id="6_f1pgp"]
+[ext_resource type="Texture2D" uid="uid://b5rcyqp41vob1" path="res://Game/Art/Linda_animatsioon/Vise_alt/7.png" id="7_6muug"]
+[ext_resource type="Texture2D" uid="uid://qwptfp2gag4p" path="res://Game/Art/Linda_animatsioon/Vise_alt/8.png" id="8_cll4k"]
+[ext_resource type="Texture2D" uid="uid://we5t3hvba046" path="res://Game/Art/Linda_animatsioon/Vise_alt/9.png" id="9_78dan"]
+[ext_resource type="Texture2D" uid="uid://dmx42jidjmrgk" path="res://Game/Art/Linda_animatsioon/Vise_alt/10.png" id="10_eqebm"]
+[ext_resource type="Texture2D" uid="uid://cjcjh48glkw40" path="res://Game/Art/Linda_animatsioon/Vise_alt/12.png" id="11_357fb"]
+[ext_resource type="Texture2D" uid="uid://3qxr05qoavvd" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda1.png" id="12_6dl75"]
+[ext_resource type="Texture2D" uid="uid://dr4uwosxf0vqq" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda2.png" id="13_qq83u"]
+[ext_resource type="Texture2D" uid="uid://i2n6tf00eqpx" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda3.png" id="14_qyhq0"]
+[ext_resource type="Texture2D" uid="uid://ba58ef68jx6ef" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda4.png" id="15_irb7x"]
+[ext_resource type="Texture2D" uid="uid://bkmhx0ju212w8" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda5.png" id="16_q1s0g"]
+[ext_resource type="Texture2D" uid="uid://b8jvfi3guyf0m" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda6.png" id="17_f3pns"]
+[ext_resource type="Texture2D" uid="uid://de88jgp5avq8p" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda7.png" id="18_fynfh"]
+[ext_resource type="Texture2D" uid="uid://c37ikomxyj7ls" path="res://Game/Art/Linda_animatsioon/Kõndimine/Linda8.png" id="19_n1f0i"]
+[ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="20_53s0y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xmsc3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6h7nc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jp61b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0o53l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xbntm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f1pgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6muug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cll4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_78dan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_eqebm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_357fb")
+}],
+"loop": false,
+"name": &"front_throw",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"top_throw",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_6dl75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qq83u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qyhq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_irb7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_q1s0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_f3pns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fynfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_n1f0i")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_hvj2o"]
+length = 0.833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["front_throw"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.754143, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"front_throw"
+}, {
+"args": [],
+"method": &"_stop_throwing"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_276hw"]
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["top_throw"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"top_throw"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_stop_throwing"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_n7dyc"]
+resource_name = "walk"
+length = 0.666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_14n2y"]
+_data = {
+"front_throw": SubResource("Animation_hvj2o"),
+"top_throw": SubResource("Animation_276hw"),
+"walk": SubResource("Animation_n7dyc")
+}
+
+[node name="CharacterBase" instance=ExtResource("1_1w0rx")]
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_xmsc3")
+animation = &"front_throw"
+frame = 8
+
+[node name="FrontThrowPosition" parent="CatchAreas" index="4"]
+position = Vector2(104, -72)
+
+[node name="InputHandler" parent="." index="4"]
+script = ExtResource("20_53s0y")
+prediction_delta = 0.25
+error_margin = 20.0
+
+[node name="Animator" parent="." index="5"]
+libraries = {
+"": SubResource("AnimationLibrary_14n2y")
+}

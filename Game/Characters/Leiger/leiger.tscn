@@ -307,8 +307,7 @@ position = Vector2(112, -96)
 [node name="InputHandler" parent="." index="4"]
 script = ExtResource("2_hjvb3")
 prediction_delta = 0.15
-error_margin = 20.0
-rethrow_delay = 1.0
+error_margin = 35.0
 
 [node name="Animator" parent="." index="5"]
 libraries = {

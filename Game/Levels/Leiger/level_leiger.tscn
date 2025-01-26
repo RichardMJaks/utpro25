@@ -3,7 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_ue1ca"]
 [ext_resource type="PackedScene" uid="uid://bsmfui0dfhi0h" path="res://Game/Characters/Leiger/leiger.tscn" id="2_qs2yo"]
 
-[node name="VolleyballLevel" instance=ExtResource("1_ue1ca")]
+[node name="LevelLeigur" instance=ExtResource("1_ue1ca")]
+next_screen = "res://Game/Levels/Linda/level_linda.tscn"
 ps_player_2 = ExtResource("2_qs2yo")
 
 [node name="ArenaMidpointHelper" parent="." index="7"]

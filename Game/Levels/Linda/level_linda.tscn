@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy1ue1tl22sx6"]
+
+[ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_o8f8a"]
+[ext_resource type="PackedScene" uid="uid://c06pvi43m4vae" path="res://Game/Characters/Linda/linda.tscn" id="2_elpcl"]
+
+[node name="LevelLinda" instance=ExtResource("1_o8f8a")]
+next_screen = "res://Game/Levels/Vanakurat/level_vanakurat.tscn"
+ps_player_2 = ExtResource("2_elpcl")
+
+[node name="ArenaMidpointHelper" parent="." index="7"]
+position = Vector2(984, 544)
+
+[node name="IslandMidpointHelper" parent="." index="8"]
+position = Vector2(1168, 672)
+
+[editable path="Colliders/LeftGround"]
+[editable path="Colliders/RightGround"]

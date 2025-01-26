@@ -15,7 +15,7 @@ grow_vertical = 2
 script = ExtResource("1_pmbkd")
 dialogTextBox = NodePath("DialogTextBox")
 darkFade = NodePath("DarkFade")
-gameScene = "res://Game/Levels/MainStage/volleyball_level.tscn"
+gameScene = "res://Game/Levels/Leiger/level_leiger.tscn"
 
 [node name="DialogBackground" type="TextureRect" parent="."]
 layout_mode = 0

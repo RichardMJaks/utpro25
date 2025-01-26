@@ -93,9 +93,6 @@ func do_throw(pos: Vector2, dir: Vector2) -> void:
 
 	volleyball = null
 
-	if name != "Player":
-		is_throwing = false
-
 func _stop_throwing() -> void:
 	is_throwing = false
 
