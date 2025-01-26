@@ -109,8 +109,6 @@ func _create_throw_timer() -> void:
 	return add_child(timer)
 
 func _on_throw_area_entered(area: Area2D, i: int, s: String) -> void:
-	if not (name == "Player"):
-		print(str(i) + " | " + s)
 	volleyball = area.owner
 	if not (true in throw_areas):
 		throw_areas[i] = true

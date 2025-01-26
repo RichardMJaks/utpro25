@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bolymfgv0plim"]
+[gd_scene load_steps=4 format=3 uid="uid://bolymfgv0plim"]
 
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_ue1ca"]
 [ext_resource type="PackedScene" uid="uid://bsmfui0dfhi0h" path="res://Game/Characters/Leiger/leiger.tscn" id="2_qs2yo"]
+[ext_resource type="Texture2D" uid="uid://3ni762got1pp" path="res://assets/preview.png" id="3_5q46y"]
 
 [node name="LevelLeigur" instance=ExtResource("1_ue1ca")]
 next_screen = "res://Game/Levels/Linda/level_linda.tscn"
@@ -12,6 +13,10 @@ position = Vector2(1160, 512)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
 position = Vector2(1664, 696)
+
+[node name="Preview" type="Sprite2D" parent="." index="10"]
+position = Vector2(-200, 520)
+texture = ExtResource("3_5q46y")
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]

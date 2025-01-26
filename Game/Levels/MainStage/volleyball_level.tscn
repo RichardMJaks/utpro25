@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=17 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/camera_shake.gd" id="3_730w7"]
 [ext_resource type="PackedScene" uid="uid://dk23i070hnenw" path="res://Game/Ground/ground.tscn" id="4_ibp17"]
+[ext_resource type="AudioStream" uid="uid://crux4xt20b32b" path="res://Game/Audio/Rock_folder/rock_hits_land_05.ogg" id="5_wfany"]
+[ext_resource type="AudioStream" uid="uid://dc4hxvjhpcsnd" path="res://Game/Audio/Rock_folder/rock_hits_land_06.ogg" id="6_jn4e5"]
+[ext_resource type="AudioStream" uid="uid://clkk8r43wjrp0" path="res://Game/Audio/Rock_folder/rock_hits_water_02.ogg" id="7_87nfj"]
+[ext_resource type="PackedScene" uid="uid://bqvwjdx4j777g" path="res://Game/Transitions/trans_square.tscn" id="8_k54tx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
 size = Vector2(864, 276.5)
@@ -23,9 +27,23 @@ size = Vector2(192, 1540)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68hts"]
 size = Vector2(192, 276)
 
-[node name="VolleyballLevel" type="Node2D"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ej37h"]
+playback_mode = 1
+random_pitch = 1.1
+streams_count = 2
+stream_0/stream = ExtResource("5_wfany")
+stream_1/stream = ExtResource("6_jn4e5")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x4swp"]
+playback_mode = 1
+random_pitch = 1.1
+streams_count = 1
+stream_0/stream = ExtResource("7_87nfj")
+
+[node name="VolleyballLevel" type="Node2D" node_paths=PackedStringArray("transition")]
 process_mode = 3
 script = ExtResource("1_c342i")
+transition = NodePath("Transition")
 
 [node name="DemoBg" type="Sprite2D" parent="."]
 z_index = -2
@@ -119,6 +137,19 @@ position = Vector2(1504, 504)
 [node name="IslandMidpointHelper" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(1472, 696)
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="HitLand" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_ej37h")
+bus = &"rock_land"
+
+[node name="HitWater" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_x4swp")
+
+[node name="Transition" parent="." instance=ExtResource("8_k54tx")]
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]

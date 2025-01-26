@@ -24,6 +24,13 @@ var volleyball: Volleyball
 
 var player_starts: bool = false
 
+# Transitioner
+@export var transition: Control
+
+# Audio
+@onready var a_hit_land: AudioStreamPlayer = %HitLand
+@onready var a_hit_water: AudioStreamPlayer = %HitWater
+
 # AI Helpers
 @onready var midpoint: Marker2D = %ArenaMidpointHelper
 @onready var island_midpoint: Marker2D = %IslandMidpointHelper
@@ -47,6 +54,7 @@ func _check_collision(body: CollisionObject2D) -> void:
 	if not (body is Ground):
 		return
 	
+	a_hit_land.play()
 	_create_stuck_ball(volleyball, ps_stuck_vb)
 		
 	_reduce_health(body.side)
@@ -61,7 +69,6 @@ func _create_stuck_ball(vb: Volleyball, ps: PackedScene) -> void:
 	stuck_vb.global_position = pos	
 
 func _reduce_health(id: PlayerVars.SIDE) -> void:
-	print("Removing health from " + PlayerVars.SIDE.keys()[id])
 	match(id):
 		PlayerVars.SIDE.LEFT:
 			left_health -= 1
@@ -71,11 +78,7 @@ func _reduce_health(id: PlayerVars.SIDE) -> void:
 	# Win
 	if right_health <= 0:
 		get_tree().create_timer(3, true, false, true) \
-			.timeout.connect(
-			func(): 
-				get_tree().paused = false
-				get_tree().change_scene_to_file(next_screen)
-		)
+			.timeout.connect(do_transition)
 		get_tree().paused = true
 		return
 	# Lose
@@ -84,6 +87,16 @@ func _reduce_health(id: PlayerVars.SIDE) -> void:
 	
 	
 	_initialize_game()	
+
+func do_transition() -> void:
+	transition.fade_out(2)
+	transition.finished_out.connect(
+		func():
+			print("finished out")
+			get_tree().paused = false
+			get_tree().change_scene_to_file(next_screen)
+	)
+
 
 func _initialize_game() -> void:
 	get_tree().paused = true

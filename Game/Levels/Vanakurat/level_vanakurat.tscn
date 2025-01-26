@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bv6gqr2wasehv" path="res://Game/Characters/Vanakurat/vanakurat.tscn" id="2_mn4uf"]
 
 [node name="VolleyballLevel" instance=ExtResource("1_gaqq8")]
+next_screen = "res://Game/StoryScenes/win_screen.tscn"
 ps_player_2 = ExtResource("2_mn4uf")
 
 [node name="ArenaMidpointHelper" parent="." index="7"]

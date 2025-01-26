@@ -12,7 +12,8 @@ extends InputHandler
 
 func _process(delta: float) -> void:
 	if not volleyball:
-		volleyball = cs.volleyball
+		if not cs.volleyball.is_queued_for_deletion():
+			volleyball = cs.volleyball
 
 	super(delta)
 
@@ -51,4 +52,3 @@ func _calculate_trajectory() -> int:
 
 func set_bounce() -> bool:
 	return true in owner.throw_areas 
-

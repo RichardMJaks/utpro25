@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqvwjdx4j777g"]
+
+[ext_resource type="Script" path="res://Game/Transitions/transition.gd" id="1_1ofp7"]
+[ext_resource type="Shader" path="res://Game/Shaders/transition.gdshader" id="2_d52xt"]
+[ext_resource type="Texture2D" uid="uid://ckx1d2d1lnade" path="res://Game/Art/ph_toll.jpg" id="3_ehusf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ir21"]
+shader = ExtResource("2_d52xt")
+shader_parameter/fade = 0.0
+shader_parameter/tiling = 3.0
+
+[node name="Transition" type="Control" node_paths=PackedStringArray("fader")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ofp7")
+fader = NodePath("CanvasLayer/TextureRect")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_3ir21")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_ehusf")

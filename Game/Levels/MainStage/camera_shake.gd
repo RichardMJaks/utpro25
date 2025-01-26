@@ -30,7 +30,6 @@ func _process(delta: float) -> void:
 	
 	t += delta * (1 / duration) 
 	strength = lerpf(strength, 0, t)
-	print(t)
 
 @warning_ignore("shadowed_variable")
 func shake(strength : float, duration: float) -> void:
