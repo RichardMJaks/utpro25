@@ -7,6 +7,7 @@
 
 [node name="VolleyballLevel" instance=ExtResource("1_qp0x3")]
 ps_player_2 = ExtResource("2_i5poq")
+is_pvp = true
 
 [node name="WhichWon" type="Control" parent="HUD" index="1"]
 unique_name_in_owner = true

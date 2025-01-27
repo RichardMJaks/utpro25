@@ -92,7 +92,7 @@ func _reduce_health(id: PlayerVars.SIDE) -> void:
 
 	# Win
 	if right_health <= 0:
-		winner = PlayerVars.SIDE.RIGHT
+		winner = PlayerVars.SIDE.LEFT
 		if is_pvp:
 			_show_who_won()
 			return
@@ -117,8 +117,8 @@ func _show_game_over() -> void:
 	%GameOver.visible = true
 
 func _show_who_won() -> void:
-	%WhichWon.visible = true
 	%WhichWon.set_win_text(winner)
+	%WhichWon.visible = true
 
 func do_transition() -> void:
 	var t = %Fader.create_tween()
@@ -170,7 +170,6 @@ func _spawn_volleyball(ps: PackedScene) -> Volleyball:
 	return vb
 
 func _on_try_again() -> void:
-	print("tryagain")
 	var t = %Fader.create_tween()
 	t.tween_property(%Fader, "color:a", 1, 2).set_ease(Tween.EASE_OUT)
 	

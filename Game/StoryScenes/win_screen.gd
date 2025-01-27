@@ -17,9 +17,6 @@ func _process(delta: float) -> void:
 
 func fadeIn():
 	var fade: float = (fadeTime - timeElapsed) / fadeTime
-	print((fadeTime - timeElapsed))
-	print(fadeTime)
-	print((fadeTime - timeElapsed) / fadeTime)
 	darkFade.modulate = Color(1, 1, 1, fade)
 	
 	if (timeElapsed > fadeTime):

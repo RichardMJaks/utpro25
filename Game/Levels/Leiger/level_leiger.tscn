@@ -9,7 +9,6 @@
 [node name="LevelLeigur" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_ue1ca")]
 next_screen = "res://Game/StoryScenes/vs2.tscn"
 ps_player_2 = ExtResource("2_qs2yo")
-is_pvp = true
 dialog_box = NodePath("HUD/LeigerDialog")
 
 [node name="Player1Position" parent="." index="1"]
