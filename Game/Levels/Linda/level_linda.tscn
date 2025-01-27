@@ -10,6 +10,7 @@
 next_screen = "res://Game/StoryScenes/vs3.tscn"
 ps_player_2 = ExtResource("2_elpcl")
 player_starts = true
+is_pvp = true
 dialog_box = NodePath("HUD/LindaDialog")
 
 [node name="ArenaMidpointHelper" parent="." index="7"]

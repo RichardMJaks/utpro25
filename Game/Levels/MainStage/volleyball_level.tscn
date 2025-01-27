@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=18 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cn8v7x8kwo85w" path="res://Game/Audio/Rock_folder/rock_hits_land_05.ogg" id="5_wfany"]
 [ext_resource type="AudioStream" uid="uid://rsuj1lrkmkat" path="res://Game/Audio/Rock_folder/rock_hits_land_06.ogg" id="6_jn4e5"]
 [ext_resource type="AudioStream" uid="uid://clkk8r43wjrp0" path="res://Game/Audio/Rock_folder/rock_hits_water_02.ogg" id="7_87nfj"]
+[ext_resource type="AudioStream" uid="uid://bqrh17iskcqgy" path="res://Game/Audio/Music/crickets.ogg" id="8_hv6pu"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_iqiqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
@@ -147,6 +148,11 @@ bus = &"rock_land"
 [node name="HitWater" type="AudioStreamPlayer" parent="Audio"]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_x4swp")
+
+[node name="Crickets" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("8_hv6pu")
+bus = &"Music"
 
 [node name="HUD" type="CanvasLayer" parent="."]
 process_mode = 3

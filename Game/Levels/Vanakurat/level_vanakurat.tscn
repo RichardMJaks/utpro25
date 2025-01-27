@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://52io61udug2d" path="res://Game/Art/Menus/paganicon.png" id="5_jg23r"]
 
 [node name="VolleyballLevel2" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_gaqq8")]
+next_screen = "res://Game/StoryScenes/win_screen2.tscn"
 ps_player_2 = ExtResource("2_mn4uf")
 dialog_box = NodePath("HUD/VanakuratDialog")
 
@@ -25,7 +26,6 @@ texture = ExtResource("4_sstxp")
 
 [node name="P2Texture" parent="HUD/VanakuratDialog/Panel/HBoxContainer/P2" index="0"]
 process_mode = 4
-visible = false
 texture = ExtResource("5_jg23r")
 
 [node name="Fader" parent="HUD" index="2"]

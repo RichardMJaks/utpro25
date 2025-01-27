@@ -15,6 +15,7 @@ var player_1: Character
 var player_2: Character
 
 var volleyball: Volleyball
+var winner: PlayerVars.SIDE = PlayerVars.SIDE.NONE
 
 @onready var player_1_pos: Marker2D = %Player1Position
 @onready var player_2_pos: Marker2D = %Player2Position
@@ -23,6 +24,7 @@ var volleyball: Volleyball
 @onready var vb_2_pos: Marker2D = %VolleyballP2Position
 
 @export var player_starts: bool = false
+@export var is_pvp: bool = false
 
 # Transitioner
 @export var transition: Control
@@ -51,13 +53,17 @@ func _ready() -> void:
 
 	_reset_player_positions()
 	var t = %Fader.create_tween()
+
 	t.tween_property(%Fader, "color:a", 0, 2).set_ease(Tween.EASE_IN)
-	t.tween_callback(func(): get_tree().create_timer(1).timeout.connect(func(): 
-		dialog_box.visible = true
-		dialog_box.process_mode = Node.PROCESS_MODE_ALWAYS
-		))
-	
-	dialog_box.finished.connect(_initialize_game)
+	if dialog_box:
+		t.tween_callback(func(): get_tree().create_timer(1).timeout.connect(func(): 
+			dialog_box.visible = true
+			dialog_box.process_mode = Node.PROCESS_MODE_ALWAYS
+			))
+		
+		dialog_box.finished.connect(_initialize_game)
+	else:
+		t.tween_callback(func(): get_tree().create_timer(1).timeout.connect(_initialize_game))
 
 func _check_collision(body: CollisionObject2D) -> void:
 	if not (body is Ground):
@@ -86,21 +92,33 @@ func _reduce_health(id: PlayerVars.SIDE) -> void:
 
 	# Win
 	if right_health <= 0:
+		winner = PlayerVars.SIDE.RIGHT
+		if is_pvp:
+			_show_who_won()
+			return
 		get_tree().create_timer(3, true, false, true) \
 			.timeout.connect(do_transition)
 		get_tree().paused = true
 		return
 	# Lose
 	if left_health <= 0:
+		winner = PlayerVars.SIDE.RIGHT
 		get_tree().paused = true
-		_show_game_over()
+		if not is_pvp:
+			_show_game_over()
+		else:
+			_show_who_won()
 		return
 	
-	
+	%Crickets.playing = true
 	_initialize_game()	
 
 func _show_game_over() -> void:
 	%GameOver.visible = true
+
+func _show_who_won() -> void:
+	%WhichWon.visible = true
+	%WhichWon.set_win_text(winner)
 
 func do_transition() -> void:
 	var t = %Fader.create_tween()
@@ -113,12 +131,19 @@ func do_transition() -> void:
 	)
 
 func _initialize_game() -> void:
-	dialog_box.visible = false
-	dialog_box.process_mode = Node.PROCESS_MODE_DISABLED
+	if dialog_box:
+		dialog_box.visible = false
+		dialog_box.process_mode = Node.PROCESS_MODE_DISABLED
 
 	get_tree().paused = true
 	get_tree().create_timer(3, true, false, true) \
-		.timeout.connect(func(): get_tree().paused = false)
+		.timeout.connect(
+		func(): 
+			get_tree().paused = false
+			%Crickets.playing = false
+			SignalBus.game_continued.emit()
+
+	)
 	_reset_player_positions()
 	volleyball = _spawn_volleyball(ps_volleyball)
 	
@@ -140,7 +165,7 @@ func _spawn_volleyball(ps: PackedScene) -> Volleyball:
 	vb.body_entered.connect(_check_collision)
 	add_child(vb, true)
 
-	vb.linear_velocity = Vector2.UP * 500
+	vb.linear_velocity = Vector2.UP * 1000
 	
 	return vb
 
@@ -154,3 +179,7 @@ func _on_try_again() -> void:
 			get_tree().reload_current_scene()
 
 	)
+
+
+func _on_return_to_menu() -> void:
+	get_tree().change_scene_to_file("res://Game/Menus/main_menu.tscn")

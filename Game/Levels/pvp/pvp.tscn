@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddjl0or1gq6vi"]
+
+[ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_qp0x3"]
+[ext_resource type="PackedScene" uid="uid://b1kj04qy4nw1q" path="res://Game/Characters/Player2/player2.tscn" id="2_i5poq"]
+[ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="3_8budp"]
+[ext_resource type="Script" path="res://Game/Levels/pvp/which_won.gd" id="3_rnq2o"]
+
+[node name="VolleyballLevel" instance=ExtResource("1_qp0x3")]
+ps_player_2 = ExtResource("2_i5poq")
+
+[node name="WhichWon" type="Control" parent="HUD" index="1"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_rnq2o")
+
+[node name="Panel" type="Panel" parent="HUD/WhichWon" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/WhichWon" index="1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -50.0
+offset_right = 265.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wintext" type="Label" parent="HUD/WhichWon/VBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Võitis"
+
+[node name="Uuesti" type="Button" parent="HUD/WhichWon/VBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme = ExtResource("3_8budp")
+text = "Mängi uuesti"
+
+[node name="Menu" type="Button" parent="HUD/WhichWon/VBoxContainer" index="2"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme = ExtResource("3_8budp")
+text = "Tagasi menüüsse"
+
+[node name="Fader" parent="HUD" index="2"]
+visible = true
+
+[connection signal="pressed" from="HUD/WhichWon/VBoxContainer/Uuesti" to="." method="_on_try_again"]
+[connection signal="pressed" from="HUD/WhichWon/VBoxContainer/Menu" to="." method="_on_try_again"]
+[connection signal="pressed" from="HUD/WhichWon/VBoxContainer/Menu" to="." method="_on_return_to_menu"]
+
+[editable path="Colliders/LeftGround"]
+[editable path="Colliders/RightGround"]

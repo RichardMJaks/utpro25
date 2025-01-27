@@ -46,6 +46,7 @@ script = ExtResource("3_iejt8")
 scene_path = "res://Game/Menus/main_menu.tscn"
 
 [node name="DarkFade" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("5_d0p2p")

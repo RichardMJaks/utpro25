@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://mmloa42cnmm5"]
+
+[node name="HitBuffer" type="Timer"]
+process_callback = 0
+wait_time = 0.1
+one_shot = true

@@ -8,12 +8,14 @@ var nextTrack
 var state # fade_out, fade_in
 var timeElapsed: float = 0
 
-var menus = ["MainMenu", "Settings", "Tutorial", "Win"]
-var levels = ["LevelLeigur", "LevelLinda", "LevelVanakurat", "VolleyballLevel", "Vs1", "Vs2", "Vs3"]
+var menus = ["MainMenu", "Settings", "Tutorial"]
+var levels = ["LevelLeigur", "LevelLinda", "LevelVanakurat", "VolleyballLevel", "Vs1", "Vs2", "Vs3", "Win"]
 
 func _ready() -> void:
 	volume_db = linear_to_db(0)
 	get_tree().connect("tree_changed", _on_tree_changed)
+	SignalBus.landed.connect(_pause_music)
+	SignalBus.game_continued.connect(_resume_music)
 
 func _on_tree_changed():
 	var scene = get_tree().current_scene
@@ -22,7 +24,8 @@ func _on_tree_changed():
 	var currentScene = scene.name
 	if (currentScene == previousScene): return
 	print(str(previousScene) + " -> " + str(currentScene))
-	
+
+	_resume_music()	
 	if (currentScene in menus && not previousScene in menus):
 		playMusic(menuMusic)
 	
@@ -31,7 +34,14 @@ func _on_tree_changed():
 	
 	previousScene = currentScene
 
+func _pause_music():
+	stream_paused = true
+
+func _resume_music():
+	stream_paused = false
+
 func playMusic(track):
+	_resume_music()
 	nextTrack = track
 	state = "fade_out"
 	timeElapsed = 0
