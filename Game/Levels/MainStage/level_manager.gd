@@ -3,20 +3,18 @@ class_name LevelManager
 
 @export var next_screen: String = "res://Game/StoryScenes/win_screen.tscn"
 
-
+#region PackedScenes
 var ps_volleyball: PackedScene = preload("res://Game/Volleyball/volleyball.tscn")
 var ps_stuck_vb: PackedScene = preload("res://Game/Volleyball/stuck_ball.tscn")
 @export var ps_player_1: PackedScene = preload("res://Game/Characters/Player/player.tscn")
 @export var ps_player_2: PackedScene = preload("res://Game/Characters/BasicAI/basic_ai.tscn")
+#endregion
 
-var left_health: int = PlayerVars.total_health
-var right_health: int = PlayerVars.total_health
-
+#region Node References
 var player_1: Character
 var player_2: Character
 
 var volleyball: Volleyball
-var winner: PlayerVars.SIDE = PlayerVars.SIDE.NONE
 
 @onready var player_1_pos: Marker2D = %Player1Position
 @onready var player_2_pos: Marker2D = %Player2Position
@@ -24,12 +22,10 @@ var winner: PlayerVars.SIDE = PlayerVars.SIDE.NONE
 @onready var vb_1_pos: Marker2D = %VolleyballP1Position
 @onready var vb_2_pos: Marker2D = %VolleyballP2Position
 
-@export var player_starts: bool = false
-@export var is_pvp: bool = false
-
-# Transitioner
+# UI
 @export var transition: Control
 @export var dialog_box: DialogBox
+#endreigon
 
 # Audio
 @onready var a_hit_land: AudioStreamPlayer = %HitLand
@@ -38,6 +34,15 @@ var winner: PlayerVars.SIDE = PlayerVars.SIDE.NONE
 # AI Helpers
 @onready var midpoint: Marker2D = %ArenaMidpointHelper
 @onready var island_midpoint: Marker2D = %IslandMidpointHelper
+#endregion
+
+#region Game variables
+var winner: PlayerVars.SIDE = PlayerVars.SIDE.NONE
+var left_health: int = PlayerVars.total_health
+var right_health: int = PlayerVars.total_health
+@export var player_starts: bool = false
+@export var is_pvp: bool = false
+#endregion
 
 
 func _ready() -> void:
