@@ -64,8 +64,8 @@ text = "Tagasi menüüsse"
 visible = true
 
 [connection signal="pressed" from="HUD/WhichWon/VBoxContainer/Uuesti" to="." method="_on_try_again"]
-[connection signal="pressed" from="HUD/WhichWon/VBoxContainer/Menu" to="." method="_on_try_again"]
 [connection signal="pressed" from="HUD/WhichWon/VBoxContainer/Menu" to="." method="_on_return_to_menu"]
+[connection signal="pressed" from="HUD/WhichWon/VBoxContainer/Menu" to="." method="_on_try_again"]
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]

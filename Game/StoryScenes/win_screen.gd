@@ -12,7 +12,6 @@ var waitTime: float = 1.5
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	timeElapsed += delta
-	
 	if (state == "fade_in"): fadeIn()
 
 func fadeIn():

@@ -3,13 +3,14 @@ class_name LevelManager
 
 @export var next_screen: String = "res://Game/StoryScenes/win_screen.tscn"
 
-var left_health: int = PlayerVars.total_health
-var right_health: int = PlayerVars.total_health
 
 var ps_volleyball: PackedScene = preload("res://Game/Volleyball/volleyball.tscn")
 var ps_stuck_vb: PackedScene = preload("res://Game/Volleyball/stuck_ball.tscn")
 @export var ps_player_1: PackedScene = preload("res://Game/Characters/Player/player.tscn")
 @export var ps_player_2: PackedScene = preload("res://Game/Characters/BasicAI/basic_ai.tscn")
+
+var left_health: int = PlayerVars.total_health
+var right_health: int = PlayerVars.total_health
 
 var player_1: Character
 var player_2: Character
