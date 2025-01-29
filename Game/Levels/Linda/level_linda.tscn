@@ -9,8 +9,8 @@
 [node name="LevelLinda" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_o8f8a")]
 next_screen = "res://Game/StoryScenes/vs3.tscn"
 ps_player_2 = ExtResource("2_elpcl")
-player_starts = true
 dialog_box = NodePath("HUD/LindaDialog")
+player_starts = true
 
 [node name="ArenaMidpointHelper" parent="." index="7"]
 position = Vector2(864, 544)

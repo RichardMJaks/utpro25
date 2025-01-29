@@ -14,6 +14,7 @@ size = Vector2(32, 31)
 
 [node name="CharacterBase" type="CharacterBody2D"]
 process_mode = 1
+process_priority = 1
 script = ExtResource("1_4mp8t")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
