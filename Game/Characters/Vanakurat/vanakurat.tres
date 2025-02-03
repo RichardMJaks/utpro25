@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bic8p0106mq7x"]
+
+[ext_resource type="Script" path="res://Game/Characters/BasicAI/ai_values.gd" id="1_we0o2"]
+
+[resource]
+script = ExtResource("1_we0o2")
+prediction_delta = 0.1
+error_margin = 20.0
+alternative_prediction = false

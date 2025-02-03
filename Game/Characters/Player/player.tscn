@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bdyd34asp50ya"]
+[gd_scene load_steps=46 format=3 uid="uid://bdyd34asp50ya"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_om7nk"]
 [ext_resource type="Texture2D" uid="uid://doqpc81cms7ve" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll1.png" id="2_c0of2"]
@@ -29,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://deilva38qhers" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/8.png" id="21_5sxum"]
 [ext_resource type="Texture2D" uid="uid://buuwc4oibawpe" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/9.png" id="22_ejg5a"]
 [ext_resource type="Texture2D" uid="uid://db0bnetrv0xlv" path="res://Game/Art/Toll_animatsioon/Viskamine_ülevalt/12.png" id="25_bu1gr"]
-[ext_resource type="PackedScene" uid="uid://mmloa42cnmm5" path="res://Game/Characters/Player/hit_buffer.tscn" id="30_8hmvk"]
 [ext_resource type="AudioStream" uid="uid://bqg5f150p1h78" path="res://Game/Audio/Leiger/DevsChoice/catch_1.ogg" id="30_fwa0l"]
 [ext_resource type="AudioStream" uid="uid://bix0vifqmftwc" path="res://Game/Audio/Leiger/DevsChoice/throw_2.ogg" id="32_jjshs"]
 [ext_resource type="AudioStream" uid="uid://bfetad4c1mhbw" path="res://Game/Audio/Leiger/DevsChoice/throw_3.ogg" id="33_5f407"]
@@ -498,10 +497,7 @@ libraries = {
 }
 autoplay = "idle"
 
-[node name="HitBuffer" parent="." index="6" instance=ExtResource("30_8hmvk")]
-unique_name_in_owner = true
-
-[node name="Audio" type="Node" parent="." index="7"]
+[node name="Audio" type="Node" parent="." index="6"]
 process_mode = 3
 
 [node name="Catch" type="AudioStreamPlayer" parent="Audio" index="0"]

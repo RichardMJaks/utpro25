@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddjl0or1gq6vi"]
+[gd_scene load_steps=6 format=3 uid="uid://ddjl0or1gq6vi"]
 
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_qp0x3"]
-[ext_resource type="PackedScene" uid="uid://b1kj04qy4nw1q" path="res://Game/Characters/Player2/player2.tscn" id="2_i5poq"]
+[ext_resource type="PackedScene" uid="uid://c06pvi43m4vae" path="res://Game/Characters/Linda/linda.tscn" id="2_mc886"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="3_8budp"]
+[ext_resource type="Script" path="res://Game/Characters/Player2/player_2input_handler.gd" id="3_kco2r"]
 [ext_resource type="Script" path="res://Game/Levels/pvp/which_won.gd" id="3_rnq2o"]
 
 [node name="VolleyballLevel" instance=ExtResource("1_qp0x3")]
-ps_player_2 = ExtResource("2_i5poq")
+ps_player_2 = ExtResource("2_mc886")
+p2_script = ExtResource("3_kco2r")
 is_pvp = true
 
 [node name="WhichWon" type="Control" parent="HUD" index="1"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=19 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
+[ext_resource type="Script" path="res://Game/Characters/Player/player_input_handler.gd" id="2_pinhv"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/camera_shake.gd" id="3_730w7"]
 [ext_resource type="PackedScene" uid="uid://dk23i070hnenw" path="res://Game/Ground/ground.tscn" id="4_ibp17"]
 [ext_resource type="AudioStream" uid="uid://cn8v7x8kwo85w" path="res://Game/Audio/Rock_folder/rock_hits_land_05.ogg" id="5_wfany"]
@@ -44,6 +45,7 @@ stream_0/stream = ExtResource("7_87nfj")
 [node name="VolleyballLevel" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_c342i")
+p1_script = ExtResource("2_pinhv")
 
 [node name="DemoBg" type="Sprite2D" parent="."]
 z_index = -2

@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_g7ffq"]
 [ext_resource type="Texture2D" uid="uid://ceejhtm85mvk5" path="res://Game/Art/assets/leigerbotthrowsprite.png" id="2_32kfw"]
-[ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="2_dt1ia"]
 [ext_resource type="Texture2D" uid="uid://d2m5at3xo1wv6" path="res://Game/Art/assets/LeigT1.png" id="3_ku44f"]
 [ext_resource type="Texture2D" uid="uid://cnenyii3hs1jc" path="res://Game/Art/assets/LeigT2.png" id="4_tcmxu"]
 [ext_resource type="Texture2D" uid="uid://chdvhkx6t6th7" path="res://Game/Art/assets/LeigT3.png" id="5_qiflf"]
@@ -153,6 +152,68 @@ animations = [{
 "name": &"walk",
 "speed": 8.0
 }]
+
+[sub_resource type="GDScript" id="GDScript_83o54"]
+script/source = "extends InputHandler
+
+@onready var cs = get_tree().current_scene
+
+@onready var volleyball: Volleyball = await cs.volleyball
+@export var prediction_delta: float = 0.05
+@export var error_margin: float = 20
+@export var alternative_prediction: bool = false
+
+# Get helpers
+@onready var midpoint: Marker2D = cs.midpoint 
+@onready var island_midpoint: Marker2D = cs.island_midpoint 
+
+func _process(delta: float) -> void:
+	if not volleyball:
+		if cs.volleyball and not cs.volleyball.is_queued_for_deletion():
+			volleyball = cs.volleyball
+
+	super(delta)
+
+func set_dir() -> int:
+	if not volleyball:
+		return 0
+
+	var pos = _calculate_trajectory()
+	
+	if volleyball.global_position.x < midpoint.global_position.x and not alternative_prediction:
+		pos = island_midpoint.global_position.x
+
+	if (pos - owner.global_position.x) < -error_margin:
+		return -1
+	elif (pos - owner.global_position.x) > error_margin:
+		return 1
+	
+	return 0
+
+func _alternative_pd() -> float:
+	return (volleyball.global_position - owner.global_position).length() / 1500
+
+
+func _calculate_trajectory() -> int:
+	var start_pos = volleyball.global_position
+	var v = volleyball.linear_velocity
+	var damp = volleyball.linear_damp
+	var g = volleyball.get_gravity()
+	var t = prediction_delta if not alternative_prediction else _alternative_pd()
+
+	var final_pos
+	if damp == 0:
+		final_pos = start_pos + v * t + 0.5 * g * t * t
+	else:
+		var start = start_pos
+		var vel_differential = (v / damp) * (1 - exp(-damp * t))
+		var gravity_differential = (g / pow(damp, 2)) * (damp * t - 1 + exp(-damp * t))
+		final_pos = start + vel_differential + gravity_differential
+	return final_pos.x
+
+func set_bounce() -> bool:
+	return true in owner.throw_areas 
+"
 
 [sub_resource type="Animation" id="Animation_p3j07"]
 resource_name = "front_throw"
@@ -305,7 +366,7 @@ position = Vector2(96, -128)
 position = Vector2(112, -96)
 
 [node name="InputHandler" parent="." index="4"]
-script = ExtResource("2_dt1ia")
+script = SubResource("GDScript_83o54")
 prediction_delta = 0.2
 error_margin = 20.0
 alternative_prediction = false

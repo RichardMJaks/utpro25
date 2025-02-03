@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b1kj04qy4nw1q"]
+[gd_scene load_steps=45 format=3 uid="uid://b1kj04qy4nw1q"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_x3k8m"]
 [ext_resource type="Texture2D" uid="uid://ceejhtm85mvk5" path="res://Game/Art/assets/leigerbotthrowsprite.png" id="2_ru4wh"]
@@ -19,7 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://bix0vifqmftwc" path="res://Game/Audio/Leiger/DevsChoice/throw_2.ogg" id="17_ibc4c"]
 [ext_resource type="AudioStream" uid="uid://bfetad4c1mhbw" path="res://Game/Audio/Leiger/DevsChoice/throw_3.ogg" id="18_lk8xu"]
 [ext_resource type="AudioStream" uid="uid://b5iwlb8p7q3b2" path="res://Game/Audio/Rock_folder/catch_rock.ogg" id="19_u4qnh"]
-[ext_resource type="PackedScene" uid="uid://mmloa42cnmm5" path="res://Game/Characters/Player/hit_buffer.tscn" id="20_xknbm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rjo1r"]
 atlas = ExtResource("2_ru4wh")
@@ -505,5 +504,5 @@ pitch_scale = 1.39
 stream = SubResource("AudioStreamRandomizer_f1dld")
 bus = &"rock_land"
 
-[node name="HitBuffer" parent="." index="7" instance=ExtResource("20_xknbm")]
+[node name="HitBuffer" parent="." index="7"]
 unique_name_in_owner = true

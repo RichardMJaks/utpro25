@@ -8,6 +8,9 @@ var ps_volleyball: PackedScene = preload("res://Game/Volleyball/volleyball.tscn"
 var ps_stuck_vb: PackedScene = preload("res://Game/Volleyball/stuck_ball.tscn")
 @export var ps_player_1: PackedScene = preload("res://Game/Characters/Player/player.tscn")
 @export var ps_player_2: PackedScene = preload("res://Game/Characters/BasicAI/basic_ai.tscn")
+@export var p1_script: Script
+@export var p2_script: Script
+@export var p2_ai_values: Resource
 #endregion
 
 #region Node References
@@ -70,7 +73,10 @@ func _initialize_players() -> void:
 	add_child(player_1)
 
 	player_2 = ps_player_2.instantiate()
-	player_2.side = PlayerVars.SIDE.RIGHT	
+	player_2.side = PlayerVars.SIDE.RIGHT
+	if not is_pvp:
+		player_2.is_ai = true
+	player_2.set_behaviour_script(p2_script, p2_ai_values)	
 	add_child(player_2)
 
 func _start_level(delay: float) -> void:
