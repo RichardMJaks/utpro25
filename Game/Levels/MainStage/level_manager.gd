@@ -8,7 +8,18 @@ var ps_volleyball: PackedScene = preload("res://Game/Volleyball/volleyball.tscn"
 var ps_stuck_vb: PackedScene = preload("res://Game/Volleyball/stuck_ball.tscn")
 @export var ps_player_1: PackedScene = preload("res://Game/Characters/Player/player.tscn")
 @export var ps_player_2: PackedScene = preload("res://Game/Characters/BasicAI/basic_ai.tscn")
+@export var p1_script: Script
+@export var p2_script: Script
+@export var p2_ai_values: Resource
 #endregion
+
+#region Preloads
+var characters: Dictionary = {
+	MPVars.CHARACTER.LINDA: preload("res://Game/Characters/Linda/linda.tscn"),
+	MPVars.CHARACTER.LEIGER: preload("res://Game/Characters/Leiger/leiger.tscn"),
+	MPVars.CHARACTER.VANAKURAT: preload("res://Game/Characters/Vanakurat/vanakurat.tscn"),
+	MPVars.CHARACTER.TOLL: preload("res://Game/Characters/Player/player.tscn")
+}
 
 #region Node References
 var player_1: Character
@@ -54,11 +65,18 @@ var post_fade_delay: float = 1
 
 func _ready() -> void:
 	tree.paused = true
+	if is_pvp:
+		ps_player_1 = characters[MPVars.p1_character]
+		ps_player_2 = characters[MPVars.p2_character]
+
 	_initialize_players()
 	_reset_player_positions()
 
 	var fade: Tween = _fade_in(fade_time)
 	fade.tween_callback(_start_level.bind(post_fade_delay))
+
+		
+
 
 #region Level initialization
 func _initialize_players() -> void:
@@ -67,10 +85,16 @@ func _initialize_players() -> void:
 
 	player_1 = ps_player_1.instantiate()
 	player_1.side = PlayerVars.SIDE.LEFT
+	player_1.is_ai = false
+	# We can set ai values to null, because player 1 is never ai
+	player_1.set_behaviour_script(p1_script, null)
 	add_child(player_1)
 
 	player_2 = ps_player_2.instantiate()
-	player_2.side = PlayerVars.SIDE.RIGHT	
+	player_2.side = PlayerVars.SIDE.RIGHT
+	if not is_pvp:
+		player_2.is_ai = true
+	player_2.set_behaviour_script(p2_script, p2_ai_values)	
 	add_child(player_2)
 
 func _start_level(delay: float) -> void:

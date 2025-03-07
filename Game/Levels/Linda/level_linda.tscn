@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy1ue1tl22sx6"]
+[gd_scene load_steps=8 format=3 uid="uid://cy1ue1tl22sx6"]
 
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_o8f8a"]
 [ext_resource type="PackedScene" uid="uid://c06pvi43m4vae" path="res://Game/Characters/Linda/linda.tscn" id="2_elpcl"]
 [ext_resource type="PackedScene" uid="uid://cjx4d0pukqak2" path="res://Game/Menus/DialogBox/Linda/linda.tscn" id="3_7i632"]
+[ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="3_on8ux"]
 [ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="4_augxg"]
+[ext_resource type="Resource" uid="uid://b4pj1es55c0ag" path="res://Game/Characters/Linda/linda.tres" id="4_mxwnb"]
 [ext_resource type="Texture2D" uid="uid://gst0yfqcr5ik" path="res://Game/Art/Menus/lindaicon.png" id="5_ejywi"]
 
 [node name="LevelLinda" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_o8f8a")]
 next_screen = "res://Game/StoryScenes/vs3.tscn"
 ps_player_2 = ExtResource("2_elpcl")
+p2_script = ExtResource("3_on8ux")
+p2_ai_values = ExtResource("4_mxwnb")
 dialog_box = NodePath("HUD/LindaDialog")
 player_starts = true
 

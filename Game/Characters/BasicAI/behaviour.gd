@@ -3,9 +3,10 @@ extends InputHandler
 @onready var cs = get_tree().current_scene
 
 @onready var volleyball: Volleyball = await cs.volleyball
-@export var prediction_delta: float = 0.05
-@export var error_margin: float = 20
-@export var alternative_prediction: bool = false
+@onready var prediction_delta: float = values.prediction_delta
+@onready var error_margin: float = values.error_margin 
+@onready var alternative_prediction: bool = values.alternative_prediction 
+var values: Resource
 
 # Get helpers
 @onready var midpoint: Marker2D = cs.midpoint 

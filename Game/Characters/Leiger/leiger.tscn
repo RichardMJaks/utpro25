@@ -1,8 +1,7 @@
-[gd_scene load_steps=45 format=3 uid="uid://bsmfui0dfhi0h"]
+[gd_scene load_steps=44 format=3 uid="uid://bsmfui0dfhi0h"]
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_tdw3h"]
 [ext_resource type="Texture2D" uid="uid://ceejhtm85mvk5" path="res://Game/Art/assets/leigerbotthrowsprite.png" id="2_dhxeo"]
-[ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="2_hjvb3"]
 [ext_resource type="Texture2D" uid="uid://d2m5at3xo1wv6" path="res://Game/Art/assets/LeigT1.png" id="3_v8oc3"]
 [ext_resource type="Texture2D" uid="uid://cejgjc0o7oqr8" path="res://Game/Art/assets/leigeridle.png" id="3_xpo8o"]
 [ext_resource type="Texture2D" uid="uid://cnenyii3hs1jc" path="res://Game/Art/assets/LeigT2.png" id="4_4imis"]
@@ -488,10 +487,7 @@ position = Vector2(96, -128)
 position = Vector2(112, -96)
 
 [node name="InputHandler" parent="." index="4"]
-script = ExtResource("2_hjvb3")
-prediction_delta = 0.15
-error_margin = 35.0
-alternative_prediction = false
+script = null
 
 [node name="Animator" parent="." index="5"]
 process_mode = 3

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 PlayerVars="*res://Game/Global/player_vars.gd"
 SignalBus="*res://Game/Global/signal_bus.gd"
 MusicPlayer="*res://Game/Global/music_player.tscn"
+MPVars="*res://Game/Global/mp_vars.gd"
 
 [display]
 

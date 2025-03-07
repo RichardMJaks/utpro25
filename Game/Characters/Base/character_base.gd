@@ -7,7 +7,7 @@ var side: PlayerVars.SIDE
 var is_throwing: bool = false
 var volleyball: Volleyball = null
 
-@onready var input_handler: InputHandler = %InputHandler
+@onready var input_handler: Node = %InputHandler
 
 @onready var animator: AnimationPlayer = %Animator
 
@@ -15,6 +15,7 @@ var volleyball: Volleyball = null
 @onready var front_throw_position: Marker2D = %FrontThrowPosition
 
 @export var rethrow_delay: float = 1
+var is_ai: bool = false
 var throw_blocked: bool = false
 
 var throw_areas: Array[bool] = [false, false]
@@ -27,6 +28,12 @@ func _ready() -> void:
 				child.position.x = side * child.position.x
 				%Sprite.flip_h = side == PlayerVars.SIDE.RIGHT
 	).call_deferred()
+
+func set_behaviour_script(script: Script, values: Resource) -> void:
+	input_handler = %InputHandler
+	input_handler.set_script(script)
+	if is_ai:
+		input_handler.values = values
 
 func _physics_process(delta: float) -> void:
 	# If throwing then all movement is blocked

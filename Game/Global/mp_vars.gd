@@ -1,0 +1,6 @@
+extends Node
+
+enum CHARACTER {LINDA, TOLL, LEIGER, VANAKURAT}
+
+var p1_character: CHARACTER = CHARACTER.TOLL
+var p2_character: CHARACTER = CHARACTER.LEIGER
