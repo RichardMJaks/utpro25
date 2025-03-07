@@ -1,0 +1,172 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhcp4nrt11g3i"]
+
+[ext_resource type="Script" path="res://Game/Menus/character_selection.gd" id="1_d4w44"]
+[ext_resource type="Texture2D" uid="uid://b2eei35cojbv4" path="res://Game/Art/Menus/leigericon.png" id="1_jhlmb"]
+[ext_resource type="Texture2D" uid="uid://gst0yfqcr5ik" path="res://Game/Art/Menus/lindaicon.png" id="2_irgby"]
+[ext_resource type="Script" path="res://Game/Menus/label-debug.gd" id="2_o6tuh"]
+[ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="3_3m5q3"]
+[ext_resource type="Script" path="res://Game/Menus/selection_button.gd" id="4_3ui1p"]
+[ext_resource type="Texture2D" uid="uid://52io61udug2d" path="res://Game/Art/Menus/paganicon.png" id="4_kpjmw"]
+[ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_jc13i"]
+
+[node name="CharacterSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d4w44")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 263.0
+offset_right = 611.0
+offset_bottom = 284.0
+script = ExtResource("2_o6tuh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="LeftPadding" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="P1Select" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="P1Leiger" type="TextureButton" parent="HBoxContainer/P1Select"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_bottom = NodePath("../P1Linda")
+texture_normal = ExtResource("1_jhlmb")
+flip_h = true
+script = ExtResource("4_3ui1p")
+character = 2
+
+[node name="P1Linda" type="TextureButton" parent="HBoxContainer/P1Select"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../P1Leiger")
+focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_bottom = NodePath("../P1Toll")
+texture_normal = ExtResource("2_irgby")
+flip_h = true
+script = ExtResource("4_3ui1p")
+
+[node name="P1Toll" type="TextureButton" parent="HBoxContainer/P1Select"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../P1Linda")
+focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_bottom = NodePath("../P1Vanakurat")
+texture_normal = ExtResource("3_3m5q3")
+script = ExtResource("4_3ui1p")
+character = 1
+
+[node name="P1Vanakurat" type="TextureButton" parent="HBoxContainer/P1Select"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../P1Toll")
+focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/Play")
+texture_normal = ExtResource("4_kpjmw")
+flip_h = true
+script = ExtResource("4_3ui1p")
+character = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="Play" type="Button" parent="HBoxContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme = ExtResource("8_jc13i")
+text = "MÄNGI"
+
+[node name="BottomPadding" type="Control" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="P2Select" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1
+
+[node name="PLeiger" type="TextureButton" parent="HBoxContainer/P2Select"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_bottom = NodePath("../P2Linda")
+texture_normal = ExtResource("1_jhlmb")
+script = ExtResource("4_3ui1p")
+character = 2
+
+[node name="P2Linda" type="TextureButton" parent="HBoxContainer/P2Select"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_top = NodePath("../PLeiger")
+focus_neighbor_bottom = NodePath("../P2Toll")
+texture_normal = ExtResource("2_irgby")
+script = ExtResource("4_3ui1p")
+
+[node name="P2Toll" type="TextureButton" parent="HBoxContainer/P2Select"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_top = NodePath("../P2Linda")
+focus_neighbor_bottom = NodePath("../P2Vanakurat")
+texture_normal = ExtResource("3_3m5q3")
+flip_h = true
+script = ExtResource("4_3ui1p")
+character = 1
+
+[node name="P2Vanakurat" type="TextureButton" parent="HBoxContainer/P2Select"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_top = NodePath("../P2Toll")
+texture_normal = ExtResource("4_kpjmw")
+script = ExtResource("4_3ui1p")
+character = 3
+
+[node name="RightPadding" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Fader" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="custom_button_pressed" from="HBoxContainer/P1Select/P1Leiger" to="." method="set_player_1"]
+[connection signal="custom_button_pressed" from="HBoxContainer/P1Select/P1Linda" to="." method="set_player_1"]
+[connection signal="custom_button_pressed" from="HBoxContainer/P1Select/P1Toll" to="." method="set_player_1"]
+[connection signal="custom_button_pressed" from="HBoxContainer/P1Select/P1Vanakurat" to="." method="set_player_1"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/CenterContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="custom_button_pressed" from="HBoxContainer/P2Select/PLeiger" to="." method="set_player_2"]
+[connection signal="custom_button_pressed" from="HBoxContainer/P2Select/P2Linda" to="." method="set_player_2"]
+[connection signal="custom_button_pressed" from="HBoxContainer/P2Select/P2Toll" to="." method="set_player_2"]
+[connection signal="custom_button_pressed" from="HBoxContainer/P2Select/P2Vanakurat" to="." method="set_player_2"]

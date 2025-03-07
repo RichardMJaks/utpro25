@@ -503,6 +503,3 @@ pitch_scale = 1.39
 [node name="RockCatch" type="AudioStreamPlayer" parent="Audio" index="2"]
 stream = SubResource("AudioStreamRandomizer_f1dld")
 bus = &"rock_land"
-
-[node name="HitBuffer" parent="." index="7"]
-unique_name_in_owner = true
