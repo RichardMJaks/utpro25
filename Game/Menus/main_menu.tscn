@@ -17,8 +17,8 @@ script = ExtResource("1_ocheg")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 3838.0
+offset_bottom = 2159.0
 texture = ExtResource("1_6ovdu")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -28,10 +28,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 320.0
-offset_top = 68.0
-offset_right = 877.0
-offset_bottom = 516.0
+offset_left = 489.0
+offset_top = 254.0
+offset_right = 1551.0
+offset_bottom = 850.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -48,6 +48,7 @@ size_flags_horizontal = 3
 focus_neighbor_right = NodePath("../Play2")
 focus_neighbor_bottom = NodePath("../../Tutorial")
 theme = ExtResource("1_53h3y")
+theme_override_font_sizes/font_size = 140
 text = "mängin"
 script = ExtResource("2_u3efc")
 scene_path = "res://Game/Levels/load_stuff.tscn"
@@ -58,6 +59,7 @@ size_flags_horizontal = 3
 focus_neighbor_left = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../../Tutorial")
 theme = ExtResource("1_53h3y")
+theme_override_font_sizes/font_size = 140
 text = "sõbraga"
 script = ExtResource("2_u3efc")
 scene_path = "res://Game/Menus/character_selection.tscn"
@@ -67,6 +69,7 @@ layout_mode = 2
 focus_neighbor_top = NodePath("../HBoxContainer/Play")
 focus_neighbor_bottom = NodePath("../Settings")
 theme = ExtResource("1_53h3y")
+theme_override_font_sizes/font_size = 140
 text = "õppetus"
 script = ExtResource("2_u3efc")
 scene_path = "res://Game/Menus/tutorial.tscn"
@@ -75,6 +78,7 @@ scene_path = "res://Game/Menus/tutorial.tscn"
 layout_mode = 2
 focus_neighbor_top = NodePath("../Tutorial")
 theme = ExtResource("1_53h3y")
+theme_override_font_sizes/font_size = 140
 text = "sääded"
 script = ExtResource("2_u3efc")
 scene_path = "res://Game/Menus/settings.tscn"
@@ -85,6 +89,9 @@ layout_mode = 2
 theme = ExtResource("1_53h3y")
 text = "lähän ära"
 script = ExtResource("5_krnyj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Play" to="VBoxContainer/HBoxContainer/Play" method="pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Play2" to="VBoxContainer/HBoxContainer/Play2" method="pressed"]

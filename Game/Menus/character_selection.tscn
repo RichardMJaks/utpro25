@@ -33,6 +33,7 @@ offset_left = 571.0
 offset_top = 263.0
 offset_right = 611.0
 offset_bottom = 284.0
+theme_override_font_sizes/font_size = 256
 script = ExtResource("2_o6tuh")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -155,6 +156,7 @@ layout_mode = 2
 
 [node name="Fader" type="ColorRect" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,6 +165,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [connection signal="custom_button_pressed" from="HBoxContainer/P1Select/P1Leiger" to="." method="set_player_1"]
 [connection signal="custom_button_pressed" from="HBoxContainer/P1Select/P1Linda" to="." method="set_player_1"]

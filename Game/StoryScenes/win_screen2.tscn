@@ -51,4 +51,8 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("5_d0p2p")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
 [connection signal="pressed" from="VBoxContainer/MainMenu" to="VBoxContainer/MainMenu" method="pressed"]

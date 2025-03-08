@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=20 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://clkk8r43wjrp0" path="res://Game/Audio/Rock_folder/rock_hits_water_02.ogg" id="7_87nfj"]
 [ext_resource type="AudioStream" uid="uid://bqrh17iskcqgy" path="res://Game/Audio/Music/crickets.ogg" id="8_hv6pu"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_iqiqn"]
+[ext_resource type="Script" path="res://Game/Levels/MainStage/game_over-story.gd" id="10_gw0nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
 size = Vector2(864, 300.5)
@@ -49,8 +50,8 @@ p1_script = ExtResource("2_pinhv")
 
 [node name="DemoBg" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(960, 548)
 texture = ExtResource("1_8hslq")
+centered = false
 
 [node name="Player1Position" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -64,7 +65,8 @@ gizmo_extents = 64.1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 process_mode = 3
-position = Vector2(960, 544)
+anchor_mode = 0
+zoom = Vector2(2, 2)
 script = ExtResource("3_730w7")
 
 [node name="VolleyballP1Position" type="Marker2D" parent="."]
@@ -168,6 +170,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("10_gw0nn")
 
 [node name="Panel" type="Panel" parent="HUD/GameOver"]
 layout_mode = 1
@@ -196,7 +199,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "Su saar hävines!"
 
-[node name="Button" type="Button" parent="HUD/GameOver/VBoxContainer"]
+[node name="TryAgain" type="Button" parent="HUD/GameOver/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 theme = ExtResource("8_iqiqn")
@@ -213,7 +217,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[connection signal="pressed" from="HUD/GameOver/VBoxContainer/Button" to="." method="_on_try_again"]
+[connection signal="pressed" from="HUD/GameOver/VBoxContainer/TryAgain" to="." method="_on_try_again"]
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]

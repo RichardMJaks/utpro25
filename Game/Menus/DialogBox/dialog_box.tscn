@@ -14,7 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_xfdxr")
 
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(0, 250)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -24,20 +24,23 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-custom_minimum_size = Vector2(0, 250)
+custom_minimum_size = Vector2(0, 500)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -250.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
 [node name="P1" type="CenterContainer" parent="Panel/HBoxContainer"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
 
 [node name="P1Texture" type="TextureRect" parent="Panel/HBoxContainer/P1"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 texture = ExtResource("1_ledqr")
 
@@ -46,16 +49,17 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 72
 text = "Ja nii [tles siim, taevalik isa mulle, et ma olen siim"
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="P2" type="CenterContainer" parent="Panel/HBoxContainer"]
-custom_minimum_size = Vector2(250, 250)
+custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
 
 [node name="P2Texture" type="TextureRect" parent="Panel/HBoxContainer/P2"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 texture = ExtResource("1_ledqr")
