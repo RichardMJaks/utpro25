@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc430ebb16tud"]
+[gd_scene load_steps=6 format=3 uid="uid://dc430ebb16tud"]
 
 [ext_resource type="Texture2D" uid="uid://hr0u0a1sqlnx" path="res://Game/Art/Menus/mainmenuBG.png" id="1_6ovdu"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="1_53h3y"]
+[ext_resource type="Script" path="res://Game/Menus/main_menu-focus.gd" id="1_ocheg"]
 [ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="2_u3efc"]
 [ext_resource type="Script" path="res://Game/Menus/Util/quit.gd" id="5_krnyj"]
 
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ocheg")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -40,6 +42,7 @@ layout_mode = 2
 theme_override_constants/separation = 10
 
 [node name="Play" type="Button" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_neighbor_right = NodePath("../Play2")

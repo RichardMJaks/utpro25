@@ -4,6 +4,7 @@ extends Control
 
 func _ready() -> void:
 	_fade_in(2)
+	%Play.grab_focus()
 
 func set_player_1(character: MPVars.CHARACTER) -> void:
 	MPVars.p1_character = character
