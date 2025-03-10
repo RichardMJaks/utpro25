@@ -348,9 +348,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_us7mv"]
 _data = {
-"front_throw": SubResource("Animation_p3j07"),
-"top_throw": SubResource("Animation_6rjyv"),
-"walk": SubResource("Animation_jxkf5")
+&"front_throw": SubResource("Animation_p3j07"),
+&"top_throw": SubResource("Animation_6rjyv"),
+&"walk": SubResource("Animation_jxkf5")
 }
 
 [node name="BasicAI" instance=ExtResource("1_g7ffq")]

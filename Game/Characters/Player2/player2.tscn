@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://uje5vyh3x33v" path="res://Game/Art/assets/LeigT9.png" id="12_klvqd"]
 [ext_resource type="Texture2D" uid="uid://8qe6intfuo8a" path="res://Game/Art/assets/LeigT12.png" id="13_qjveg"]
 [ext_resource type="Texture2D" uid="uid://dyo1jgls7g57q" path="res://Game/Art/assets/leigurwalksprite.png" id="14_086hp"]
-[ext_resource type="Script" path="res://Game/Characters/Player2/player_2input_handler.gd" id="15_e5f7d"]
+[ext_resource type="Script" uid="uid://b473cmsk3w3ox" path="res://Game/Characters/Player2/player_2input_handler.gd" id="15_e5f7d"]
 [ext_resource type="AudioStream" uid="uid://bqg5f150p1h78" path="res://Game/Audio/Leiger/DevsChoice/catch_1.ogg" id="16_tbmea"]
 [ext_resource type="AudioStream" uid="uid://bix0vifqmftwc" path="res://Game/Audio/Leiger/DevsChoice/throw_2.ogg" id="17_ibc4c"]
 [ext_resource type="AudioStream" uid="uid://bfetad4c1mhbw" path="res://Game/Audio/Leiger/DevsChoice/throw_3.ogg" id="18_lk8xu"]
@@ -450,11 +450,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_us7mv"]
 _data = {
-"RESET": SubResource("Animation_ol2bx"),
-"front_throw": SubResource("Animation_p3j07"),
-"idle": SubResource("Animation_hduev"),
-"top_throw": SubResource("Animation_6rjyv"),
-"walk": SubResource("Animation_jxkf5")
+&"RESET": SubResource("Animation_ol2bx"),
+&"front_throw": SubResource("Animation_p3j07"),
+&"idle": SubResource("Animation_hduev"),
+&"top_throw": SubResource("Animation_6rjyv"),
+&"walk": SubResource("Animation_jxkf5")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pqgxj"]
@@ -486,7 +486,7 @@ script = ExtResource("15_e5f7d")
 
 [node name="Animator" parent="." index="5"]
 libraries = {
-"": SubResource("AnimationLibrary_us7mv")
+&"": SubResource("AnimationLibrary_us7mv")
 }
 
 [node name="Audio" type="Node" parent="." index="6"]

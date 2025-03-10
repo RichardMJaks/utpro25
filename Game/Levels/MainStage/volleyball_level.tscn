@@ -1,16 +1,16 @@
 [gd_scene load_steps=20 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
-[ext_resource type="Script" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
-[ext_resource type="Script" path="res://Game/Characters/Player/player_input_handler.gd" id="2_pinhv"]
-[ext_resource type="Script" path="res://Game/Levels/MainStage/camera_shake.gd" id="3_730w7"]
+[ext_resource type="Script" uid="uid://enldbo1rmxfk" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
+[ext_resource type="Script" uid="uid://bql5jfqd7p6cy" path="res://Game/Characters/Player/player_input_handler.gd" id="2_pinhv"]
+[ext_resource type="Script" uid="uid://owuavfuylsj7" path="res://Game/Levels/MainStage/camera_shake.gd" id="3_730w7"]
 [ext_resource type="PackedScene" uid="uid://dk23i070hnenw" path="res://Game/Ground/ground.tscn" id="4_ibp17"]
 [ext_resource type="AudioStream" uid="uid://cn8v7x8kwo85w" path="res://Game/Audio/Rock_folder/rock_hits_land_05.ogg" id="5_wfany"]
 [ext_resource type="AudioStream" uid="uid://rsuj1lrkmkat" path="res://Game/Audio/Rock_folder/rock_hits_land_06.ogg" id="6_jn4e5"]
 [ext_resource type="AudioStream" uid="uid://clkk8r43wjrp0" path="res://Game/Audio/Rock_folder/rock_hits_water_02.ogg" id="7_87nfj"]
 [ext_resource type="AudioStream" uid="uid://bqrh17iskcqgy" path="res://Game/Audio/Music/crickets.ogg" id="8_hv6pu"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_iqiqn"]
-[ext_resource type="Script" path="res://Game/Levels/MainStage/game_over-story.gd" id="10_gw0nn"]
+[ext_resource type="Script" uid="uid://8ph18dw0udpp" path="res://Game/Levels/MainStage/game_over-story.gd" id="10_gw0nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
 size = Vector2(864, 300.5)

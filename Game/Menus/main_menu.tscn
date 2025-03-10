@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://hr0u0a1sqlnx" path="res://Game/Art/Menus/mainmenuBG.png" id="1_6ovdu"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="1_53h3y"]
-[ext_resource type="Script" path="res://Game/Menus/main_menu-focus.gd" id="1_ocheg"]
-[ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="2_u3efc"]
-[ext_resource type="Script" path="res://Game/Menus/Util/quit.gd" id="5_krnyj"]
+[ext_resource type="Script" uid="uid://c0njukhlf0nim" path="res://Game/Menus/main_menu-focus.gd" id="1_ocheg"]
+[ext_resource type="Script" uid="uid://7dq41wqnxati" path="res://Game/Menus/Util/scene_changer.gd" id="2_u3efc"]
+[ext_resource type="Script" uid="uid://c766j2uhkkdw8" path="res://Game/Menus/Util/quit.gd" id="5_krnyj"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

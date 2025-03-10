@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d0ok4bbej2p80"]
 
 [ext_resource type="Texture2D" uid="uid://dotof3yxh071d" path="res://Game/Art/assets/black.png" id="1_0yrpm"]
-[ext_resource type="Script" path="res://Game/StoryScenes/dialog.gd" id="1_pmbkd"]
+[ext_resource type="Script" uid="uid://drf4fdk3na0tj" path="res://Game/StoryScenes/dialog.gd" id="1_pmbkd"]
 [ext_resource type="Texture2D" uid="uid://bnw44ebnbgcav" path="res://Game/Art/assets/dialog_background.png" id="2_4psm2"]
 [ext_resource type="Theme" uid="uid://x2mfs161k0id" path="res://Game/Styles/text.tres" id="3_rn2y2"]
 

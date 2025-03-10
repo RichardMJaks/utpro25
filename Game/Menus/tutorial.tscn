@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4g1soq5tondq" path="res://Game/Art/Menus/tutorialscreen.png" id="1_rimi0"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="2_31271"]
-[ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="3_2d450"]
+[ext_resource type="Script" uid="uid://7dq41wqnxati" path="res://Game/Menus/Util/scene_changer.gd" id="3_2d450"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3

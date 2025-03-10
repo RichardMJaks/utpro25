@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhcp4nrt11g3i"]
 
-[ext_resource type="Script" path="res://Game/Menus/character_selection.gd" id="1_d4w44"]
+[ext_resource type="Script" uid="uid://bs58hhgdpmd7i" path="res://Game/Menus/character_selection.gd" id="1_d4w44"]
 [ext_resource type="Texture2D" uid="uid://b2eei35cojbv4" path="res://Game/Art/Menus/leigericon.png" id="1_jhlmb"]
 [ext_resource type="Texture2D" uid="uid://gst0yfqcr5ik" path="res://Game/Art/Menus/lindaicon.png" id="2_irgby"]
-[ext_resource type="Script" path="res://Game/Menus/label-debug.gd" id="2_o6tuh"]
+[ext_resource type="Script" uid="uid://brfeckubuwgx4" path="res://Game/Menus/label-debug.gd" id="2_o6tuh"]
 [ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="3_3m5q3"]
-[ext_resource type="Script" path="res://Game/Menus/selection_button.gd" id="4_3ui1p"]
+[ext_resource type="Script" uid="uid://bnl8rndm6wosi" path="res://Game/Menus/selection_button.gd" id="4_3ui1p"]
 [ext_resource type="Texture2D" uid="uid://52io61udug2d" path="res://Game/Art/Menus/paganicon.png" id="4_kpjmw"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_jc13i"]
 

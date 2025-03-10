@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://brigmd3vsvmgl"]
 
 [ext_resource type="Texture2D" uid="uid://co1f4x7yeyokm" path="res://Game/Art/assets/bouldergameprop.png" id="1_ledqr"]
-[ext_resource type="Script" path="res://Game/Menus/DialogBox/dialog_box.gd" id="1_xfdxr"]
+[ext_resource type="Script" uid="uid://di13c21a5pcam" path="res://Game/Menus/DialogBox/dialog_box.gd" id="1_xfdxr"]
 
 [node name="DialogBox" type="Control"]
 process_mode = 3

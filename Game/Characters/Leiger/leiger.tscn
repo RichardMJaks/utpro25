@@ -449,11 +449,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_us7mv"]
 _data = {
-"RESET": SubResource("Animation_ol2bx"),
-"front_throw": SubResource("Animation_p3j07"),
-"idle": SubResource("Animation_hduev"),
-"top_throw": SubResource("Animation_6rjyv"),
-"walk": SubResource("Animation_jxkf5")
+&"RESET": SubResource("Animation_ol2bx"),
+&"front_throw": SubResource("Animation_p3j07"),
+&"idle": SubResource("Animation_hduev"),
+&"top_throw": SubResource("Animation_6rjyv"),
+&"walk": SubResource("Animation_jxkf5")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vpuip"]

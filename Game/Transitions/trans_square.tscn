@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqvwjdx4j777g"]
 
-[ext_resource type="Script" path="res://Game/Transitions/transition.gd" id="1_1ofp7"]
-[ext_resource type="Shader" path="res://Game/Shaders/transition.gdshader" id="2_d52xt"]
+[ext_resource type="Script" uid="uid://ng1u5t4atpkc" path="res://Game/Transitions/transition.gd" id="1_1ofp7"]
+[ext_resource type="Shader" uid="uid://bibtg40aiddas" path="res://Game/Shaders/transition.gdshader" id="2_d52xt"]
 [ext_resource type="Texture2D" uid="uid://ckx1d2d1lnade" path="res://Game/Art/ph_toll.jpg" id="3_ehusf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ir21"]

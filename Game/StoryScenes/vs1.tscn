@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cebp4rpdn07wa"]
 
-[ext_resource type="Script" path="res://Game/StoryScenes/vs.gd" id="1_6llkk"]
+[ext_resource type="Script" uid="uid://cmcr0lpo2jqy7" path="res://Game/StoryScenes/vs.gd" id="1_6llkk"]
 [ext_resource type="Texture2D" uid="uid://d30v6yqe8jvoj" path="res://Game/Art/Menus/tollvsleiger.png" id="2_roifx"]
 [ext_resource type="Texture2D" uid="uid://dotof3yxh071d" path="res://Game/Art/assets/black.png" id="4_1v7sv"]
 

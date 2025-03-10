@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_ue1ca"]
 [ext_resource type="PackedScene" uid="uid://bsmfui0dfhi0h" path="res://Game/Characters/Leiger/leiger.tscn" id="2_qs2yo"]
-[ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="3_6xp5i"]
+[ext_resource type="Script" uid="uid://8pn6w2q6rk4q" path="res://Game/Characters/BasicAI/behaviour.gd" id="3_6xp5i"]
 [ext_resource type="PackedScene" uid="uid://nk8crvl3oekp" path="res://Game/Menus/DialogBox/Leiger/leiger.tscn" id="3_ohmxp"]
 [ext_resource type="Resource" uid="uid://ckq2u75rxrt1" path="res://Game/Characters/Leiger/leiger.tres" id="3_xglgm"]
 [ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="4_wwsm1"]

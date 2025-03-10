@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cnh17nihq0hli"]
 
 [ext_resource type="Texture2D" uid="uid://hr0u0a1sqlnx" path="res://Game/Art/Menus/mainmenuBG.png" id="1_creqo"]
-[ext_resource type="Script" path="res://Game/Menus/Util/audio_slider.gd" id="2_1f2wm"]
+[ext_resource type="Script" uid="uid://qsf33131gl4v" path="res://Game/Menus/Util/audio_slider.gd" id="2_1f2wm"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="2_gsepi"]
 [ext_resource type="Texture2D" uid="uid://dotof3yxh071d" path="res://Game/Art/assets/black.png" id="2_tfffq"]
-[ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="3_k8ejn"]
+[ext_resource type="Script" uid="uid://7dq41wqnxati" path="res://Game/Menus/Util/scene_changer.gd" id="3_k8ejn"]
 [ext_resource type="Theme" uid="uid://x2mfs161k0id" path="res://Game/Styles/text.tres" id="3_mjwf5"]
 
 [node name="Settings" type="Control"]

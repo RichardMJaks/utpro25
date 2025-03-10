@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bp8k4nuhd0p81"]
 
-[ext_resource type="Script" path="res://Game/Menus/Util/scene_changer.gd" id="1_6w75q"]
-[ext_resource type="Script" path="res://Game/Menus/Util/audio_slider.gd" id="1_choop"]
+[ext_resource type="Script" uid="uid://7dq41wqnxati" path="res://Game/Menus/Util/scene_changer.gd" id="1_6w75q"]
+[ext_resource type="Script" uid="uid://qsf33131gl4v" path="res://Game/Menus/Util/audio_slider.gd" id="1_choop"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3

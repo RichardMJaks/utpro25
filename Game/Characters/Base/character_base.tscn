@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bu7452mkngn4r"]
 
-[ext_resource type="Script" path="res://Game/Characters/Base/character_base.gd" id="1_4mp8t"]
-[ext_resource type="Script" path="res://Game/Characters/Components/input_handler.gd" id="2_cgqy4"]
+[ext_resource type="Script" uid="uid://b4btoe1oc3ova" path="res://Game/Characters/Base/character_base.gd" id="1_4mp8t"]
+[ext_resource type="Script" uid="uid://bhtgcabffdimn" path="res://Game/Characters/Components/input_handler.gd" id="2_cgqy4"]
 [ext_resource type="PackedScene" uid="uid://mmloa42cnmm5" path="res://Game/Characters/Player/hit_buffer.tscn" id="3_v2lwx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vv1gm"]

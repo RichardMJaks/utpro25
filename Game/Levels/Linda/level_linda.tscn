@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bhrsdy0yfwrer" path="res://Game/Levels/MainStage/volleyball_level.tscn" id="1_o8f8a"]
 [ext_resource type="PackedScene" uid="uid://c06pvi43m4vae" path="res://Game/Characters/Linda/linda.tscn" id="2_elpcl"]
 [ext_resource type="PackedScene" uid="uid://cjx4d0pukqak2" path="res://Game/Menus/DialogBox/Linda/linda.tscn" id="3_7i632"]
-[ext_resource type="Script" path="res://Game/Characters/BasicAI/behaviour.gd" id="3_on8ux"]
+[ext_resource type="Script" uid="uid://8pn6w2q6rk4q" path="res://Game/Characters/BasicAI/behaviour.gd" id="3_on8ux"]
 [ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="4_augxg"]
 [ext_resource type="Resource" uid="uid://b4pj1es55c0ag" path="res://Game/Characters/Linda/linda.tres" id="4_mxwnb"]
 [ext_resource type="Texture2D" uid="uid://gst0yfqcr5ik" path="res://Game/Art/Menus/lindaicon.png" id="5_ejywi"]

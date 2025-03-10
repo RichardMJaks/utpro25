@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bu7452mkngn4r" path="res://Game/Characters/Base/character_base.tscn" id="1_om7nk"]
 [ext_resource type="Texture2D" uid="uid://doqpc81cms7ve" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll1.png" id="2_c0of2"]
-[ext_resource type="Script" path="res://Game/Characters/Player/player_input_handler.gd" id="2_rbr0d"]
+[ext_resource type="Script" uid="uid://bql5jfqd7p6cy" path="res://Game/Characters/Player/player_input_handler.gd" id="2_rbr0d"]
 [ext_resource type="Texture2D" uid="uid://dunirirr1y3rr" path="res://Game/Art/Toll_animatsioon/Viskamine_alt/toll2.png" id="3_brog0"]
 [ext_resource type="Texture2D" uid="uid://bg01r44ag510t" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll2.png" id="3_yne8h"]
 [ext_resource type="Texture2D" uid="uid://erlbnpxei0i8" path="res://Game/Art/Toll_animatsioon/Kõndimine/toll3.png" id="4_x581x"]
@@ -446,11 +446,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_36ayt"]
 _data = {
-"RESET": SubResource("Animation_lo37y"),
-"front_throw": SubResource("Animation_banqd"),
-"idle": SubResource("Animation_0qvr1"),
-"top_throw": SubResource("Animation_obj6g"),
-"walk": SubResource("Animation_fgt8e")
+&"RESET": SubResource("Animation_lo37y"),
+&"front_throw": SubResource("Animation_banqd"),
+&"idle": SubResource("Animation_0qvr1"),
+&"top_throw": SubResource("Animation_obj6g"),
+&"walk": SubResource("Animation_fgt8e")
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_meitp"]
@@ -493,7 +493,7 @@ script = ExtResource("2_rbr0d")
 [node name="Animator" parent="." index="5"]
 process_mode = 3
 libraries = {
-"": SubResource("AnimationLibrary_36ayt")
+&"": SubResource("AnimationLibrary_36ayt")
 }
 autoplay = "idle"
 
