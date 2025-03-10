@@ -64,6 +64,7 @@ var post_fade_delay: float = 1
 #endregion
 
 func _ready() -> void:
+	%Fader.visible = true
 	tree.paused = true
 	if is_pvp:
 		ps_player_1 = characters[MPVars.p1_character]

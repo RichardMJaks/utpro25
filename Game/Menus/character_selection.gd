@@ -3,6 +3,7 @@ extends Control
 @onready var fader: ColorRect = %Fader
 
 func _ready() -> void:
+	%Fader.visible = true
 	_fade_in(2)
 	%Play.grab_focus()
 
