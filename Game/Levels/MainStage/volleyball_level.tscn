@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=22 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" uid="uid://enldbo1rmxfk" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
@@ -11,6 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://bqrh17iskcqgy" path="res://Game/Audio/Music/crickets.ogg" id="8_hv6pu"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_iqiqn"]
 [ext_resource type="Script" uid="uid://8ph18dw0udpp" path="res://Game/Levels/MainStage/game_over-story.gd" id="10_gw0nn"]
+[ext_resource type="Texture2D" uid="uid://bri4438gvie1f" path="res://addons/controller_icons/assets/ps5/circle.png" id="12_nnth5"]
+[ext_resource type="Texture2D" uid="uid://c05iqfpx578f2" path="res://addons/controller_icons/assets/ps5/triangle.png" id="13_pfxvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
 size = Vector2(864, 300.5)
@@ -198,13 +200,42 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "Su saar hävines!"
+horizontal_alignment = 1
 
 [node name="TryAgain" type="Button" parent="HUD/GameOver/VBoxContainer"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 theme = ExtResource("8_iqiqn")
 text = "proovin uuesti"
+
+[node name="TryAgainControllerText" type="HBoxContainer" parent="HUD/GameOver/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/GameOver/VBoxContainer/TryAgainControllerText"]
+layout_mode = 2
+texture = ExtResource("12_nnth5")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HUD/GameOver/VBoxContainer/TryAgainControllerText"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Proovi uuesti"
+
+[node name="ReturnToMenuControllerText" type="HBoxContainer" parent="HUD/GameOver/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD/GameOver/VBoxContainer/ReturnToMenuControllerText"]
+layout_mode = 2
+texture = ExtResource("13_pfxvp")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="HUD/GameOver/VBoxContainer/ReturnToMenuControllerText"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Tagasi menüüsse"
 
 [node name="Fader" type="ColorRect" parent="HUD"]
 unique_name_in_owner = true

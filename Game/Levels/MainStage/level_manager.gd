@@ -64,6 +64,10 @@ var post_fade_delay: float = 1
 #endregion
 
 func _ready() -> void:
+
+	DevShortcuts.global_lose.connect(_handle_win.bind(PlayerVars.SIDE.RIGHT))
+	DevShortcuts.global_win.connect(_handle_win.bind(PlayerVars.SIDE.LEFT))
+
 	%Fader.visible = true
 	tree.paused = true
 	if is_pvp:
@@ -179,6 +183,7 @@ func _check_health() -> void:
 	_start_game()
 	
 func _handle_win(winning_side: PlayerVars.SIDE) -> void:
+	tree.paused = true # This is incase we call it from dev shortcuts
 	winner = winning_side
 
 	if is_pvp:
