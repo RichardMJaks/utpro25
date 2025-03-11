@@ -6,7 +6,7 @@ extends Control
 func _ready() -> void:
 	visibility_changed.connect(%TryAgain.grab_focus)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not visible:
 		return
 
