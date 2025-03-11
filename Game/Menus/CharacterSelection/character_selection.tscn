@@ -1,0 +1,341 @@
+[gd_scene load_steps=22 format=3 uid="uid://bhcp4nrt11g3i"]
+
+[ext_resource type="Script" uid="uid://bs58hhgdpmd7i" path="res://Game/Menus/CharacterSelection/character_selection.gd" id="1_d4w44"]
+[ext_resource type="Texture2D" uid="uid://b2eei35cojbv4" path="res://Game/Art/Menus/leigericon.png" id="1_jhlmb"]
+[ext_resource type="Texture2D" uid="uid://gst0yfqcr5ik" path="res://Game/Art/Menus/lindaicon.png" id="2_irgby"]
+[ext_resource type="Script" uid="uid://brfeckubuwgx4" path="res://Game/Menus/CharacterSelection/label-debug.gd" id="2_o6tuh"]
+[ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="3_3m5q3"]
+[ext_resource type="Script" uid="uid://cvbv10pe83ujh" path="res://Game/Menus/CharacterSelection/character_select.gd" id="3_ylai1"]
+[ext_resource type="Script" uid="uid://bnl8rndm6wosi" path="res://Game/Menus/CharacterSelection/selection_button.gd" id="4_3ui1p"]
+[ext_resource type="Texture2D" uid="uid://52io61udug2d" path="res://Game/Art/Menus/paganicon.png" id="4_kpjmw"]
+[ext_resource type="Texture2D" uid="uid://c0dvwhes2tox5" path="res://Game/Art/Characters/vanapagan.png" id="4_n2w62"]
+[ext_resource type="Texture2D" uid="uid://4mr0cyh3emsw" path="res://Game/Art/Characters/linda.png" id="4_ybhqa"]
+[ext_resource type="Texture2D" uid="uid://eoy6lfhvlhq3" path="res://Game/Art/Characters/leiger.png" id="5_2tdoo"]
+[ext_resource type="Texture2D" uid="uid://belyhno2tge45" path="res://addons/controller_icons/assets/ps5/cross.png" id="8_6lkba"]
+[ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_jc13i"]
+[ext_resource type="Texture2D" uid="uid://bb8qjwcmyrtk4" path="res://addons/controller_icons/assets/ps5/square.png" id="9_10npf"]
+[ext_resource type="Texture2D" uid="uid://bri4438gvie1f" path="res://addons/controller_icons/assets/ps5/circle.png" id="11_h2t7u"]
+[ext_resource type="Shader" uid="uid://ew6dt33ujghy" path="res://Game/Menus/CharacterSelection/character-fade.gdshader" id="13_n2w62"]
+[ext_resource type="Texture2D" uid="uid://cxig60j7cbjcg" path="res://Game/Art/Characters/toll.png" id="14_ybhqa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2is0y"]
+shader = ExtResource("13_n2w62")
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oi6jh"]
+shader = ExtResource("13_n2w62")
+shader_parameter/offset = 0.0
+
+[sub_resource type="Gradient" id="Gradient_ybhqa"]
+offsets = PackedFloat32Array(0.248588, 0.70904, 0.844633)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2tdoo"]
+gradient = SubResource("Gradient_ybhqa")
+width = 3840
+height = 2160
+fill = 2
+fill_from = Vector2(0.509615, 0.491453)
+fill_to = Vector2(0.745192, 0.863248)
+
+[node name="CharacterSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d4w44")
+character_textures = Dictionary[int, Texture2D]({
+0: ExtResource("4_ybhqa"),
+1: ExtResource("14_ybhqa"),
+2: ExtResource("5_2tdoo"),
+3: ExtResource("4_n2w62")
+})
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 263.0
+offset_right = 611.0
+offset_bottom = 284.0
+theme_override_font_sizes/font_size = 256
+script = ExtResource("2_o6tuh")
+
+[node name="CharacterDisplay" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 484.0
+offset_top = -400.0
+offset_right = -484.0
+offset_bottom = 880.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharP1" type="TextureRect" parent="CharacterDisplay"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2is0y")
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("4_ybhqa")
+expand_mode = 5
+stretch_mode = 5
+flip_h = true
+
+[node name="Control" type="Control" parent="CharacterDisplay"]
+layout_mode = 2
+
+[node name="CharP2" type="TextureRect" parent="CharacterDisplay"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_oi6jh")
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_2tdoo")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Fade" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 3840.0
+offset_bottom = 2160.0
+texture = SubResource("GradientTexture2D_2tdoo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="LeftPadding" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="P1Select" type="VBoxContainer" parent="HBoxContainer"]
+process_priority = 1
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+script = ExtResource("3_ylai1")
+inactive_modulate = Color(0.396889, 0.396889, 0.396889, 1)
+
+[node name="P1Leiger" type="TextureRect" parent="HBoxContainer/P1Select"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+focus_neighbor_right = NodePath("../../Center/Play/VBoxContainer/HBoxContainer/Play")
+focus_neighbor_bottom = NodePath("../P1Linda")
+texture = ExtResource("1_jhlmb")
+stretch_mode = 4
+flip_h = true
+script = ExtResource("4_3ui1p")
+character = 2
+
+[node name="P1Linda" type="TextureRect" parent="HBoxContainer/P1Select"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+focus_neighbor_top = NodePath("../P1Leiger")
+focus_neighbor_right = NodePath("../../Center/Play/VBoxContainer/HBoxContainer/Play")
+focus_neighbor_bottom = NodePath("../P1Toll")
+texture = ExtResource("2_irgby")
+stretch_mode = 4
+flip_h = true
+script = ExtResource("4_3ui1p")
+
+[node name="P1Toll" type="TextureRect" parent="HBoxContainer/P1Select"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+focus_neighbor_top = NodePath("../P1Linda")
+focus_neighbor_right = NodePath("../../Center/Play/VBoxContainer/HBoxContainer/Play")
+focus_neighbor_bottom = NodePath("../P1Vanakurat")
+texture = ExtResource("3_3m5q3")
+stretch_mode = 4
+script = ExtResource("4_3ui1p")
+character = 1
+
+[node name="P1Vanakurat" type="TextureRect" parent="HBoxContainer/P1Select"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+focus_neighbor_top = NodePath("../P1Toll")
+focus_neighbor_right = NodePath("../../Center/Play/VBoxContainer/HBoxContainer/Play")
+texture = ExtResource("4_kpjmw")
+stretch_mode = 4
+flip_h = true
+script = ExtResource("4_3ui1p")
+character = 3
+
+[node name="Center" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TopMargin" type="Control" parent="HBoxContainer/Center"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="ControlGuides" type="HBoxContainer" parent="HBoxContainer/Center"]
+layout_mode = 2
+
+[node name="ChooseCharacter" type="HBoxContainer" parent="HBoxContainer/Center/ControlGuides"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Center/ControlGuides/ChooseCharacter"]
+layout_mode = 2
+texture = ExtResource("9_10npf")
+expand_mode = 3
+
+[node name="Play" type="Label" parent="HBoxContainer/Center/ControlGuides/ChooseCharacter"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../../../P1Select/P1Leiger")
+focus_neighbor_right = NodePath("../../../../../P2Select/PLeiger")
+theme = ExtResource("8_jc13i")
+theme_override_font_sizes/font_size = 96
+text = "Vali tegelane"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnToMenu" type="HBoxContainer" parent="HBoxContainer/Center/ControlGuides"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Center/ControlGuides/ReturnToMenu"]
+layout_mode = 2
+texture = ExtResource("11_h2t7u")
+expand_mode = 3
+
+[node name="Play" type="Label" parent="HBoxContainer/Center/ControlGuides/ReturnToMenu"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../../../P1Select/P1Leiger")
+focus_neighbor_right = NodePath("../../../../../P2Select/PLeiger")
+theme = ExtResource("8_jc13i")
+theme_override_font_sizes/font_size = 96
+text = "Tagasi menüüsse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MiddleMargin" type="Control" parent="HBoxContainer/Center"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Play" type="CenterContainer" parent="HBoxContainer/Center"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/Center/Play"]
+layout_mode = 2
+theme_override_constants/separation = 90
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/Center/Play/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Center/Play/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_6lkba")
+expand_mode = 3
+
+[node name="Play" type="Label" parent="HBoxContainer/Center/Play/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../../../P1Select/P1Leiger")
+focus_neighbor_right = NodePath("../../../../../P2Select/P2Leiger")
+theme = ExtResource("8_jc13i")
+theme_override_font_sizes/font_size = 96
+text = "MÄNGI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/Center/Play/VBoxContainer"]
+layout_mode = 2
+
+[node name="BottomPadding" type="Control" parent="HBoxContainer/Center"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="P2Select" type="VBoxContainer" parent="HBoxContainer"]
+process_priority = 1
+layout_mode = 2
+size_flags_horizontal = 8
+alignment = 1
+script = ExtResource("3_ylai1")
+device = 1
+
+[node name="P2Leiger" type="TextureRect" parent="HBoxContainer/P2Select"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+focus_neighbor_left = NodePath("../../Center/Play/VBoxContainer/HBoxContainer/Play")
+focus_neighbor_bottom = NodePath("../P2Linda")
+texture = ExtResource("1_jhlmb")
+stretch_mode = 4
+script = ExtResource("4_3ui1p")
+character = 2
+
+[node name="P2Linda" type="TextureRect" parent="HBoxContainer/P2Select"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+focus_neighbor_left = NodePath("../../Center/Play/VBoxContainer/HBoxContainer/Play")
+focus_neighbor_top = NodePath("../P2Leiger")
+focus_neighbor_bottom = NodePath("../P2Toll")
+texture = ExtResource("2_irgby")
+stretch_mode = 4
+script = ExtResource("4_3ui1p")
+
+[node name="P2Toll" type="TextureRect" parent="HBoxContainer/P2Select"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+focus_neighbor_left = NodePath("../../Center/Play/VBoxContainer/HBoxContainer/Play")
+focus_neighbor_top = NodePath("../P2Linda")
+focus_neighbor_bottom = NodePath("../P2Vanakurat")
+texture = ExtResource("3_3m5q3")
+stretch_mode = 4
+flip_h = true
+script = ExtResource("4_3ui1p")
+character = 1
+
+[node name="P2Vanakurat" type="TextureRect" parent="HBoxContainer/P2Select"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+focus_neighbor_left = NodePath("../../Center/Play/VBoxContainer/HBoxContainer/Play")
+focus_neighbor_top = NodePath("../P2Toll")
+texture = ExtResource("4_kpjmw")
+stretch_mode = 4
+script = ExtResource("4_3ui1p")
+character = 3
+
+[node name="RightPadding" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Fader" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[connection signal="changed" from="HBoxContainer/P1Select" to="." method="set_player_1"]
+[connection signal="changed" from="HBoxContainer/P2Select" to="." method="set_player_2"]

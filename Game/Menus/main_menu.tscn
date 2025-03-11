@@ -63,7 +63,7 @@ theme = ExtResource("1_53h3y")
 theme_override_font_sizes/font_size = 140
 text = "sõbraga"
 script = ExtResource("2_u3efc")
-scene_path = "res://Game/Menus/character_selection.tscn"
+scene_path = "uid://bhcp4nrt11g3i"
 
 [node name="Tutorial" type="Button" parent="VBoxContainer"]
 layout_mode = 2
