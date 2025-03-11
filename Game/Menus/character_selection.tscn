@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhcp4nrt11g3i"]
+[gd_scene load_steps=10 format=3 uid="uid://bhcp4nrt11g3i"]
 
 [ext_resource type="Script" uid="uid://bs58hhgdpmd7i" path="res://Game/Menus/character_selection.gd" id="1_d4w44"]
 [ext_resource type="Texture2D" uid="uid://b2eei35cojbv4" path="res://Game/Art/Menus/leigericon.png" id="1_jhlmb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://33ynjhg6xri4" path="res://Game/Art/Menus/tollicon.png" id="3_3m5q3"]
 [ext_resource type="Script" uid="uid://bnl8rndm6wosi" path="res://Game/Menus/selection_button.gd" id="4_3ui1p"]
 [ext_resource type="Texture2D" uid="uid://52io61udug2d" path="res://Game/Art/Menus/paganicon.png" id="4_kpjmw"]
+[ext_resource type="Texture2D" uid="uid://belyhno2tge45" path="res://addons/controller_icons/assets/ps5/cross.png" id="8_6lkba"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_jc13i"]
 
 [node name="CharacterSelection" type="Control"]
@@ -57,7 +58,7 @@ alignment = 1
 [node name="P1Leiger" type="TextureButton" parent="HBoxContainer/P1Select"]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
-focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/Play")
 focus_neighbor_bottom = NodePath("../P1Linda")
 texture_normal = ExtResource("1_jhlmb")
 stretch_mode = 4
@@ -69,7 +70,7 @@ character = 2
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 focus_neighbor_top = NodePath("../P1Leiger")
-focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/Play")
 focus_neighbor_bottom = NodePath("../P1Toll")
 texture_normal = ExtResource("2_irgby")
 stretch_mode = 4
@@ -80,7 +81,7 @@ script = ExtResource("4_3ui1p")
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 focus_neighbor_top = NodePath("../P1Linda")
-focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/Play")
 focus_neighbor_bottom = NodePath("../P1Vanakurat")
 texture_normal = ExtResource("3_3m5q3")
 stretch_mode = 4
@@ -91,7 +92,7 @@ character = 1
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 focus_neighbor_top = NodePath("../P1Toll")
-focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_right = NodePath("../../VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/Play")
 texture_normal = ExtResource("4_kpjmw")
 stretch_mode = 4
 flip_h = true
@@ -108,14 +109,31 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 
-[node name="Play" type="Button" parent="HBoxContainer/VBoxContainer/CenterContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(500, 300)
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../../P1Select/P1Leiger")
-focus_neighbor_right = NodePath("../../../P2Select/PLeiger")
+theme_override_constants/separation = 90
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_6lkba")
+expand_mode = 3
+
+[node name="Play" type="Label" parent="HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../../../P1Select/P1Leiger")
+focus_neighbor_right = NodePath("../../../../../P2Select/PLeiger")
 theme = ExtResource("8_jc13i")
+theme_override_font_sizes/font_size = 96
 text = "MÄNGI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="HBoxContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="BottomPadding" type="Control" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -129,7 +147,7 @@ alignment = 1
 [node name="PLeiger" type="TextureButton" parent="HBoxContainer/P2Select"]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/Play")
 focus_neighbor_bottom = NodePath("../P2Linda")
 texture_normal = ExtResource("1_jhlmb")
 stretch_mode = 4
@@ -139,7 +157,7 @@ character = 2
 [node name="P2Linda" type="TextureButton" parent="HBoxContainer/P2Select"]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/Play")
 focus_neighbor_top = NodePath("../PLeiger")
 focus_neighbor_bottom = NodePath("../P2Toll")
 texture_normal = ExtResource("2_irgby")
@@ -149,7 +167,7 @@ script = ExtResource("4_3ui1p")
 [node name="P2Toll" type="TextureButton" parent="HBoxContainer/P2Select"]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/Play")
 focus_neighbor_top = NodePath("../P2Linda")
 focus_neighbor_bottom = NodePath("../P2Vanakurat")
 texture_normal = ExtResource("3_3m5q3")
@@ -161,7 +179,7 @@ character = 1
 [node name="P2Vanakurat" type="TextureButton" parent="HBoxContainer/P2Select"]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
-focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/Play")
+focus_neighbor_left = NodePath("../../VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/Play")
 focus_neighbor_top = NodePath("../P2Toll")
 texture_normal = ExtResource("4_kpjmw")
 stretch_mode = 4
@@ -190,7 +208,6 @@ anchor_mode = 0
 [connection signal="custom_button_pressed" from="HBoxContainer/P1Select/P1Linda" to="." method="set_player_1"]
 [connection signal="custom_button_pressed" from="HBoxContainer/P1Select/P1Toll" to="." method="set_player_1"]
 [connection signal="custom_button_pressed" from="HBoxContainer/P1Select/P1Vanakurat" to="." method="set_player_1"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/CenterContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="custom_button_pressed" from="HBoxContainer/P2Select/PLeiger" to="." method="set_player_2"]
 [connection signal="custom_button_pressed" from="HBoxContainer/P2Select/P2Linda" to="." method="set_player_2"]
 [connection signal="custom_button_pressed" from="HBoxContainer/P2Select/P2Toll" to="." method="set_player_2"]

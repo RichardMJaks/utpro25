@@ -27,6 +27,12 @@ func _fade_out(tween_time: float) -> Tween:
 	
 	return tween
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed(&"ui_continue"):
+		_on_play_pressed()
+	if Input.is_action_just_pressed(&"ui_return"):
+		get_tree().change_scene_to_file("res://Game/Menus/main_menu.tscn")
+
 func _on_play_pressed() -> void:
 	var tween = _fade_out(2)
 	tween.tween_callback(
