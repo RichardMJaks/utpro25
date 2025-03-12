@@ -30,6 +30,15 @@ func _process(_delta: float) -> void:
     if current == -1:
         current = 0
         changed.emit(switch_active(0))
+
+    if Input.is_action_just_pressed(PREFIX[device] + "lock"):
+        print(PREFIX[device] + "lock")
+        owner.call(PREFIX[device] + "lock")
+
+    # Don't let them change character after locking it in
+    if owner.get(PREFIX[device] + "locked"):
+        return
+
     var dir = 0
     if Input.is_action_just_pressed(PREFIX[device] + "up"): dir = -1
     if Input.is_action_just_pressed(PREFIX[device] + "down"): dir = 1
