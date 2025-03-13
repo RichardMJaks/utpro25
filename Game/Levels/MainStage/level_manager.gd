@@ -66,6 +66,7 @@ var post_fade_delay: float = 1
 #endregion
 
 func _ready() -> void:
+	MusicPlayer.get_child(0)._resume_music()
 	SignalBus.served.connect(
 		func(): 
 			var angle: Vector2 = Vector2.from_angle(
