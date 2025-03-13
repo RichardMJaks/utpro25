@@ -30,3 +30,5 @@ func set_bounce() -> bool:
 
 func _on_hit_buffer_timeout() -> void:
 	wants_bounce = false
+	wants_front_bounce = false
+	wants_top_bounce = false
