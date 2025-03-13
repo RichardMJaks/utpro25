@@ -2,6 +2,9 @@ extends InputHandler
 
 @onready var hit_buffer: Timer = %HitBuffer
 
+func _ready() -> void:
+	hit_buffer.timeout.connect(_on_hit_buffer_timeout)
+
 func set_dir() -> int:
 	@warning_ignore("narrowing_conversion")
 	return Input.get_axis("m2_left", "m2_right")
@@ -29,3 +32,5 @@ func set_bounce() -> bool:
 
 func _on_hit_buffer_timeout() -> void:
 	wants_bounce = false
+	wants_front_bounce = false
+	wants_top_bounce = false

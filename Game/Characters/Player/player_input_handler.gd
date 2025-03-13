@@ -2,6 +2,9 @@ extends InputHandler
 
 @onready var hit_buffer: Timer = %HitBuffer
 
+func _ready() -> void:
+	hit_buffer.timeout.connect(_on_hit_buffer_timeout)
+
 func set_dir() -> int:
 	@warning_ignore("narrowing_conversion")
 	return Input.get_axis("m_left", "m_right")
