@@ -1,0 +1,114 @@
+[gd_scene load_steps=16 format=3 uid="uid://bndx66eurwmys"]
+
+[ext_resource type="Texture2D" uid="uid://dnfur1qeyma1b" path="res://Game/Art/vetevana/1.png" id="1_abo1n"]
+[ext_resource type="Texture2D" uid="uid://c6ajt8a817n5c" path="res://Game/Art/vetevana/2.png" id="2_pwhmu"]
+[ext_resource type="Texture2D" uid="uid://bhowx38elsgss" path="res://Game/Art/vetevana/3.png" id="3_kdj4c"]
+[ext_resource type="Texture2D" uid="uid://3yd50bnxikam" path="res://Game/Art/vetevana/4.png" id="4_iy5mc"]
+[ext_resource type="Texture2D" uid="uid://coyjsvbfhmprn" path="res://Game/Art/vetevana/5.png" id="5_njowj"]
+[ext_resource type="Texture2D" uid="uid://cp55oilksi15t" path="res://Game/Art/vetevana/6.png" id="6_we677"]
+[ext_resource type="Texture2D" uid="uid://nfpfk5pfioot" path="res://Game/Art/vetevana/7.png" id="7_vl7ja"]
+[ext_resource type="Texture2D" uid="uid://1tyokn6wrlt5" path="res://Game/Art/vetevana/8.png" id="8_agr0u"]
+[ext_resource type="Texture2D" uid="uid://craaan54lh4nv" path="res://Game/Art/vetevana/9.png" id="9_njmdo"]
+[ext_resource type="Texture2D" uid="uid://baw0rk51xhjy7" path="res://Game/Art/vetevana/10.png" id="10_hc3hc"]
+[ext_resource type="Texture2D" uid="uid://d2k4vag5yyh56" path="res://Game/Art/vetevana/11.png" id="11_rn0id"]
+[ext_resource type="Script" uid="uid://o2n8nskbays1" path="res://Game/Characters/Vetevana/vetevana.gd" id="12_pwhmu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kg7t5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_abo1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pwhmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kdj4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iy5mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_njowj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_we677")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vl7ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_agr0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_njmdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hc3hc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rn0id")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_kdj4c"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.5, 0.583333, 0.666667, 0.75, 0.833333, 0.916667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"served"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iy5mc"]
+_data = {
+&"default": SubResource("Animation_kdj4c")
+}
+
+[node name="vetevana" type="AnimatedSprite2D" node_paths=PackedStringArray("anim")]
+sprite_frames = SubResource("SpriteFrames_kg7t5")
+frame = 11
+script = ExtResource("12_pwhmu")
+anim = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_iy5mc")
+}

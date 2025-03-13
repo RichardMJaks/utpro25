@@ -27,13 +27,15 @@ var player_2: Character
 
 var volleyball: Volleyball
 
+@export var vetevana: AnimatedSprite2D
+
 @onready var tree: SceneTree = get_tree()
 
 @onready var player_1_pos: Marker2D = %Player1Position
 @onready var player_2_pos: Marker2D = %Player2Position
 
-@onready var vb_1_pos: Marker2D = %VolleyballP1Position
-@onready var vb_2_pos: Marker2D = %VolleyballP2Position
+@onready var vb_pos = %VolleyballPosition
+@onready var vb_dir = 1
 
 # UI
 @onready var fader: Control = %Fader
@@ -64,7 +66,15 @@ var post_fade_delay: float = 1
 #endregion
 
 func _ready() -> void:
-
+	SignalBus.served.connect(
+		func(): 
+			var angle: Vector2 = Vector2.from_angle(
+				randf_range(deg_to_rad(-60), deg_to_rad(-70))
+			)
+			volleyball.freeze = false
+			volleyball.linear_velocity = angle * PlayerVars.bounce_force
+			volleyball.linear_velocity.x *= vb_dir
+	)
 	DevShortcuts.global_lose.connect(_handle_win.bind(PlayerVars.SIDE.RIGHT))
 	DevShortcuts.global_win.connect(_handle_win.bind(PlayerVars.SIDE.LEFT))
 
@@ -116,6 +126,9 @@ func _start_level(delay: float) -> void:
 	else:
 		next_action_timer.timeout.connect(_start_game)
 
+func _delay_before_start() -> void:
+	tree.create_timer(2).timeout.connect(_start_game)
+
 func _start_game() -> void:
 	if dialog_box:
 		dialog_box.visible = false
@@ -125,17 +138,19 @@ func _start_game() -> void:
 		func(): 
 			tree.paused = false
 			SignalBus.game_continued.emit()
+			vetevana.throw(vb_dir)
 	)
 
 	_reset_player_positions()
 	volleyball = _spawn_volleyball(ps_volleyball)
-	
+	volleyball.global_position = vb_pos.global_position	
 	# Set Ball Start Position
 	player_starts = !player_starts
 	if player_starts:
-		volleyball.global_position = vb_1_pos.global_position
+		vb_dir = -1
 	else:
-		volleyball.global_position = vb_2_pos.global_position
+		vb_dir = 1
+	volleyball.freeze = true
 
 func _reset_player_positions() -> void:
 	player_1.global_position = player_1_pos.global_position
@@ -180,7 +195,7 @@ func _check_health() -> void:
 		return
 	
 	a_crickets.play()
-	_start_game()
+	_delay_before_start()
 	
 func _handle_win(winning_side: PlayerVars.SIDE) -> void:
 	tree.paused = true # This is incase we call it from dev shortcuts
@@ -239,7 +254,8 @@ func _spawn_volleyball(ps: PackedScene) -> Volleyball:
 	vb.body_entered.connect(_check_collision)
 	add_child(vb, true)
 
-	vb.linear_velocity = Vector2.UP * 1000
+	
+	vb.sleeping = true
 	
 	return vb
 #endregion

@@ -8,3 +8,6 @@ func make_invisible() -> void:
 func make_visible() -> void:
 	freeze = false
 	visible = true
+
+func _ready() -> void:
+	SignalBus.served.connect(func(): sleeping = false)

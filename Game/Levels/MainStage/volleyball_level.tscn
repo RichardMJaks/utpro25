@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bhrsdy0yfwrer"]
+[gd_scene load_steps=23 format=3 uid="uid://bhrsdy0yfwrer"]
 
 [ext_resource type="Texture2D" uid="uid://fsk5lxsmts2r" path="res://Game/Art/assets/demo_bg.png" id="1_8hslq"]
 [ext_resource type="Script" uid="uid://enldbo1rmxfk" path="res://Game/Levels/MainStage/level_manager.gd" id="1_c342i"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://8ph18dw0udpp" path="res://Game/Levels/MainStage/game_over-story.gd" id="10_gw0nn"]
 [ext_resource type="Texture2D" uid="uid://bri4438gvie1f" path="res://addons/controller_icons/assets/ps5/circle.png" id="12_nnth5"]
 [ext_resource type="Texture2D" uid="uid://c05iqfpx578f2" path="res://addons/controller_icons/assets/ps5/triangle.png" id="13_pfxvp"]
+[ext_resource type="PackedScene" uid="uid://bndx66eurwmys" path="res://Game/Characters/Vetevana/vetevana.tscn" id="14_pfxvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
 size = Vector2(864, 300.5)
@@ -45,10 +46,11 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("7_87nfj")
 
-[node name="VolleyballLevel" type="Node2D"]
+[node name="VolleyballLevel" type="Node2D" node_paths=PackedStringArray("vetevana")]
 process_mode = 3
 script = ExtResource("1_c342i")
 p1_script = ExtResource("2_pinhv")
+vetevana = NodePath("Vetevana")
 
 [node name="DemoBg" type="Sprite2D" parent="."]
 z_index = -2
@@ -71,13 +73,9 @@ anchor_mode = 0
 zoom = Vector2(2, 2)
 script = ExtResource("3_730w7")
 
-[node name="VolleyballP1Position" type="Marker2D" parent="."]
+[node name="VolleyballPosition" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(384, 320)
-
-[node name="VolleyballP2Position" type="Marker2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(1472, 320)
+position = Vector2(958, 639)
 
 [node name="Colliders" type="Node2D" parent="."]
 
@@ -135,6 +133,11 @@ collision_mask = 0
 position = Vector2(-184, 118)
 shape = SubResource("RectangleShape2D_68hts")
 debug_color = Color(0.549624, 0.310666, 0.367176, 0.42)
+
+[node name="Vetevana" parent="." instance=ExtResource("14_pfxvp")]
+unique_name_in_owner = true
+position = Vector2(947, 721)
+frame_progress = 0.0327673
 
 [node name="ArenaMidpointHelper" type="Marker2D" parent="."]
 unique_name_in_owner = true
