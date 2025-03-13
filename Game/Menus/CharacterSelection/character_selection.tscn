@@ -13,10 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://eoy6lfhvlhq3" path="res://Game/Art/Characters/leiger.png" id="5_2tdoo"]
 [ext_resource type="Texture2D" uid="uid://belyhno2tge45" path="res://addons/controller_icons/assets/ps5/cross.png" id="8_6lkba"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_jc13i"]
-[ext_resource type="Texture2D" uid="uid://bb8qjwcmyrtk4" path="res://addons/controller_icons/assets/ps5/square.png" id="9_10npf"]
-[ext_resource type="Texture2D" uid="uid://bri4438gvie1f" path="res://addons/controller_icons/assets/ps5/circle.png" id="11_h2t7u"]
 [ext_resource type="Shader" uid="uid://ew6dt33ujghy" path="res://Game/Menus/CharacterSelection/character-fade.gdshader" id="13_n2w62"]
+[ext_resource type="Texture2D" uid="uid://ba8db2ijn3615" path="res://Game/Art/psbuttons/pscontroller_square.png" id="14_2is0y"]
 [ext_resource type="Texture2D" uid="uid://cxig60j7cbjcg" path="res://Game/Art/Characters/toll.png" id="14_ybhqa"]
+[ext_resource type="Texture2D" uid="uid://bgyllh2pt8r5y" path="res://Game/Art/psbuttons/pscontroller_ring.png" id="16_oi6jh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2is0y"]
 shader = ExtResource("13_n2w62")
@@ -216,7 +216,7 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MainHUD/Center/ControlGuides/ChooseCharacter"]
 layout_mode = 2
-texture = ExtResource("9_10npf")
+texture = ExtResource("14_2is0y")
 expand_mode = 3
 
 [node name="Play" type="Label" parent="MainHUD/Center/ControlGuides/ChooseCharacter"]
@@ -236,7 +236,7 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MainHUD/Center/ControlGuides/ReturnToMenu"]
 layout_mode = 2
-texture = ExtResource("11_h2t7u")
+texture = ExtResource("16_oi6jh")
 expand_mode = 3
 
 [node name="Play" type="Label" parent="MainHUD/Center/ControlGuides/ReturnToMenu"]
