@@ -10,10 +10,21 @@ func set_bounce() -> bool:
 	#HACK: References can be a bit fucked
 	if not hit_buffer:
 		hit_buffer = %HitBuffer
-	#HACK: Can be a bit buggy
-	if Input.is_action_just_pressed("a2_bounce") or wants_bounce:
+	if wants_bounce:
+		return true
+	if Input.is_action_just_pressed("a2_bounce"):
+		hit_buffer.start()
+		wants_front_bounce = true
+		wants_top_bounce = false
+		return true
+	if Input.is_action_just_pressed("a2_bounce_top"):
+		wants_top_bounce = true
+		wants_front_bounce = false
 		hit_buffer.start()
 		return true
+
+	wants_front_bounce = false
+	wants_top_bounce = false	
 	return false
 
 func _on_hit_buffer_timeout() -> void:

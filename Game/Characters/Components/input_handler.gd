@@ -3,6 +3,8 @@ extends Node
 class_name InputHandler
 
 var wants_bounce: bool = false
+var wants_top_bounce: bool = false
+var wants_front_bounce: bool = false
 var dir: int = 0
 
 func _process(_delta: float) -> void:
