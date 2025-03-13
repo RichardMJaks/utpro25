@@ -69,11 +69,11 @@ func _throw(vb: Volleyball) -> void:
 		return
 
 	is_throwing = true
-	if throw_areas[0]:
+	if input_handler.wants_top_bounce:
 		vb.make_invisible()
 		animator.play("top_throw")
 		SignalBus.bounced.emit()
-	elif throw_areas[1]:
+	elif input_handler.wants_front_bounce:
 		vb.make_invisible()
 		animator.play("front_throw")
 		SignalBus.bounced.emit()
