@@ -13,11 +13,15 @@ var current: int = -1
 func _ready() -> void:
     for selection: TextureRect in selections:
         selection.modulate = inactive_modulate
-    
+
 func switch_active(dir: int) -> MPVars.CHARACTER:
     if current == 0 and dir < 0:
+        @warning_ignore("int_as_enum_without_cast")
+        @warning_ignore("int_as_enum_without_match")   
         return -1
     if current + 1 == selections.size() and dir > 0:
+        @warning_ignore("int_as_enum_without_cast")
+        @warning_ignore("int_as_enum_without_match")   
         return -1
     
     selections[current].modulate = inactive_modulate
