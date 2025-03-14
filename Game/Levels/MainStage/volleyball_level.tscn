@@ -164,6 +164,7 @@ stream = SubResource("AudioStreamRandomizer_x4swp")
 [node name="Crickets" type="AudioStreamPlayer" parent="Audio"]
 unique_name_in_owner = true
 stream = ExtResource("8_hv6pu")
+volume_db = 4.685
 bus = &"Music"
 
 [node name="HUD" type="CanvasLayer" parent="."]
