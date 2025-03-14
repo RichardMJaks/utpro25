@@ -75,6 +75,7 @@ callback_mode_discrete = 0
 
 [node name="HitBuffer" parent="." instance=ExtResource("3_v2lwx")]
 unique_name_in_owner = true
+wait_time = 0.2
 
 [connection signal="area_entered" from="CatchAreas/FrontThrowArea" to="." method="_on_throw_area_entered" binds= [1, "front"]]
 [connection signal="area_exited" from="CatchAreas/FrontThrowArea" to="." method="_on_throw_area_exited" binds= [1]]
