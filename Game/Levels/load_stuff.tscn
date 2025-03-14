@@ -22,15 +22,15 @@ hue_variation_min = -0.01
 hue_variation_max = 0.00999998
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sbe86"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.309804, 0.34902, 0.419608, 0)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(1, 1, 1, 1)
+border_color = Color(0.456, 0.5136, 0.6, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op1cq"]
-bg_color = Color(1, 1, 1, 1)
+bg_color = Color(0.454902, 0.513726, 0.6, 1)
 
 [node name="LoadStuff" type="Node2D"]
 script = ExtResource("1_xuoa7")
@@ -91,8 +91,10 @@ offset_left = 328.0
 offset_top = 150.0
 offset_right = 592.0
 offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Low serve/Spike"
+text = "Kiirelt alla vise"
 
 [node name="RB" type="Label" parent="ColorRect"]
 layout_mode = 0
@@ -100,8 +102,10 @@ offset_left = 1481.0
 offset_top = 148.0
 offset_right = 1648.0
 offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "High serve"
+text = "Körge vise"
 
 [node name="DPad" type="Label" parent="ColorRect"]
 layout_mode = 0
@@ -109,8 +113,10 @@ offset_left = 334.0
 offset_top = 375.0
 offset_right = 417.0
 offset_bottom = 420.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Move"
+text = "Liigu"
 
 [node name="LeftJoy" type="Label" parent="ColorRect"]
 layout_mode = 0
@@ -118,27 +124,55 @@ offset_left = 328.0
 offset_top = 508.0
 offset_right = 411.0
 offset_bottom = 553.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Move"
+text = "Liigu"
 
 [node name="Triangle" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 1443.0
-offset_top = 302.0
-offset_right = 1765.0
-offset_bottom = 347.0
+offset_left = 1390.0
+offset_top = 312.0
+offset_right = 1769.0
+offset_bottom = 357.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Try again (in menu)"
+text = "Proovi uuesti (menüüs)"
 horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 873.0
+offset_right = 1328.0
+offset_bottom = 981.0
+
+[node name="Task" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Viska kolm kiva vastase kapsaaeda"
+horizontal_alignment = 1
+
+[node name="Task2" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Sedasi oled sa köva mees!"
+horizontal_alignment = 1
 
 [node name="Circle" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 1421.0
-offset_top = 373.0
-offset_right = 1763.0
-offset_bottom = 418.0
+offset_left = 1331.0
+offset_top = 379.0
+offset_right = 1777.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Main menu (in menu)"
+text = "Avalehele (menüüs)"
 horizontal_alignment = 2
 
 [node name="Timer" type="Timer" parent="."]

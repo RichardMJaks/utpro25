@@ -85,6 +85,7 @@ func _ready() -> void:
 	if is_pvp:
 		ps_player_1 = characters[MPVars.p1_character]
 		ps_player_2 = characters[MPVars.p2_character]
+		player_starts = randi_range(0, 1) == 0
 
 	_initialize_players()
 	_reset_player_positions()

@@ -12,6 +12,7 @@ var p1_locked: bool = false
 var p2_locked: bool = false
 
 @export var character_textures: Dictionary[MPVars.CHARACTER, Texture2D]
+@export var character_callouts: Dictionary[MPVars.CHARACTER, AudioStreamPlayer]
 
 func _ready() -> void:
 	%Fader.visible = true
@@ -35,10 +36,12 @@ func set_player_2(character: MPVars.CHARACTER) -> void:
 
 func p1_lock() -> void:
 	p1_locked = true
+	character_callouts[MPVars.p1_character].play()
 	lock_display_tween(display_p1)
 
 func p2_lock() -> void:
 	p2_locked = true
+	character_callouts[MPVars.p2_character].play()
 	lock_display_tween(display_p2)
 
 func tween_display(display: TextureRect) -> Tween:

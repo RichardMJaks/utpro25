@@ -74,8 +74,7 @@ script = ExtResource("5_krnyj")
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-focus_neighbor_right = NodePath("../Play2")
-focus_neighbor_bottom = NodePath("../Tutorial")
+focus_neighbor_bottom = NodePath("../Play2")
 theme = ExtResource("1_53h3y")
 theme_override_font_sizes/font_size = 140
 text = "üksi kõva mees"
@@ -85,8 +84,7 @@ scene_path = "res://Game/Levels/load_stuff.tscn"
 [node name="Play2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-focus_neighbor_left = NodePath("../Play")
-focus_neighbor_bottom = NodePath("../Tutorial")
+focus_neighbor_top = NodePath("../Play")
 theme = ExtResource("1_53h3y")
 theme_override_font_sizes/font_size = 140
 text = "söbraga jöumööt"
@@ -95,6 +93,39 @@ scene_path = "uid://bhcp4nrt11g3i"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="TeamCredits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3513.0
+offset_top = 1875.0
+offset_right = 3801.0
+offset_bottom = 2072.0
+theme_override_font_sizes/font_size = 30
+text = "Richard Miikael Jaks
+Kaur Huko Käämbre
+Angela Jelisejev
+Joseph Mattias Tomp
+Urmas Reisberg"
+horizontal_alignment = 2
+
+[node name="AssetCredits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 1714.0
+offset_right = 522.0
+offset_bottom = 2151.0
+theme_override_font_sizes/font_size = 30
+text = "Thatched Villagers by Kevin MacLeod
+From FreeMusicArchive
+CC BY License
+
+Baltic Levity by Kevin MacLeod
+From Free Music Archive
+CC BY License
+
+PS5 Button Icons & Controls by Zacksly
+CC-BY License
+zacksly.itch.io"
 
 [connection signal="pressed" from="VBoxContainer/Tutorial" to="VBoxContainer/Tutorial" method="pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="pressed"]

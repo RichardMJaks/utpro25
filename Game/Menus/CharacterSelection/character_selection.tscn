@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bhcp4nrt11g3i"]
+[gd_scene load_steps=26 format=3 uid="uid://bhcp4nrt11g3i"]
 
 [ext_resource type="Script" uid="uid://bs58hhgdpmd7i" path="res://Game/Menus/CharacterSelection/character_selection.gd" id="1_d4w44"]
 [ext_resource type="Texture2D" uid="uid://b2eei35cojbv4" path="res://Game/Art/Menus/leigericon.png" id="1_jhlmb"]
@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://ba8db2ijn3615" path="res://Game/Art/psbuttons/pscontroller_square.png" id="14_2is0y"]
 [ext_resource type="Texture2D" uid="uid://cxig60j7cbjcg" path="res://Game/Art/Characters/toll.png" id="14_ybhqa"]
 [ext_resource type="Texture2D" uid="uid://bgyllh2pt8r5y" path="res://Game/Art/psbuttons/pscontroller_ring.png" id="16_oi6jh"]
+[ext_resource type="AudioStream" uid="uid://dpnwdj2woqhys" path="res://Game/Audio/characterchantsa/leiger.ogg" id="18_3g18s"]
+[ext_resource type="AudioStream" uid="uid://c1k5crne7xdir" path="res://Game/Audio/characterchantsa/linda.ogg" id="19_b2qmr"]
+[ext_resource type="AudioStream" uid="uid://cf3e6sbtloqte" path="res://Game/Audio/characterchantsa/toll.ogg" id="20_jj8eq"]
+[ext_resource type="AudioStream" uid="uid://ldng6bgqi78j" path="res://Game/Audio/characterchantsa/vanakurat.ogg" id="21_xy4b7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2is0y"]
 shader = ExtResource("13_n2w62")
@@ -44,7 +48,7 @@ fill = 2
 fill_from = Vector2(0.509615, 0.491453)
 fill_to = Vector2(0.745192, 0.863248)
 
-[node name="CharacterSelection" type="Control"]
+[node name="CharacterSelection" type="Control" node_paths=PackedStringArray("character_callouts")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,6 +62,12 @@ character_textures = Dictionary[int, Texture2D]({
 2: ExtResource("5_2tdoo"),
 3: ExtResource("4_n2w62")
 })
+character_callouts = {
+0: NodePath("Audio/Linda"),
+1: NodePath("Audio/Toll"),
+2: NodePath("Audio/Leiger"),
+3: NodePath("Audio/Vanakurat")
+}
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -186,7 +196,7 @@ layout_mode = 2
 
 [node name="P1" type="Label" parent="MainHUD/Center/NameContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 212
+theme_override_font_sizes/font_size = 174
 text = "LINDA"
 script = ExtResource("2_o6tuh")
 
@@ -196,7 +206,7 @@ size_flags_horizontal = 3
 
 [node name="P2" type="Label" parent="MainHUD/Center/NameContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 212
+theme_override_font_sizes/font_size = 174
 text = "LEIGER"
 horizontal_alignment = 2
 script = ExtResource("2_o6tuh")
@@ -356,6 +366,20 @@ color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Leiger" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("18_3g18s")
+
+[node name="Linda" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("19_b2qmr")
+
+[node name="Toll" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("20_jj8eq")
+
+[node name="Vanakurat" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("21_xy4b7")
 
 [connection signal="changed" from="MainHUD/P1Select" to="." method="set_player_1"]
 [connection signal="changed" from="MainHUD/P2Select" to="." method="set_player_2"]

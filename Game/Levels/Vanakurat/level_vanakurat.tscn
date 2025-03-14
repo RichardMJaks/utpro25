@@ -15,9 +15,6 @@ p2_script = ExtResource("3_6t4lq")
 p2_ai_values = ExtResource("4_xncko")
 dialog_box = NodePath("HUD/VanakuratDialog")
 
-[node name="Vetevana" parent="." index="6"]
-frame_progress = 0.0
-
 [node name="ArenaMidpointHelper" parent="." index="7"]
 position = Vector2(960, 520)
 
