@@ -13,15 +13,6 @@ ps_player_2 = ExtResource("2_mc886")
 p2_script = ExtResource("3_kco2r")
 is_pvp = true
 
-[node name="Vetevana" parent="." index="6"]
-frame_progress = 0.0
-
-[node name="HUD" parent="." index="10"]
-visible = true
-
-[node name="GameOver" parent="HUD" index="0"]
-visible = false
-
 [node name="WhichWon" type="Control" parent="HUD" index="1"]
 unique_name_in_owner = true
 visible = false

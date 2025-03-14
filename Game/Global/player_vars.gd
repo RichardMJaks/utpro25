@@ -1,7 +1,7 @@
 extends Node
 
 # Player Properties
-var speed = 700
+var speed = 600
 var bounce_force_range = 300
 var bounce_force = 2000:
     get:

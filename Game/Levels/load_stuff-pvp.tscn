@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfdvo3dv5ecuq"]
+[gd_scene load_steps=11 format=3 uid="uid://cfdvo3dv5ecuq"]
 
 [ext_resource type="Script" uid="uid://lx45hbpq3vwh" path="res://Game/Levels/load_stuff.gd" id="1_vq5qs"]
 [ext_resource type="Texture2D" uid="uid://co1f4x7yeyokm" path="res://Game/Art/assets/bouldergameprop.png" id="2_8os5w"]
 [ext_resource type="Texture2D" uid="uid://cvigkrt6myql4" path="res://Game/Art/ps5_layout/controlscheme.png" id="3_bumhf"]
+[ext_resource type="Texture2D" uid="uid://bq5krrcllodb4" path="res://Game/Art/serve.png" id="4_bumhf"]
+[ext_resource type="Texture2D" uid="uid://bihi71njav4k5" path="res://Game/Art/spike-2.png" id="5_ji0pa"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_034f3"]
 lifetime_randomness = 0.5
@@ -31,6 +33,15 @@ border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op1cq"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_pf38k"]
+colors = PackedColorArray(0.45, 0.45, 0.45, 0.517647, 0.45, 0.45, 0.45, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bumhf"]
+gradient = SubResource("Gradient_pf38k")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
 
 [node name="LoadStuff" type="Node2D"]
 script = ExtResource("1_vq5qs")
@@ -86,59 +97,86 @@ texture = ExtResource("3_bumhf")
 expand_mode = 1
 
 [node name="LB" type="Label" parent="ColorRect"]
-layout_mode = 0
 offset_left = 328.0
 offset_top = 150.0
 offset_right = 592.0
 offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Low serve/Spike"
+text = "Kiirelt alla vise"
 
 [node name="RB" type="Label" parent="ColorRect"]
-layout_mode = 0
 offset_left = 1481.0
 offset_top = 148.0
 offset_right = 1648.0
 offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "High serve"
+text = "Körge vise"
 
 [node name="DPad" type="Label" parent="ColorRect"]
-layout_mode = 0
 offset_left = 334.0
 offset_top = 375.0
 offset_right = 417.0
 offset_bottom = 420.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Move"
+text = "Liigu"
 
 [node name="LeftJoy" type="Label" parent="ColorRect"]
-layout_mode = 0
 offset_left = 328.0
 offset_top = 508.0
 offset_right = 411.0
 offset_bottom = 553.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Move"
+text = "Liigu"
 
 [node name="Triangle" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 1443.0
-offset_top = 302.0
-offset_right = 1765.0
-offset_bottom = 347.0
+offset_left = 1390.0
+offset_top = 312.0
+offset_right = 1769.0
+offset_bottom = 357.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Try again (in menu)"
+text = "Proovi uuesti (menüüs)"
 horizontal_alignment = 2
 
-[node name="Circle" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 1421.0
-offset_top = 373.0
-offset_right = 1763.0
-offset_bottom = 418.0
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+offset_left = 579.0
+offset_top = 873.0
+offset_right = 1328.0
+offset_bottom = 981.0
+
+[node name="Task" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Viska kolm kiva vastase kapsaaeda"
+horizontal_alignment = 1
+
+[node name="Task2" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
-text = "Main menu (in menu)"
+text = "Sedasi oled sa köva mees!"
+horizontal_alignment = 1
+
+[node name="Circle" type="Label" parent="ColorRect"]
+offset_left = 1331.0
+offset_top = 379.0
+offset_right = 1777.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.631373, 0.635294, 0.639216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "Avalehele (menüüs)"
 horizontal_alignment = 2
 
 [node name="Timer" type="Timer" parent="."]
@@ -149,5 +187,43 @@ autostart = true
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(2, 2)
+
+[node name="ServeIcon" type="TextureRect" parent="."]
+modulate = Color(0.54902, 0.552941, 0.556863, 1)
+offset_left = 1647.0
+offset_top = 141.0
+offset_right = 1723.0
+offset_bottom = 217.0
+texture = ExtResource("4_bumhf")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="ServeIcon"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_bumhf")
+
+[node name="SpikeIcon" type="TextureRect" parent="."]
+modulate = Color(0.54902, 0.552941, 0.556863, 1)
+offset_left = 255.0
+offset_top = 141.0
+offset_right = 331.0
+offset_bottom = 217.0
+texture = ExtResource("5_ji0pa")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="SpikeIcon"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_bumhf")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

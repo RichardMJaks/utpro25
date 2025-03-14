@@ -9,21 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://gst0yfqcr5ik" path="res://Game/Art/Menus/lindaicon.png" id="5_ejywi"]
 
 [node name="LevelLinda" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_o8f8a")]
-next_screen = "res://Game/StoryScenes/vs3.tscn"
+next_screen = "res://Game/StoryScenes/win_screen2.tscn"
 ps_player_2 = ExtResource("2_elpcl")
 p2_script = ExtResource("3_on8ux")
 p2_ai_values = ExtResource("4_mxwnb")
 dialog_box = NodePath("HUD/LindaDialog")
 player_starts = true
 
-[node name="Vetevana" parent="." index="6"]
-frame_progress = 0.0
-
 [node name="ArenaMidpointHelper" parent="." index="7"]
-position = Vector2(864, 544)
+position = Vector2(938, 541)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
-position = Vector2(1168, 672)
+position = Vector2(1339, 676)
 
 [node name="ServeBoundaryHelper" parent="." index="9"]
 position = Vector2(1352, 615)

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://52io61udug2d" path="res://Game/Art/Menus/paganicon.png" id="5_jg23r"]
 
 [node name="VolleyballLevel2" node_paths=PackedStringArray("dialog_box") instance=ExtResource("1_gaqq8")]
-next_screen = "res://Game/StoryScenes/win_screen2.tscn"
+next_screen = "res://Game/StoryScenes/vs2.tscn"
 ps_player_2 = ExtResource("2_mn4uf")
 p2_script = ExtResource("3_6t4lq")
 p2_ai_values = ExtResource("4_xncko")
