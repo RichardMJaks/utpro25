@@ -15,11 +15,17 @@ p2_script = ExtResource("3_6t4lq")
 p2_ai_values = ExtResource("4_xncko")
 dialog_box = NodePath("HUD/VanakuratDialog")
 
+[node name="Vetevana" parent="." index="6"]
+frame_progress = 0.0
+
 [node name="ArenaMidpointHelper" parent="." index="7"]
 position = Vector2(960, 520)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
 position = Vector2(1576, 736)
+
+[node name="ServeBoundaryHelper" parent="." index="9"]
+position = Vector2(1486, 610)
 
 [node name="VanakuratDialog" parent="HUD" index="0" instance=ExtResource("3_o51bo")]
 process_mode = 4
@@ -31,9 +37,6 @@ texture = ExtResource("4_sstxp")
 [node name="P2Texture" parent="HUD/VanakuratDialog/Panel/HBoxContainer/P2" index="0"]
 process_mode = 4
 texture = ExtResource("5_jg23r")
-
-[node name="Fader" parent="HUD" index="2"]
-visible = true
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]

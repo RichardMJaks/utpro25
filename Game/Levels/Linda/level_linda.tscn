@@ -16,11 +16,17 @@ p2_ai_values = ExtResource("4_mxwnb")
 dialog_box = NodePath("HUD/LindaDialog")
 player_starts = true
 
+[node name="Vetevana" parent="." index="6"]
+frame_progress = 0.0
+
 [node name="ArenaMidpointHelper" parent="." index="7"]
 position = Vector2(864, 544)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
 position = Vector2(1168, 672)
+
+[node name="ServeBoundaryHelper" parent="." index="9"]
+position = Vector2(1352, 615)
 
 [node name="LindaDialog" parent="HUD" index="0" instance=ExtResource("3_7i632")]
 process_mode = 4
@@ -31,9 +37,6 @@ texture = ExtResource("4_augxg")
 
 [node name="P2Texture" parent="HUD/LindaDialog/Panel/HBoxContainer/P2" index="0"]
 texture = ExtResource("5_ejywi")
-
-[node name="Fader" parent="HUD" index="2"]
-visible = true
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]

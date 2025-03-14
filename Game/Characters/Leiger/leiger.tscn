@@ -492,7 +492,7 @@ script = null
 [node name="Animator" parent="." index="5"]
 process_mode = 3
 libraries = {
-"": SubResource("AnimationLibrary_us7mv")
+&"": SubResource("AnimationLibrary_us7mv")
 }
 autoplay = "idle"
 

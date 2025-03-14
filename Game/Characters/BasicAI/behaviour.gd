@@ -11,6 +11,7 @@ var values: Resource
 # Get helpers
 @onready var midpoint: Marker2D = cs.midpoint 
 @onready var island_midpoint: Marker2D = cs.island_midpoint 
+@onready var serve_boundary: Marker2D = cs.serve_boundary
 
 func _process(delta: float) -> void:
 	if not volleyball:
@@ -57,4 +58,13 @@ func _calculate_trajectory() -> int:
 	return final_pos.x
 
 func set_bounce() -> bool:
+	if not true in owner.throw_areas:
+		return false
+	
+	if serve_boundary.global_position.x > owner.global_position.x:
+		wants_top_bounce = true
+		wants_front_bounce = false
+	else:
+		wants_front_bounce = true
+		wants_top_bounce = false
 	return true in owner.throw_areas 

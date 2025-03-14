@@ -50,6 +50,7 @@ var volleyball: Volleyball
 # AI Helpers
 @onready var midpoint: Marker2D = %ArenaMidpointHelper
 @onready var island_midpoint: Marker2D = %IslandMidpointHelper
+@onready var serve_boundary: Marker2D = %ServeBoundaryHelper
 #endregion
 
 #region Game variables

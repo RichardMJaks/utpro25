@@ -42,32 +42,10 @@ alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="Play" type="Button" parent="VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_neighbor_right = NodePath("../Play2")
-focus_neighbor_bottom = NodePath("../../Tutorial")
-theme = ExtResource("1_53h3y")
-theme_override_font_sizes/font_size = 140
-text = "mängin"
-script = ExtResource("2_u3efc")
-scene_path = "res://Game/Levels/load_stuff.tscn"
-
-[node name="Play2" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_neighbor_left = NodePath("../Play")
-focus_neighbor_bottom = NodePath("../../Tutorial")
-theme = ExtResource("1_53h3y")
-theme_override_font_sizes/font_size = 140
-text = "sõbraga"
-script = ExtResource("2_u3efc")
-scene_path = "uid://bhcp4nrt11g3i"
-
 [node name="Tutorial" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
-focus_neighbor_top = NodePath("../HBoxContainer/Play")
+focus_neighbor_top = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Settings")
 theme = ExtResource("1_53h3y")
 theme_override_font_sizes/font_size = 140
@@ -76,6 +54,7 @@ script = ExtResource("2_u3efc")
 scene_path = "res://Game/Menus/tutorial.tscn"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Tutorial")
 theme = ExtResource("1_53h3y")
@@ -91,11 +70,34 @@ theme = ExtResource("1_53h3y")
 text = "lähän ära"
 script = ExtResource("5_krnyj")
 
+[node name="Play" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_right = NodePath("../Play2")
+focus_neighbor_bottom = NodePath("../Tutorial")
+theme = ExtResource("1_53h3y")
+theme_override_font_sizes/font_size = 140
+text = "üksi kõva mees"
+script = ExtResource("2_u3efc")
+scene_path = "res://Game/Levels/load_stuff.tscn"
+
+[node name="Play2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Tutorial")
+theme = ExtResource("1_53h3y")
+theme_override_font_sizes/font_size = 140
+text = "söbraga jöumööt"
+script = ExtResource("2_u3efc")
+scene_path = "uid://bhcp4nrt11g3i"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Play" to="VBoxContainer/HBoxContainer/Play" method="pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/Play2" to="VBoxContainer/HBoxContainer/Play2" method="pressed"]
 [connection signal="pressed" from="VBoxContainer/Tutorial" to="VBoxContainer/Tutorial" method="pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="VBoxContainer/Settings" method="pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="pressed"]
+[connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="pressed"]
+[connection signal="pressed" from="VBoxContainer/Play2" to="VBoxContainer/Play2" method="pressed"]

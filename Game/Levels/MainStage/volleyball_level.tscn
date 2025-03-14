@@ -11,8 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://bqrh17iskcqgy" path="res://Game/Audio/Music/crickets.ogg" id="8_hv6pu"]
 [ext_resource type="Theme" uid="uid://ds1yohn75ktb6" path="res://Game/Styles/button.tres" id="8_iqiqn"]
 [ext_resource type="Script" uid="uid://8ph18dw0udpp" path="res://Game/Levels/MainStage/game_over-story.gd" id="10_gw0nn"]
-[ext_resource type="Texture2D" uid="uid://bri4438gvie1f" path="res://addons/controller_icons/assets/ps5/circle.png" id="12_nnth5"]
-[ext_resource type="Texture2D" uid="uid://c05iqfpx578f2" path="res://addons/controller_icons/assets/ps5/triangle.png" id="13_pfxvp"]
+[ext_resource type="Texture2D" uid="uid://dks7u8pueeh2i" path="res://Game/Art/psbuttons/pscontroller_X.png" id="13_pfxvp"]
+[ext_resource type="Texture2D" uid="uid://bgyllh2pt8r5y" path="res://Game/Art/psbuttons/pscontroller_ring.png" id="14_ihl3a"]
 [ext_resource type="PackedScene" uid="uid://bndx66eurwmys" path="res://Game/Characters/Vetevana/vetevana.tscn" id="14_pfxvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3fci"]
@@ -46,7 +46,7 @@ random_pitch = 1.1
 streams_count = 1
 stream_0/stream = ExtResource("7_87nfj")
 
-[node name="VolleyballLevel" type="Node2D" node_paths=PackedStringArray("vetevana")]
+[node name="VolleyballLevel2" type="Node2D" node_paths=PackedStringArray("vetevana")]
 process_mode = 3
 script = ExtResource("1_c342i")
 p1_script = ExtResource("2_pinhv")
@@ -137,7 +137,6 @@ debug_color = Color(0.549624, 0.310666, 0.367176, 0.42)
 [node name="Vetevana" parent="." instance=ExtResource("14_pfxvp")]
 unique_name_in_owner = true
 position = Vector2(947, 721)
-frame_progress = 0.0327673
 
 [node name="ArenaMidpointHelper" type="Marker2D" parent="."]
 unique_name_in_owner = true
@@ -146,6 +145,10 @@ position = Vector2(1504, 504)
 [node name="IslandMidpointHelper" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(1472, 696)
+
+[node name="ServeBoundaryHelper" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1517, 613)
 
 [node name="Audio" type="Node" parent="."]
 
@@ -218,7 +221,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="HUD/GameOver/VBoxContainer/TryAgainControllerText"]
 layout_mode = 2
-texture = ExtResource("12_nnth5")
+texture = ExtResource("13_pfxvp")
 expand_mode = 3
 
 [node name="Label" type="Label" parent="HUD/GameOver/VBoxContainer/TryAgainControllerText"]
@@ -232,7 +235,7 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HUD/GameOver/VBoxContainer/ReturnToMenuControllerText"]
 layout_mode = 2
-texture = ExtResource("13_pfxvp")
+texture = ExtResource("14_ihl3a")
 expand_mode = 3
 
 [node name="Label" type="Label" parent="HUD/GameOver/VBoxContainer/ReturnToMenuControllerText"]

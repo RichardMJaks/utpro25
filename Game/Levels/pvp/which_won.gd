@@ -16,5 +16,5 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed(&"ui_try-again"):
 		try_again_func.call()
 	
-	if Input.is_action_just_pressed(&"ui_return-to-menu"):
+	if Input.is_action_just_pressed(&"ui_return"):
 		return_to_menu_func.call()

@@ -17,7 +17,7 @@ var total_health = 3
 var angle_range = 3
 var top_throw_dir: 
     get: 
-        var initial = 0
+        var initial = 10
         return Vector2.from_angle(deg_to_rad(
             initial + randf_range(
                 -angle_range/2.0,

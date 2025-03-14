@@ -21,11 +21,17 @@ position = Vector2(350, 784.1)
 [node name="Player2Position" parent="." index="2"]
 position = Vector2(1542, 784.1)
 
+[node name="Vetevana" parent="." index="6"]
+frame_progress = 0.0
+
 [node name="ArenaMidpointHelper" parent="." index="7"]
 position = Vector2(1160, 512)
 
 [node name="IslandMidpointHelper" parent="." index="8"]
 position = Vector2(1696, 704)
+
+[node name="ServeBoundaryHelper" parent="." index="9"]
+position = Vector2(1131, 616)
 
 [node name="LeigerDialog" parent="HUD" index="0" instance=ExtResource("3_ohmxp")]
 process_mode = 4
@@ -36,9 +42,6 @@ texture = ExtResource("4_wwsm1")
 
 [node name="P2Texture" parent="HUD/LeigerDialog/Panel/HBoxContainer/P2" index="0"]
 texture = ExtResource("5_5eebb")
-
-[node name="Fader" parent="HUD" index="2"]
-visible = true
 
 [editable path="Colliders/LeftGround"]
 [editable path="Colliders/RightGround"]

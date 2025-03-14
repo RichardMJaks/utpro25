@@ -13,6 +13,8 @@ var waitTime: float = 1.5
 func _process(delta: float) -> void:
 	timeElapsed += delta
 	if (state == "fade_in"): fadeIn()
+	if Input.is_action_just_pressed("ui_return"):
+		get_tree().change_scene_to_file("res://Game/Menus/main_menu.tscn")
 
 func fadeIn():
 	var fade: float = (fadeTime - timeElapsed) / fadeTime

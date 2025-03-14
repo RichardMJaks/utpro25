@@ -94,5 +94,5 @@ func _process(_delta: float) -> void:
 func _on_play_pressed() -> void:
 	var tween = _fade_out(2)
 	tween.tween_callback(
-		get_tree().change_scene_to_file.bind("res://Game/Levels/pvp/pvp.tscn")
+		get_tree().change_scene_to_file.bind("res://Game/Levels/load_stuff-pvp.tscn")
 	)
