@@ -97,6 +97,7 @@ texture = ExtResource("3_bumhf")
 expand_mode = 1
 
 [node name="LB" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 328.0
 offset_top = 150.0
 offset_right = 592.0
@@ -107,6 +108,7 @@ theme_override_font_sizes/font_size = 36
 text = "Kiirelt alla vise"
 
 [node name="RB" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 1481.0
 offset_top = 148.0
 offset_right = 1648.0
@@ -117,6 +119,7 @@ theme_override_font_sizes/font_size = 36
 text = "Körge vise"
 
 [node name="DPad" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 334.0
 offset_top = 375.0
 offset_right = 417.0
@@ -127,6 +130,7 @@ theme_override_font_sizes/font_size = 36
 text = "Liigu"
 
 [node name="LeftJoy" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 328.0
 offset_top = 508.0
 offset_right = 411.0
@@ -137,6 +141,7 @@ theme_override_font_sizes/font_size = 36
 text = "Liigu"
 
 [node name="Triangle" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 1390.0
 offset_top = 312.0
 offset_right = 1769.0
@@ -148,6 +153,7 @@ text = "Proovi uuesti (menüüs)"
 horizontal_alignment = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
 offset_left = 579.0
 offset_top = 873.0
 offset_right = 1328.0
@@ -169,6 +175,7 @@ text = "Sedasi oled sa köva mees!"
 horizontal_alignment = 1
 
 [node name="Circle" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 1331.0
 offset_top = 379.0
 offset_right = 1777.0
